@@ -152,6 +152,38 @@ a { text-decoration: none; color: inherit; }
 .method-box .desc { font-size: 11px; color: var(--gray3); line-height: 1.7; }
 .method-box code { background: var(--bg4); color: var(--red); padding: 1px 7px; border-radius: 4px; font-size: 11px; font-family: monospace; }
 
+/* ── Conclusion Box (game-dev summary) ── */
+.conclusion-box {
+  background: linear-gradient(135deg, rgba(37,244,238,0.04) 0%, rgba(254,44,85,0.04) 100%);
+  border: 1px solid rgba(37,244,238,0.2); border-left: 3px solid var(--accent);
+  border-radius: 12px; padding: 18px 20px; margin-bottom: 28px;
+}
+.conclusion-box .cb-header {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 14px;
+}
+.conclusion-box .cb-icon { font-size: 20px; }
+.conclusion-box .cb-title { font-size: 13px; font-weight: 800; color: var(--white); }
+.conclusion-box .cb-tag {
+  font-size: 9px; font-weight: 700; color: var(--accent);
+  background: rgba(37,244,238,0.12); border: 1px solid rgba(37,244,238,0.25);
+  padding: 2px 8px; border-radius: 10px; margin-left: auto;
+}
+.conclusion-box .cb-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+.conclusion-box .cb-col { }
+.conclusion-box .cb-col-title {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; display: flex; align-items: center; gap: 5px;
+}
+.conclusion-box .cb-col-title .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
+.conclusion-box .cb-col-body { font-size: 11px; color: #bbb; line-height: 1.7; }
+.conclusion-box .cb-col-body strong { color: var(--white); font-weight: 600; }
+.conclusion-box .cb-highlight {
+  display: inline; background: rgba(37,244,238,0.1); color: var(--accent);
+  padding: 1px 6px; border-radius: 4px; font-weight: 600; font-size: 11px;
+}
+.sidebar-issue {
+  font-size: 10px; color: var(--gray3); margin-top: 2px; font-weight: 400;
+}
+
 .tk-section-title {
   display: flex; align-items: center; justify-content: space-between;
   font-size: 14px; font-weight: 700; color: var(--white);
@@ -487,7 +519,7 @@ a { text-decoration: none; color: inherit; }
   <!-- ── Sidebar ── -->
   <nav class="hub-sidebar">
     <div class="sidebar-group">
-      <div class="sidebar-group-label">本期内容</div>
+      <div class="sidebar-group-label">Vol.001 · 2026-04-01</div>
       <button class="nav-item active" data-target="s-trends" onclick="switchSection('s-trends',this)">
         <span class="ni-icon">🔥</span>
         <span class="ni-label">热搜分析</span>
@@ -543,6 +575,28 @@ a { text-decoration: none; color: inherit; }
           <div class="stat-pill">🌎 <strong>地区</strong> 美国</div>
           <div class="stat-pill">📊 <strong>来源</strong> Google Trends RSS + Web</div>
           <div class="stat-pill">🎮 <strong>视角</strong> 游戏研发 · 内容情报</div>
+        </div>
+
+        <div class="conclusion-box">
+          <div class="cb-header">
+            <span class="cb-icon">🎮</span>
+            <span class="cb-title">本期热搜 游戏研发结论</span>
+            <span class="cb-tag">优先级：玩法 > 角色 > 广告</span>
+          </div>
+          <div class="cb-grid">
+            <div class="cb-col">
+              <div class="cb-col-title" style="color:#25f4ee"><span class="dot" style="background:#25f4ee"></span> 角色设计方向</div>
+              <div class="cb-col-body"><strong>反差搭档</strong>是本周最强角色公式——Zootopia 2 的小聪明×大行动力、Stranger Things 的少年群像各司其职。<span class="cb-highlight">病态魅力型</span>角色（Euphoria 的极致心理原型）和<span class="cb-highlight">全能跨界者</span>（大谷翔平双职业、赞达亚多角色叠加）值得探索。宝可梦的萌系进化多形态也是经典参考。</div>
+            </div>
+            <div class="cb-col">
+              <div class="cb-col-title" style="color:#ffc533"><span class="dot" style="background:#ffc533"></span> 活动/玩法方向</div>
+              <div class="cb-col-body"><span class="cb-highlight">淘汰赛/竞猜树</span>（March Madness Bracket）和<span class="cb-highlight">图鉴收集/进化系统</span>（宝可梦 30 周年）是两大最直接可转化的玩法结构。多结局分支剧情（Euphoria/Stranger Things）适合叙事向活动。季节性节庆活动（Coachella 换装、Y2K 复古限定）提供周期性运营灵感。</div>
+            </div>
+            <div class="cb-col">
+              <div class="cb-col-title" style="color:#fe2c55"><span class="dot" style="background:#fe2c55"></span> 广告创意方向</div>
+              <div class="cb-col-body"><span class="cb-highlight">反差 duo 开场</span>（Zootopia 搭档）和<span class="cb-highlight">"落后19分但赢了"的逆转叙事</span>（March Madness）是最强情绪钩子。悬疑叙事节奏（Stranger Things 低音效+画面切换）和怀旧情绪开场（宝可梦 30 年对比）适合做品牌向短片。</div>
+            </div>
+          </div>
         </div>
 
         <!-- 01 Zootopia 2 -->
@@ -1132,14 +1186,24 @@ a { text-decoration: none; color: inherit; }
           </div>
         </div>
 
-        <div class="method-box" style="border-color:rgba(37,244,238,0.2);margin-bottom:24px;">
-          <div class="icon">🎮</div>
-          <div>
-            <div class="title">本期 TikTok 游戏研发结论</div>
-            <div class="desc">
-              <strong style="color:#25f4ee">角色设计方向：</strong>Brainrot 怪物美学（畸形感+荒诞幽默）和二次元超级英雄变身（IShowSpeed Deku Cosplay）是当前最强角色原型——建议探索「荒诞怪物收集」或「夸张变身」方向的角色设计。<br>
-              <strong style="color:#ffc533">活动/玩法方向：</strong>Before/After 成长挑战（「1 Day」健身）和 ASMR 满足感循环（切黄瓜实验）指向「每日打卡成长」和「满足感 loop」两种高粘性玩法结构。<br>
-              <strong style="color:#fe2c55">广告创意方向：</strong>真人模仿动画角色的视觉冲击（变身揭晓）、AI 生成魔性循环（低成本高传播）、问题驱动分段揭晓（「什么工具能切穿？」）是本周三大最强钩子结构。
+        <div class="conclusion-box">
+          <div class="cb-header">
+            <span class="cb-icon">🎮</span>
+            <span class="cb-title">本期 TikTok 游戏研发结论</span>
+            <span class="cb-tag">优先级：角色 > 广告 > 玩法</span>
+          </div>
+          <div class="cb-grid">
+            <div class="cb-col">
+              <div class="cb-col-title" style="color:#25f4ee"><span class="dot" style="background:#25f4ee"></span> 角色设计方向</div>
+              <div class="cb-col-body"><span class="cb-highlight">Brainrot 怪物美学</span>（畸形感+荒诞幽默）和<span class="cb-highlight">二次元超级英雄变身</span>（IShowSpeed Deku Cosplay）是当前最强角色原型。建议探索「荒诞怪物收集」或「夸张变身」方向的角色设计。反差型保护者（硬汉奶爸）也有共鸣基础。</div>
+            </div>
+            <div class="cb-col">
+              <div class="cb-col-title" style="color:#ffc533"><span class="dot" style="background:#ffc533"></span> 活动/玩法方向</div>
+              <div class="cb-col-body"><span class="cb-highlight">Before/After 成长挑战</span>（「1 Day」健身）和<span class="cb-highlight">ASMR 满足感循环</span>（切黄瓜实验）指向「每日打卡成长」和「满足感 loop」两种高粘性玩法结构。隐藏空间探索（阁楼揭秘）适合地图解锁设计。</div>
+            </div>
+            <div class="cb-col">
+              <div class="cb-col-title" style="color:#fe2c55"><span class="dot" style="background:#fe2c55"></span> 广告创意方向</div>
+              <div class="cb-col-body"><span class="cb-highlight">真人模仿动画角色</span>的视觉冲击（变身揭晓）、<span class="cb-highlight">AI 生成魔性循环</span>（低成本高传播）、<span class="cb-highlight">问题驱动分段揭晓</span>（「什么工具能切穿？」）是本周三大最强钩子结构。</div>
             </div>
           </div>
         </div>
@@ -1731,14 +1795,24 @@ a { text-decoration: none; color: inherit; }
           <div class="stat-pill">🎮 <strong>视角</strong> 游戏研发 · 内容情报</div>
         </div>
 
-        <div class="method-box" style="border-color:rgba(37,244,238,0.2);margin-bottom:24px;">
-          <div class="icon">🎮</div>
-          <div>
-            <div class="title">本期 YouTube Shorts 游戏研发结论</div>
-            <div class="desc">
-              <strong style="color:#25f4ee">角色设计方向：</strong>Oba Femi 的霸道登场（极致压迫感角色）和 GTA 6 泄露少年（传奇天才黑客型）是最强角色原型——建议探索「Boss 级压迫存在」和「天才叛逆者」方向的角色设计。<br>
-              <strong style="color:#ffc533">活动/玩法方向：</strong>MrBeast 公式（气球爆炸/陌生人分钱/保险箱寻宝）= 随机奖励+道德博弈+密室解谜三大活动模板，可直接转化为游戏内活动设计。流沙足球指向「特殊地形变体玩法」。<br>
-              <strong style="color:#fe2c55">广告创意方向：</strong>45-58秒是 Shorts 黄金时长。三大钩子结构：① 金额数字开场（"Win $10,000"）② 悬念揭晓（"Banksy 真实身份"）③ 荒诞物理结合（流沙足球）。完播 > 点赞——优化前3秒和结尾反转。
+        <div class="conclusion-box">
+          <div class="cb-header">
+            <span class="cb-icon">🎮</span>
+            <span class="cb-title">本期 YouTube Shorts 游戏研发结论</span>
+            <span class="cb-tag">优先级：广告 > 玩法 > 角色</span>
+          </div>
+          <div class="cb-grid">
+            <div class="cb-col">
+              <div class="cb-col-title" style="color:#25f4ee"><span class="dot" style="background:#25f4ee"></span> 角色设计方向</div>
+              <div class="cb-col-body"><span class="cb-highlight">Oba Femi 的霸道登场</span>（极致压迫感 Boss 角色）和<span class="cb-highlight">GTA 6 泄露少年</span>（传奇天才黑客型）是最强角色原型。建议探索「Boss 级压迫存在」和「天才叛逆者」方向。Banksy 的神秘身份型也适合做隐藏 NPC。</div>
+            </div>
+            <div class="cb-col">
+              <div class="cb-col-title" style="color:#ffc533"><span class="dot" style="background:#ffc533"></span> 活动/玩法方向</div>
+              <div class="cb-col-body"><span class="cb-highlight">MrBeast 公式</span>（气球爆炸/陌生人分钱/保险箱寻宝）= 随机奖励+道德博弈+密室解谜三大活动模板，可直接转化为游戏内活动。<span class="cb-highlight">流沙足球</span>指向「特殊地形变体玩法」——环境修改规则。</div>
+            </div>
+            <div class="cb-col">
+              <div class="cb-col-title" style="color:#fe2c55"><span class="dot" style="background:#fe2c55"></span> 广告创意方向</div>
+              <div class="cb-col-body"><span class="cb-highlight">45-58秒</span>是 Shorts 黄金时长。三大钩子：① <span class="cb-highlight">金额数字开场</span>（"Win $10,000"）② <span class="cb-highlight">悬念揭晓</span>（"Banksy 真实身份"）③ <span class="cb-highlight">荒诞物理</span>（流沙足球）。完播 > 点赞——优化前3秒和结尾反转。</div>
             </div>
           </div>
         </div>
