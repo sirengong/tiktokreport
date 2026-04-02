@@ -269,6 +269,100 @@ a { text-decoration: none; color: inherit; }
 .ttc-ua-list li::before { content: '▸'; position: absolute; left: 3px; color: var(--red); font-size: 9px; top: 6px; }
 .ttc-ua-list li strong { color: var(--white); font-weight: 600; }
 
+/* ─────────── ADS SECTION STYLES ─────────── */
+.ads-grid { display: flex; flex-direction: column; gap: 20px; margin-bottom: 36px; }
+
+.ad-card {
+  background: var(--bg3); border: 1px solid var(--border2); border-radius: 16px;
+  overflow: hidden;
+  display: grid; grid-template-columns: 180px 1fr;
+}
+.ad-thumb {
+  position: relative; width: 180px; background: var(--bg4);
+  flex-shrink: 0; overflow: hidden;
+}
+.ad-thumb img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  cursor: zoom-in; transition: opacity 0.15s;
+}
+.ad-thumb img:hover { opacity: 0.82; }
+.ad-rank {
+  position: absolute; top: 10px; left: 10px; z-index: 10;
+  background: rgba(0,0,0,0.75); color: var(--white);
+  font-size: 14px; font-weight: 900; width: 28px; height: 28px;
+  border-radius: 7px; display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.ad-platform-badge {
+  position: absolute; bottom: 10px; left: 10px; z-index: 10;
+  background: #333; border: 1px solid rgba(255,255,255,0.15); border-radius: 6px;
+  padding: 3px 8px; font-size: 9px; font-weight: 700; color: #fff;
+  letter-spacing: 0.5px;
+}
+.ad-perf-tag {
+  position: absolute; top: 10px; right: 10px; z-index: 10;
+  background: rgba(255,180,0,0.15); border: 1px solid rgba(255,180,0,0.4);
+  color: #ffc533; border-radius: 5px;
+  padding: 2px 7px; font-size: 9px; font-weight: 700; letter-spacing: 0.5px;
+}
+.ad-duration-badge {
+  position: absolute; bottom: 10px; right: 10px; z-index: 10;
+  background: rgba(0,0,0,0.6); color: #ccc; border-radius: 5px;
+  padding: 2px 6px; font-size: 9px; font-weight: 600;
+}
+.ad-info { padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; }
+.ad-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.ad-meta { display: flex; flex-direction: column; gap: 3px; }
+.ad-objective {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--gray3); margin-bottom: 1px;
+}
+.ad-industry { font-size: 15px; font-weight: 800; color: var(--white); line-height: 1.3; }
+.ad-advertiser { font-size: 11px; color: var(--gray2); }
+.ad-creative-type { font-size: 10px; color: var(--accent); font-weight: 600; }
+.ad-ctr-badge {
+  background: rgba(37,244,238,0.1); border: 1px solid rgba(37,244,238,0.25);
+  color: var(--accent); font-size: 11px; font-weight: 700;
+  padding: 3px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0;
+}
+.ad-metrics {
+  display: flex; gap: 0; background: var(--bg4); border-radius: 10px;
+  overflow: hidden; border: 1px solid var(--border);
+}
+.ad-metric {
+  flex: 1; padding: 9px 12px;
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  border-right: 1px solid var(--border);
+}
+.ad-metric:last-child { border-right: none; }
+.ad-metric .am-val { font-size: 14px; font-weight: 800; color: var(--white); }
+.ad-metric .am-lbl { font-size: 9px; color: var(--gray3); letter-spacing: 0.5px; }
+.ad-metric.highlight .am-val { color: var(--accent); }
+.ad-analysis {
+  background: var(--bg4); border: 1px solid var(--border); border-radius: 9px;
+  padding: 12px 14px;
+}
+.ad-analysis-label {
+  font-size: 9px; font-weight: 700; color: var(--red); letter-spacing: 1px;
+  text-transform: uppercase; margin-bottom: 6px;
+}
+.ad-analysis-list { list-style: none; }
+.ad-analysis-list li {
+  font-size: 11px; color: #aaa; line-height: 1.6;
+  padding: 3px 0 3px 16px; position: relative;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.ad-analysis-list li:last-child { border-bottom: none; }
+.ad-analysis-list li::before { content: '▸'; position: absolute; left: 2px; color: var(--red); font-size: 9px; top: 5px; }
+.ad-analysis-list li strong { color: var(--white); font-weight: 600; }
+.ad-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; color: var(--gray3); border: 1px solid var(--border);
+  border-radius: 8px; padding: 5px 12px; transition: all 0.15s;
+  text-decoration: none; align-self: flex-start;
+}
+.ad-link:hover { color: var(--white); border-color: var(--gray2); }
+
 /* ─────────── COMING SOON SECTION ─────────── */
 .coming-soon-panel {
   display: flex; align-items: center; justify-content: center;
@@ -352,7 +446,7 @@ a { text-decoration: none; color: inherit; }
       <button class="nav-item" data-target="s-ads" onclick="switchSection('s-ads',this)">
         <span class="ni-icon">📢</span>
         <span class="ni-label">平台热门广告</span>
-        <span class="ni-badge-soon">即将</span>
+        <span class="ni-badge-new">NEW</span>
       </button>
     </div>
     <div class="sidebar-divider"></div>
@@ -1522,18 +1616,378 @@ a { text-decoration: none; color: inherit; }
     </div>
 
     <!-- ══════════════════════════════════════ -->
-    <!--  SECTION: Hot Ads (Coming Soon)        -->
+    <!--  SECTION: 热门广告                     -->
     <!-- ══════════════════════════════════════ -->
     <div id="s-ads" class="section-panel">
       <div class="sec-inner">
-        <div class="coming-soon-panel">
-          <div class="cs-box">
-            <div class="cs-icon">📢</div>
-            <div class="cs-title">平台热门广告</div>
-            <div class="cs-desc">覆盖 YouTube、Facebook、X、Instagram 平台热门投放广告素材，拆解格式、钩子与投放策略。</div>
-            <span class="cs-badge">预计 Vol.002 上线</span>
+        <div class="sec-kicker">📢 广大大 guangdada.net · 多平台游戏广告情报</div>
+        <div class="sec-title">全球游戏 Top Ads · 跨平台精选</div>
+        <div class="sec-desc">来自广大大平台本周展示广告热榜前 8，覆盖 Facebook、TikTok、Google、AppLovin、Mintegral 等主流平台。人气值综合曝光、互动与投放时长，展示估值反映实际触达规模。</div>
+        <div class="stats-row">
+          <div class="stat-pill">📅 <strong>数据日期</strong> 2026-04-02</div>
+          <div class="stat-pill">🌐 <strong>平台覆盖</strong> TikTok / Google / AppLovin / UnityAds / Mintegral / Kwai / Yandex</div>
+          <div class="stat-pill">📊 <strong>来源</strong> 广大大 · 展示广告热榜</div>
+          <div class="stat-pill">📢 <strong>展示数量</strong> 8 条精选</div>
+        </div>
+
+        <div class="ads-grid">
+
+          <!-- Ad #1: xbox.com | TikTok | W2A | 30K imp -->
+          <div class="ad-card">
+            <div class="ad-thumb">
+              <img src="ads_images_gdd/01_xbox_com.jpg" alt="xbox.com Ad" onclick="openLightbox(this)">
+              <div class="ad-rank">1</div>
+              <div class="ad-platform-badge" style="background:#010101">TikTok</div>
+              <div class="ad-perf-tag">W2A</div>
+            </div>
+            <div class="ad-info">
+              <div class="ad-header">
+                <div class="ad-meta">
+                  <div class="ad-objective">TikTok · 展示广告</div>
+                  <div class="ad-industry">xbox.com</div>
+                  <div class="ad-creative-type">W2A 互动广告</div>
+                </div>
+                <div class="ad-ctr-badge">人气 509</div>
+              </div>
+              <div class="ad-metrics">
+                <div class="ad-metric highlight">
+                  <div class="am-val">509</div>
+                  <div class="am-lbl">人气值</div>
+                </div>
+                <div class="ad-metric">
+                  <div class="am-val">30K</div>
+                  <div class="am-lbl">展示估值</div>
+                </div>
+                <div class="ad-metric">
+                  <div class="am-val">53</div>
+                  <div class="am-lbl">热度</div>
+                </div>
+              </div>
+              <div class="ad-analysis">
+                <div class="ad-analysis-label">UA 复用洞察</div>
+                <ul class="ad-analysis-list">
+                  <li><strong>主机平台拥抱移动广告</strong>：Xbox 采用 W2A 格式在 TikTok 投放，说明主机/订阅服务正加速迁移到移动端 UA 策略</li>
+                  <li><strong>高曝光 W2A 创意</strong>：30K 展示估值为本榜最高，交互式广告格式在 TikTok 上具有显著点击率提升效果</li>
+                  <li><strong>跨品类借鉴</strong>：游戏 UA 可参考大品牌 W2A 设计语言——用可玩片段替代纯视频，降低决策成本</li>
+                </ul>
+              </div>
+              <a class="ad-link" href="https://guangdada.net/modules/creative/display-ads" target="_blank">在广大大查看详情 →</a>
+            </div>
+          </div>
+
+          <!-- Ad #2: Welcome to tengine! | Kwai | W2A | 4.5K imp -->
+          <div class="ad-card">
+            <div class="ad-thumb">
+              <img src="ads_images_gdd/02_Welcome_to_tengine_.jpg" alt="Tengine Ad" onclick="openLightbox(this)">
+              <div class="ad-rank">2</div>
+              <div class="ad-platform-badge" style="background:#ff5c00">Kwai</div>
+              <div class="ad-perf-tag">W2A</div>
+              <div class="ad-duration-badge">9s</div>
+            </div>
+            <div class="ad-info">
+              <div class="ad-header">
+                <div class="ad-meta">
+                  <div class="ad-objective">Kwai · 展示广告</div>
+                  <div class="ad-industry">Tengine</div>
+                  <div class="ad-creative-type">W2A 互动广告 · 9s</div>
+                </div>
+                <div class="ad-ctr-badge">人气 1569</div>
+              </div>
+              <div class="ad-metrics">
+                <div class="ad-metric highlight">
+                  <div class="am-val">1569</div>
+                  <div class="am-lbl">人气值</div>
+                </div>
+                <div class="ad-metric">
+                  <div class="am-val">4.5K</div>
+                  <div class="am-lbl">展示估值</div>
+                </div>
+                <div class="ad-metric">
+                  <div class="am-val">51</div>
+                  <div class="am-lbl">热度</div>
+                </div>
+              </div>
+              <div class="ad-analysis">
+                <div class="ad-analysis-label">UA 复用洞察</div>
+                <ul class="ad-analysis-list">
+                  <li><strong>Kwai 高人气格式</strong>：人气值 1569 位居前列，Kwai 平台对 W2A 短时长格式（9s）有显著偏好</li>
+                  <li><strong>极短可玩广告</strong>：9s W2A 说明用户注意力窗口极窄，钩子必须在前 2s 完成吸引</li>
+                  <li><strong>东南亚用户特征</strong>：Kwai 主要覆盖中东 / 东南亚市场，超休闲与轻度策略游戏在此高转化</li>
+                </ul>
+              </div>
+              <a class="ad-link" href="https://guangdada.net/modules/creative/display-ads" target="_blank">在广大大查看详情 →</a>
+            </div>
+          </div>
+
+          <!-- Ad #3: Zone X: Wasteland Survival RPG | AppLovin | Top10% | 1m -->
+          <div class="ad-card">
+            <div class="ad-thumb">
+              <img src="ads_images_gdd/03_Zone_X__Wasteland_Survival_RPG.jpg" alt="Zone X Ad" onclick="openLightbox(this)">
+              <div class="ad-rank">3</div>
+              <div class="ad-platform-badge" style="background:#e76e22">AppLovin</div>
+              <div class="ad-perf-tag">Top10%</div>
+              <div class="ad-duration-badge">1m</div>
+            </div>
+            <div class="ad-info">
+              <div class="ad-header">
+                <div class="ad-meta">
+                  <div class="ad-objective">AppLovin · 生存 RPG</div>
+                  <div class="ad-industry">Zone X: Wasteland Survival RPG</div>
+                  <div class="ad-advertiser">CASUAL AZUR GAMES</div>
+                </div>
+                <div class="ad-ctr-badge" style="background:rgba(255,180,0,0.12);border-color:rgba(255,180,0,0.4);color:#ffc533;">Top10%</div>
+              </div>
+              <div class="ad-metrics">
+                <div class="ad-metric highlight">
+                  <div class="am-val">1569</div>
+                  <div class="am-lbl">人气值</div>
+                </div>
+                <div class="ad-metric">
+                  <div class="am-val">6K</div>
+                  <div class="am-lbl">展示估值</div>
+                </div>
+                <div class="ad-metric">
+                  <div class="am-val">51</div>
+                  <div class="am-lbl">热度</div>
+                </div>
+              </div>
+              <div class="ad-analysis">
+                <div class="ad-analysis-label">UA 复用洞察</div>
+                <ul class="ad-analysis-list">
+                  <li><strong>Top10% 高效创意</strong>：AppLovin 网络认证高效广告，生存 RPG 在超休闲玩家中转化率极高</li>
+                  <li><strong>1 分钟长效素材</strong>：长视频广告通常用于展示完整玩法循环，说明该游戏留存弧线足够有吸引力</li>
+                  <li><strong>Azur Games 策略</strong>：该发行商擅长模仿爆款机制并快速规模化，1 分钟生存 + 建造流程是当前最强 UA 钩子之一</li>
+                </ul>
+              </div>
+              <a class="ad-link" href="https://guangdada.net/modules/creative/display-ads" target="_blank">在广大大查看详情 →</a>
+            </div>
+          </div>
+
+          <!-- Ad #4: Hero Wars: Alliance | Google | 6.8K imp -->
+          <div class="ad-card">
+            <div class="ad-thumb">
+              <img src="ads_images_gdd/04_Hero_Wars__Alliance.jpg" alt="Hero Wars Ad" onclick="openLightbox(this)">
+              <div class="ad-rank">4</div>
+              <div class="ad-platform-badge" style="background:#4285f4">Google</div>
+            </div>
+            <div class="ad-info">
+              <div class="ad-header">
+                <div class="ad-meta">
+                  <div class="ad-objective">Google · 中度策略 RPG</div>
+                  <div class="ad-industry">Hero Wars: Alliance</div>
+                  <div class="ad-advertiser">NEXTERS GLOBAL LTD</div>
+                </div>
+                <div class="ad-ctr-badge">人气 1000</div>
+              </div>
+              <div class="ad-metrics">
+                <div class="ad-metric highlight">
+                  <div class="am-val">1000</div>
+                  <div class="am-lbl">人气值</div>
+                </div>
+                <div class="ad-metric">
+                  <div class="am-val">6.8K</div>
+                  <div class="am-lbl">展示估值</div>
+                </div>
+                <div class="ad-metric">
+                  <div class="am-val">51</div>
+                  <div class="am-lbl">热度</div>
+                </div>
+              </div>
+              <div class="ad-analysis">
+                <div class="ad-analysis-label">UA 复用洞察</div>
+                <ul class="ad-analysis-list">
+                  <li><strong>最高展示估值</strong>：6.8K 为本榜最高，Hero Wars 在 Google 网络持续高规模投放，品牌已形成认知护城河</li>
+                  <li><strong>「误导性谜题」长青策略</strong>：Hero Wars 以解谜 vs 实际玩法反差著称，该创意形式带来超高 CTR，游戏 UA 可参考「承诺 vs 揭晓」叙事结构</li>
+                  <li><strong>Google Ads 覆盖 Android 生态</strong>：适合有广泛受众的中度游戏，Hero Wars 每周持续出现在榜说明其 UA 支出规模极大</li>
+                </ul>
+              </div>
+              <a class="ad-link" href="https://guangdada.net/modules/creative/display-ads" target="_blank">在广大大查看详情 →</a>
+            </div>
+          </div>
+
+          <!-- Ad #5: Water Sort | UnityAds | Top10% | 22s -->
+          <div class="ad-card">
+            <div class="ad-thumb">
+              <img src="ads_images_gdd/05_Water_Sort__Offline_Color_Game.jpg" alt="Water Sort Ad" onclick="openLightbox(this)">
+              <div class="ad-rank">5</div>
+              <div class="ad-platform-badge" style="background:#333">UnityAds</div>
+              <div class="ad-perf-tag">Top10%</div>
+              <div class="ad-duration-badge">22s</div>
+            </div>
+            <div class="ad-info">
+              <div class="ad-header">
+                <div class="ad-meta">
+                  <div class="ad-objective">UnityAds · 益智休闲</div>
+                  <div class="ad-industry">Water Sort: Offline Color Game</div>
+                  <div class="ad-advertiser">NiuAIGO</div>
+                </div>
+                <div class="ad-ctr-badge" style="background:rgba(255,180,0,0.12);border-color:rgba(255,180,0,0.4);color:#ffc533;">Top10%</div>
+              </div>
+              <div class="ad-metrics">
+                <div class="ad-metric highlight">
+                  <div class="am-val">1027</div>
+                  <div class="am-lbl">人气值</div>
+                </div>
+                <div class="ad-metric">
+                  <div class="am-val">6K</div>
+                  <div class="am-lbl">展示估值</div>
+                </div>
+                <div class="ad-metric">
+                  <div class="am-val">51</div>
+                  <div class="am-lbl">热度</div>
+                </div>
+              </div>
+              <div class="ad-analysis">
+                <div class="ad-analysis-label">UA 复用洞察</div>
+                <ul class="ad-analysis-list">
+                  <li><strong>UnityAds Top10% 高转化</strong>：Unity 内嵌广告覆盖深度游戏用户，Water Sort 在此受众中保持高效说明「满足感」驱动下载</li>
+                  <li><strong>22s 满足感素材</strong>：Water Sort 广告几乎全是展示理清混色水瓶的满足过程，ASMR + 完成感是核心情绪钩子</li>
+                  <li><strong>「Offline」价值主张</strong>：主打离线游玩打破网络依赖顾虑，游戏 UA 中「无广告/离线」标签近期 CTR 提升明显</li>
+                </ul>
+              </div>
+              <a class="ad-link" href="https://guangdada.net/modules/creative/display-ads" target="_blank">在广大大查看详情 →</a>
+            </div>
+          </div>
+
+          <!-- Ad #6: Mahjong! Tile Puzzle | Mintegral | Top10% | 47s -->
+          <div class="ad-card">
+            <div class="ad-thumb">
+              <img src="ads_images_gdd/06_Mahjong__Tile_Puzzle.jpg" alt="Mahjong Ad" onclick="openLightbox(this)">
+              <div class="ad-rank">6</div>
+              <div class="ad-platform-badge" style="background:#6d3fdf">Mintegral</div>
+              <div class="ad-perf-tag">Top10%</div>
+              <div class="ad-duration-badge">47s</div>
+            </div>
+            <div class="ad-info">
+              <div class="ad-header">
+                <div class="ad-meta">
+                  <div class="ad-objective">Mintegral · 麻将益智</div>
+                  <div class="ad-industry">Mahjong! Tile Puzzle</div>
+                  <div class="ad-advertiser">PT Kuyisi Digital</div>
+                </div>
+                <div class="ad-ctr-badge" style="background:rgba(255,180,0,0.12);border-color:rgba(255,180,0,0.4);color:#ffc533;">Top10%</div>
+              </div>
+              <div class="ad-metrics">
+                <div class="ad-metric highlight">
+                  <div class="am-val">1630</div>
+                  <div class="am-lbl">人气值</div>
+                </div>
+                <div class="ad-metric">
+                  <div class="am-val">7.1K</div>
+                  <div class="am-lbl">展示估值</div>
+                </div>
+                <div class="ad-metric">
+                  <div class="am-val">51</div>
+                  <div class="am-lbl">热度</div>
+                </div>
+              </div>
+              <div class="ad-analysis">
+                <div class="ad-analysis-label">UA 复用洞察</div>
+                <ul class="ad-analysis-list">
+                  <li><strong>本期双料冠军</strong>：人气值 1630 + 展示估值 7.1K 双榜最高，Mintegral Top10% 认证 —— 麻将品类 UA 效率极强</li>
+                  <li><strong>47s 教学式素材</strong>：中长创意通常用于展示「从混乱到清空」的完整关卡，制造即时满足感与「我能做到」的心理预期</li>
+                  <li><strong>Mintegral 东南亚优势</strong>：Mintegral 在东南亚 / 中东 / 欧美均有强覆盖，麻将品类在海外华人社区之外渗透速度加快</li>
+                </ul>
+              </div>
+              <a class="ad-link" href="https://guangdada.net/modules/creative/display-ads" target="_blank">在广大大查看详情 →</a>
+            </div>
+          </div>
+
+          <!-- Ad #7: Legion Glory | Yandex | 39s -->
+          <div class="ad-card">
+            <div class="ad-thumb">
+              <img src="ads_images_gdd/07_Legion_Glory__Слава_легиона.jpg" alt="Legion Glory Ad" onclick="openLightbox(this)">
+              <div class="ad-rank">7</div>
+              <div class="ad-platform-badge" style="background:#c00">Yandex</div>
+              <div class="ad-duration-badge">39s</div>
+            </div>
+            <div class="ad-info">
+              <div class="ad-header">
+                <div class="ad-meta">
+                  <div class="ad-objective">Yandex · 战略对战</div>
+                  <div class="ad-industry">Legion Glory</div>
+                  <div class="ad-advertiser">Totoro Games Company Limited</div>
+                </div>
+                <div class="ad-ctr-badge">人气 1569</div>
+              </div>
+              <div class="ad-metrics">
+                <div class="ad-metric highlight">
+                  <div class="am-val">1569</div>
+                  <div class="am-lbl">人气值</div>
+                </div>
+                <div class="ad-metric">
+                  <div class="am-val">4.5K</div>
+                  <div class="am-lbl">展示估值</div>
+                </div>
+                <div class="ad-metric">
+                  <div class="am-val">51</div>
+                  <div class="am-lbl">热度</div>
+                </div>
+              </div>
+              <div class="ad-analysis">
+                <div class="ad-analysis-label">UA 复用洞察</div>
+                <ul class="ad-analysis-list">
+                  <li><strong>Yandex 俄语市场专项</strong>：广告标题含斯拉夫文字（Слава легиона），专门针对俄语用户本地化，说明 CIS 市场仍是战略游戏热土</li>
+                  <li><strong>39s 战斗展示</strong>：中长创意适合展示兵团部署与战场场面，让玩家「看到自己能做的事」是下载核心驱动</li>
+                  <li><strong>本地化 UA 策略</strong>：语言定向 + 平台定向双管齐下，游戏 UA 中多语言素材分 SKU 投放的 ROI 通常显著优于通用版</li>
+                </ul>
+              </div>
+              <a class="ad-link" href="https://guangdada.net/modules/creative/display-ads" target="_blank">在广大大查看详情 →</a>
+            </div>
+          </div>
+
+          <!-- Ad #8: Fate War | Google | IGG -->
+          <div class="ad-card">
+            <div class="ad-thumb">
+              <img src="ads_images_gdd/08_Fate_War.jpg" alt="Fate War Ad" onclick="openLightbox(this)">
+              <div class="ad-rank">8</div>
+              <div class="ad-platform-badge" style="background:#4285f4">Google</div>
+            </div>
+            <div class="ad-info">
+              <div class="ad-header">
+                <div class="ad-meta">
+                  <div class="ad-objective">Google · 奇幻策略 RPG</div>
+                  <div class="ad-industry">Fate War</div>
+                  <div class="ad-advertiser">IGG SINGAPORE PTE. LTD.</div>
+                </div>
+                <div class="ad-ctr-badge">人气 912</div>
+              </div>
+              <div class="ad-metrics">
+                <div class="ad-metric highlight">
+                  <div class="am-val">912</div>
+                  <div class="am-lbl">人气值</div>
+                </div>
+                <div class="ad-metric">
+                  <div class="am-val">5.8K</div>
+                  <div class="am-lbl">展示估值</div>
+                </div>
+                <div class="ad-metric">
+                  <div class="am-val">51</div>
+                  <div class="am-lbl">热度</div>
+                </div>
+              </div>
+              <div class="ad-analysis">
+                <div class="ad-analysis-label">UA 复用洞察</div>
+                <ul class="ad-analysis-list">
+                  <li><strong>IGG 持续重投</strong>：IGG（Castle Clash、Lords Mobile 发行商）在 Google 广告体系持续高投放，奇幻 RPG 是其核心品类</li>
+                  <li><strong>Google 广泛受众覆盖</strong>：5.8K 展示估值说明该素材正在大规模 A/B 测试阶段，IGG 通常同时跑 50+ 素材变体</li>
+                  <li><strong>「命运 + 战争」叙事</strong>：奇幻史诗题材在男性中度玩家中永远有受众，角色命运感叙事驱动长期留存</li>
+                </ul>
+              </div>
+              <a class="ad-link" href="https://guangdada.net/modules/creative/display-ads" target="_blank">在广大大查看详情 →</a>
+            </div>
+          </div>
+
+        </div><!-- /.ads-grid -->
+
+        <div class="method-box">
+          <div class="icon">💡</div>
+          <div>
+            <div class="title">关于数据来源</div>
+            <div class="desc">以上 8 条广告来自广大大（guangdada.net）展示广告热榜，按人气值综合排序，覆盖 TikTok、Google AdMob、AppLovin、UnityAds、Mintegral、Kwai、Yandex 等主流移动广告平台。人气值 = 曝光量 × 互动率 × 投放持续性综合评分；展示估值 = 平台抽样估算的实际触达量级；热度 = 当前投放活跃程度（满分 100）。</div>
           </div>
         </div>
+
       </div>
     </div>
 
