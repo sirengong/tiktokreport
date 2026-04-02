@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美国热搜分析 · Vol.001 · 2026-04-01</title>
+<style>
+  :root {
+    --red: #fe2c55;
+    --red2: #ff4d6d;
+    --bg: #000;
+    --bg2: #0a0a0a;
+    --bg3: #111;
+    --bg4: #1a1a1a;
+    --border: #222;
+    --white: #fff;
+    --gray1: #aaa;
+    --gray2: #888;
+    --gray3: #555;
+    --accent: #25f4ee;
+    --gold: #ffd700;
+    --purple: #9b59b6;
+    --blue: #3498db;
+    --green: #2ecc71;
+    --orange: #e67e22;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  /* ── Header ── */
+  .header {
+    background: linear-gradient(135deg, #0d0d0d 0%, #1a0a0a 50%, #0d0d0d 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .header-icon { font-size: 36px; }
+  .header-meta { flex: 1; }
+  .header-title {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    color: var(--white);
+  }
+  .header-sub {
+    font-size: 12px;
+    color: var(--gray2);
+    margin-top: 4px;
+  }
+  .header-badge {
+    background: var(--red);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.3px;
+  }
+  .nav-back {
+    color: var(--gray2);
+    font-size: 12px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+  .nav-back:hover { color: var(--white); border-color: var(--gray3); }
+
+  /* ── Layout ── */
+  .layout {
+    display: flex;
+    min-height: calc(100vh - 90px);
+  }
+
+  /* ── Sidebar ── */
+  .sidebar {
+    width: 200px;
+    flex-shrink: 0;
+    background: var(--bg2);
+    border-right: 1px solid var(--border);
+    padding: 24px 0;
+    position: sticky;
+    top: 0;
+    height: calc(100vh - 90px);
+    overflow-y: auto;
+  }
+  .sidebar-section {
+    padding: 0 16px;
+    margin-bottom: 20px;
+  }
+  .sidebar-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--gray3);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0 8px;
+    margin-bottom: 8px;
+  }
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    color: var(--gray2);
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+  }
+  .sidebar-item:hover { background: var(--bg4); color: var(--white); }
+  .sidebar-item.active { background: rgba(254, 44, 85, 0.15); color: var(--red); }
+  .sidebar-item .icon { font-size: 14px; flex-shrink: 0; }
+  .sidebar-item .label { flex: 1; }
+  .sidebar-item .badge-new {
+    background: var(--red);
+    color: white;
+    font-size: 9px;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+  .sidebar-item .badge-soon {
+    background: var(--bg4);
+    color: var(--gray3);
+    font-size: 9px;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+
+  /* ── Main Content ── */
+  .main {
+    flex: 1;
+    padding: 32px 40px;
+    max-width: 1000px;
+  }
+
+  /* ── Section Title ── */
+  .section-header {
+    margin-bottom: 28px;
+  }
+  .section-kicker {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .section-desc {
+    font-size: 13px;
+    color: var(--gray2);
+    line-height: 1.7;
+    max-width: 640px;
+  }
+
+  /* ── Stats row ── */
+  .stats-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .stat-pill {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 12px;
+    color: var(--gray1);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .stat-pill strong { color: var(--white); }
+
+  /* ── Trend Card ── */
+  .trend-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .trend-card:hover { border-color: var(--gray3); }
+
+  .card-top {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 0;
+  }
+
+  /* Image column */
+  .card-images {
+    background: var(--bg4);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 2px;
+    min-height: 220px;
+  }
+  .card-images img {
+    width: 100%;
+    object-fit: cover;
+    flex: 1;
+    display: block;
+    border-radius: 4px;
+  }
+  .img-trio {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    height: 240px;
+  }
+  .img-trio img { flex: 1; }
+
+  /* Info column */
+  .card-info {
+    padding: 20px 24px;
+  }
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .rank-num {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--red);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+    min-width: 44px;
+  }
+  .topic-meta { flex: 1; }
+  .topic-en {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 3px;
+  }
+  .topic-zh {
+    font-size: 13px;
+    color: var(--gray2);
+  }
+  .traffic-badge {
+    background: rgba(254, 44, 85, 0.12);
+    border: 1px solid rgba(254, 44, 85, 0.3);
+    color: var(--red);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    align-self: center;
+  }
+
+  .card-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 14px 0;
+  }
+
+  /* Content pills row */
+  .hashtags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .tag {
+    background: var(--bg4);
+    color: var(--gray1);
+    font-size: 11px;
+    padding: 3px 9px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+  }
+
+  /* Bullets */
+  .bullets {
+    list-style: none;
+    margin-bottom: 14px;
+  }
+  .bullets li {
+    font-size: 13px;
+    color: var(--gray1);
+    line-height: 1.65;
+    padding: 4px 0;
+    padding-left: 16px;
+    position: relative;
+  }
+  .bullets li::before {
+    content: '·';
+    position: absolute;
+    left: 4px;
+    color: var(--gray3);
+  }
+
+  /* UA Section */
+  .ua-section {
+    background: var(--bg4);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .ua-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .ua-items { list-style: none; }
+  .ua-items li {
+    font-size: 12px;
+    color: var(--gray1);
+    line-height: 1.7;
+    padding: 5px 0;
+    padding-left: 20px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .ua-items li:last-child { border-bottom: none; }
+  .ua-items li::before {
+    content: '▸';
+    position: absolute;
+    left: 4px;
+    color: var(--red);
+    font-size: 10px;
+    top: 7px;
+  }
+  .ua-items li strong {
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  /* ── Footer ── */
+  .page-footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 40px;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-note { font-size: 11px; color: var(--gray3); }
+  .footer-links { display: flex; gap: 16px; }
+  .footer-links a { font-size: 11px; color: var(--gray3); text-decoration: none; }
+  .footer-links a:hover { color: var(--gray2); }
+
+  @media (max-width: 800px) {
+    .card-top { grid-template-columns: 1fr; }
+    .card-images { min-height: 180px; }
+    .sidebar { display: none; }
+    .main { padding: 20px; }
+    .header { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<div class="header">
+  <div class="header-icon">🔥</div>
+  <div class="header-meta">
+    <div class="header-title">欧美内容情报站 · 美区热搜分析</div>
+    <div class="header-sub">Vol.001 &nbsp;·&nbsp; 2026-04-01 &nbsp;·&nbsp; 数据范围：3月底至4月初 &nbsp;·&nbsp; 地区：美国</div>
+  </div>
+  <span class="header-badge">US Google Trends</span>
+  <a href="index.html" class="nav-back">← TikTok报告</a>
+</div>
+
+<!-- ── Layout ── -->
+<div class="layout">
+
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">本期内容</div>
+      <a class="sidebar-item active" href="trends.html">
+        <span class="icon">🔥</span>
+        <span class="label">热搜分析</span>
+        <span class="badge-new">NEW</span>
+      </a>
+      <a class="sidebar-item" href="index.html">
+        <span class="icon">🎵</span>
+        <span class="label">TikTok 热门</span>
+      </a>
+      <a class="sidebar-item" href="#">
+        <span class="icon">▶️</span>
+        <span class="label">YouTube Shorts</span>
+        <span class="badge-soon">即将</span>
+      </a>
+      <a class="sidebar-item" href="#">
+        <span class="icon">😂</span>
+        <span class="label">表情包 Memes</span>
+        <span class="badge-soon">即将</span>
+      </a>
+      <a class="sidebar-item" href="#">
+        <span class="icon">📢</span>
+        <span class="label">平台热门广告</span>
+        <span class="badge-soon">即将</span>
+      </a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">往期</div>
+      <a class="sidebar-item" href="../index.html">
+        <span class="icon">📋</span>
+        <span class="label">全部归档</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main class="main">
+
+    <div class="section-header">
+      <div class="section-kicker">🔥 US Google Trends · 热搜分析</div>
+      <div class="section-title">美区热搜 Top 10</div>
+      <div class="section-desc">
+        基于 Google Trends 美国地区实时数据，精选 3 月底至 4 月初搜索量峰值最高、与游戏营销相关度最强的 10 大话题，每条附 UA 素材可复用洞察。
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-pill">📅 <strong>数据周期</strong> 2026.03.25 – 04.01</div>
+      <div class="stat-pill">🌎 <strong>地区</strong> 美国</div>
+      <div class="stat-pill">📊 <strong>来源</strong> Google Trends RSS + Web</div>
+      <div class="stat-pill">🎮 <strong>视角</strong> 游戏营销 UA 向</div>
+    </div>
+
+    <!-- ─────────── 01 Zootopia 2 ─────────── -->
+    <div class="trend-card">
+      <div class="card-top">
+        <div class="card-images">
+          <div class="img-trio">
+            <img src="trend_images/01_zootopia2_1.jpg" alt="Zootopia 2">
+            <img src="trend_images/01_zootopia2_2.jpg" alt="Zootopia 2">
+            <img src="trend_images/01_zootopia2_3.jpg" alt="Zootopia 2">
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-header">
+            <div class="rank-num">01</div>
+            <div class="topic-meta">
+              <div class="topic-en">Zootopia 2</div>
+              <div class="topic-zh">疯狂动物城 2</div>
+            </div>
+            <div class="traffic-badge">2M+ 搜索</div>
+          </div>
+          <div class="hashtags">
+            <span class="tag">#Zootopia2</span>
+            <span class="tag">#Disney</span>
+            <span class="tag">#WaltDisney</span>
+            <span class="tag">#DisneyPlus</span>
+          </div>
+          <ul class="bullets">
+            <li>2025年11月院线公映，以 18.5 亿美元全球票房打破动画电影史上映纪录；2026年3月11日登陆 Disney+ 流媒体，掀起新一轮讨论热潮。</li>
+            <li>延续 Judy Hopps 与 Nick Wilde 搭档破案，引入 Ke Huy Quan、Fortune Feimster、Quinta Brunson 等新声优阵容，加入全新沼泽区、沙漠区等场景。</li>
+            <li>IMDB 评分 7.4/10，已获 2026 年颁奖季多项提名，Z 世代与家庭观众双覆盖，社媒热度跨圈层持续扩散。</li>
+          </ul>
+          <div class="ua-section">
+            <div class="ua-label">🎮 UA 素材可复用点</div>
+            <ul class="ua-items">
+              <li><strong>【动物拟人化搭档公式】</strong> 视觉反差搭档（小只×大只角色组合）= 天然钩子。RPG / 放置类素材可套用"意想不到的 duo"框架，展示两个外形迥异但配合默契的角色出场。</li>
+              <li><strong>【流媒体上线窗口投放】</strong> 用户刷完电影后处于娱乐欲高峰，3月中旬至4月是投放休闲 / 剧情手游的黄金窗口期，文案用"The adventure continues"蹭续集情绪。</li>
+              <li><strong>【制服 + 职业扮演审美】</strong> 片中动物警探造型契合美区玩家对"穿搭+职业扮演"内容的偏好，角色换装 / 职业解锁类素材在此周期点击率预期高。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────── 02 March Madness ─────────── -->
+    <div class="trend-card">
+      <div class="card-top">
+        <div class="card-images">
+          <div class="img-trio">
+            <img src="trend_images/02_march_madness_1.png" alt="March Madness">
+            <img src="trend_images/02_march_madness_2.png" alt="March Madness">
+            <img src="trend_images/02_march_madness_3.jpg" alt="March Madness">
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-header">
+            <div class="rank-num">02</div>
+            <div class="topic-meta">
+              <div class="topic-en">March Madness 2026</div>
+              <div class="topic-zh">NCAA 疯狂三月</div>
+            </div>
+            <div class="traffic-badge">5M+ 搜索</div>
+          </div>
+          <div class="hashtags">
+            <span class="tag">#MarchMadness</span>
+            <span class="tag">#MarchMadness2026</span>
+            <span class="tag">#FinalFour</span>
+            <span class="tag">#NCAABasketball</span>
+          </div>
+          <ul class="bullets">
+            <li>2026 年 NCAA 男篮锦标赛创下收视历史纪录，首轮周四场次达 980 万观众；UConn 19 分大逆转淘汰杜克，Braylon Mullins 压哨球视频全网刷屏。</li>
+            <li>四强：密歇根大学 vs 亚利桑那大学、康涅狄格大学 vs 伊利诺伊大学，冠军赛 4 月 6 日在印第安纳波利斯举行。</li>
+            <li>全美约 24% 成年人参与 Bracket 竞猜，广告市场在此两周集中爆发，是美区一年最大的体育营销窗口之一。</li>
+          </ul>
+          <div class="ua-section">
+            <div class="ua-label">🎮 UA 素材可复用点</div>
+            <ul class="ua-items">
+              <li><strong>【逆转叙事钩子】</strong> "Down 19 → Still won" 叙事在美国玩家中极具共鸣。竞技 / 策略类手游素材可直接沿用绝地翻盘结构，配合游戏内逆转画面，激发分享欲。</li>
+              <li><strong>【Bracket 决策心理迁移】</strong> 用户高度沉浸于"选择→结果"决策循环，与策略游戏 / 卡牌游戏核心玩法同构。素材可用"Build your team / Make your pick"框架切入阵容搭配玩法。</li>
+              <li><strong>【赛程倒计时压迫感】</strong> 4 月 6 日冠军赛前 1-2 周，投放模拟"赛程积分榜"样式素材，契合用户当下信息接收习惯，点击率预期高于常规素材。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────── 03 Coachella ─────────── -->
+    <div class="trend-card">
+      <div class="card-top">
+        <div class="card-images">
+          <div class="img-trio">
+            <img src="trend_images/03_coachella_1.jpg" alt="Coachella 2026">
+            <img src="trend_images/03_coachella_2.png" alt="Coachella 2026">
+            <img src="trend_images/03_coachella_3.jpg" alt="Coachella 2026">
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-header">
+            <div class="rank-num">03</div>
+            <div class="topic-meta">
+              <div class="topic-en">Coachella 2026</div>
+              <div class="topic-zh">科切拉音乐节</div>
+            </div>
+            <div class="traffic-badge">3M+ 搜索</div>
+          </div>
+          <div class="hashtags">
+            <span class="tag">#Coachella2026</span>
+            <span class="tag">#Coachella</span>
+            <span class="tag">#SabrinaCarpenter</span>
+            <span class="tag">#JustinBieber</span>
+          </div>
+          <ul class="bullets">
+            <li>4月10-12日（第一周末）及4月17-19日（第二周末）在加州印第奥举办，门票宣布后不到一周售罄。</li>
+            <li>三大压轴：Sabrina Carpenter（周五）、Justin Bieber（周六，回归舞台首演）、Karol G（周日）；另有 Young Thug 重回自由后首演、BIGBANG 参演引发全球关注。</li>
+            <li>时尚与美妆是最大 UGC 驱动力，TikTok"Coachella Outfit"相关标签累计浏览超 10 亿次，品牌营销预算在此窗口集中爆发。</li>
+          </ul>
+          <div class="ua-section">
+            <div class="ua-label">🎮 UA 素材可复用点</div>
+            <ul class="ua-items">
+              <li><strong>【Festival Look 换装钩子】</strong> Coachella 是美区 Z 世代年度最高"换装自我表达"情绪峰值。换装 / 皮肤自定义类手游素材可用"Your Coachella fit, in-game"钩子，精准命中节日氛围情绪。</li>
+              <li><strong>【情怀回归叙事】</strong> Justin Bieber 回归、BIGBANG 参演的"情怀回归"叙事在全球华人圈和美区都有极高情感浓度，是跨圈层扩散的绝佳挂靠点。</li>
+              <li><strong>【KOL 内容蹭势】</strong> 节日期间达人内容密度爆发，素材中加入沙漠、霓虹、音乐节帐篷等视觉元素，即便与游戏无直接联系，也能通过视觉联想捕获节日情绪流量。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────── 04 Euphoria S3 ─────────── -->
+    <div class="trend-card">
+      <div class="card-top">
+        <div class="card-images">
+          <div class="img-trio">
+            <img src="trend_images/04_euphoria_s3_1.png" alt="Euphoria Season 3">
+            <img src="trend_images/04_euphoria_s3_2.jpg" alt="Euphoria Season 3">
+            <img src="trend_images/04_euphoria_s3_3.jpg" alt="Euphoria Season 3">
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-header">
+            <div class="rank-num">04</div>
+            <div class="topic-meta">
+              <div class="topic-en">Euphoria Season 3</div>
+              <div class="topic-zh">《亢奋》第三季</div>
+            </div>
+            <div class="traffic-badge">2M+ 搜索</div>
+          </div>
+          <div class="hashtags">
+            <span class="tag">#Euphoria</span>
+            <span class="tag">#EuphoriaS3</span>
+            <span class="tag">#EuphoriaSeason3</span>
+            <span class="tag">#Zendaya</span>
+          </div>
+          <ul class="bullets">
+            <li>HBO/Max《亢奋》第三季官宣 4 月 12 日首播，距第二季（2022年）时隔近四年，预告片上线 48 小时内播放量突破 5000 万次。</li>
+            <li>本季设定"5 年时间跳跃"，角色从高中步入成年社会；新增 Natasha Lyonne、Sharon Stone、Rosalía 等明星加盟，强化成人世界戏剧张力。</li>
+            <li>剧集以高饱和霓虹美学、Z 世代焦虑议题著称，Zendaya 造型与剧中配乐每季都引发大规模二创内容爆发。</li>
+          </ul>
+          <div class="ua-section">
+            <div class="ua-label">🎮 UA 素材可复用点</div>
+            <ul class="ua-items">
+              <li><strong>【霓虹美学视觉借鉴】</strong> 深色背景 + 霓虹紫 / 金高光配色是《亢奋》标志性视觉语言，手游 UA 素材沿用这套打光风格，即便不提及剧集，也能触发"亢奋氛围"情绪联想，延长视觉驻留。</li>
+              <li><strong>【成年焦虑叙事共鸣】</strong> "You're not the same person you were / New chapter starts now"等文案框架，精准命中正在追剧的 18-26 岁核心用户群，适合剧情 RPG / 互动小说类品类。</li>
+              <li><strong>【首播日抢量窗口】</strong> 每周播出日 ±2 天集中提高出价，素材使用青春 / 派对 / 情感冲突题材，是极高性价比的周期性追热点策略。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────── 05 Grok AI ─────────── -->
+    <div class="trend-card">
+      <div class="card-top">
+        <div class="card-images">
+          <div class="img-trio">
+            <img src="trend_images/05_grok_ai_1.png" alt="Grok AI">
+            <img src="trend_images/05_grok_ai_2.png" alt="Grok AI">
+            <img src="trend_images/05_grok_ai_3.jpg" alt="Grok AI">
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-header">
+            <div class="rank-num">05</div>
+            <div class="topic-meta">
+              <div class="topic-en">Grok AI</div>
+              <div class="topic-zh">Grok 人工智能</div>
+            </div>
+            <div class="traffic-badge">1M+ 搜索</div>
+          </div>
+          <div class="hashtags">
+            <span class="tag">#Grok</span>
+            <span class="tag">#GrokAI</span>
+            <span class="tag">#xAI</span>
+            <span class="tag">#ElonMusk</span>
+          </div>
+          <ul class="bullets">
+            <li>xAI 推出 SuperGrok Lite 订阅档（月费 $10），提供 Grok 3.5 访问权限及基础图像/视频创作能力，定价策略引发大量"值不值"讨论。</li>
+            <li>Grok Imagine 图像生成功能重大更新，新增风格化模板；同期将免费层生成权限收紧，引发用户大规模抱怨。</li>
+            <li>Elon Musk 预告"Grok 5 将史诗级"，但发布时间已延误，科技媒体与用户持续处于高期待等待状态。</li>
+          </ul>
+          <div class="ua-section">
+            <div class="ua-label">🎮 UA 素材可复用点</div>
+            <ul class="ua-items">
+              <li><strong>【AI 好奇心借势】</strong> Grok 每次更新带来大量"AI 到底能做什么"好奇心搜索流量，这类用户具有高科技接受度和尝鲜意愿。益智 / 策略类素材可用"AI-level strategy / Smarter than you think"钩子，暗示游戏深度。</li>
+              <li><strong>【付费分层心理共鸣】</strong> SuperGrok Lite $10 定价引发"数字服务值不值"大讨论，用户对内购 / 订阅决策敏感度达峰值，"Free to start / Try before you pay"框架降低内购转化门槛效果此时最显著。</li>
+              <li><strong>【AI 失控焦虑流量】</strong> Grok 生成不良内容争议引发"AI 失控"情绪在科技读者群中高度扩散，赛博朋克 / 末日 / AI 对抗主题手游素材可用"What if AI had no rules?"钩子精准捕获这批用户。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────── 06 Pokémon 30th ─────────── -->
+    <div class="trend-card">
+      <div class="card-top">
+        <div class="card-images">
+          <div class="img-trio">
+            <img src="trend_images/06_pokemon_1.jpg" alt="Pokemon 30th">
+            <img src="trend_images/06_pokemon_2.jpg" alt="Pokemon 30th">
+            <img src="trend_images/06_pokemon_3.jpg" alt="Pokemon 30th">
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-header">
+            <div class="rank-num">06</div>
+            <div class="topic-meta">
+              <div class="topic-en">Pokémon 30th Anniversary</div>
+              <div class="topic-zh">宝可梦 30 周年</div>
+            </div>
+            <div class="traffic-badge">3M+ 搜索</div>
+          </div>
+          <div class="hashtags">
+            <span class="tag">#Pokemon30</span>
+            <span class="tag">#Pokemon</span>
+            <span class="tag">#PokemonDay</span>
+            <span class="tag">#Nintendo</span>
+          </div>
+          <ul class="bullets">
+            <li>宝可梦 30 周年纪念（2月27日）系列庆典活动延续至 3-4 月，全球同步发行限量收藏卡牌包，eBay 转手价瞬间溢价 300%+，引爆收藏圈和社交媒体。</li>
+            <li>TCG 宝可梦卡牌市场在过去 12 个月流通量增长 140%，30 周年联名款开盒视频大量涌现，TikTok 上 #PokemonCards 标签单周曝光超 5 亿次。</li>
+            <li>Nintendo Switch 2 发布前后，宝可梦新作传言持续发酵，玩家社区高度活跃，"抓宝可梦"情怀话题在全年龄层均有强烈共鸣。</li>
+          </ul>
+          <div class="ua-section">
+            <div class="ua-label">🎮 UA 素材可复用点</div>
+            <ul class="ua-items">
+              <li><strong>【开盒 / 抽卡情绪极值】</strong> 开盒视频的惊喜感与抽卡动画高度同构，在宝可梦卡牌热的当口，手游抽卡 / 开宝箱素材"高光展示"中插入夸张反应，击中用户情绪记忆点。</li>
+              <li><strong>【收集完整度强迫症】</strong> "Gotta catch 'em all"是30年传承的强迫收集心理钩子，图鉴完成度 / 角色解锁进度条类素材在此情绪背景下转化效率历史性高峰。</li>
+              <li><strong>【情怀+新奇双引擎】</strong> 30 周年叙事可用"你是从哪一代开始的"互动句式唤起群体记忆，适合有资深玩家社区的手游用于引发评论互动，降低 CPE。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────── 07 Shohei Ohtani ─────────── -->
+    <div class="trend-card">
+      <div class="card-top">
+        <div class="card-images">
+          <div class="img-trio">
+            <img src="trend_images/07_ohtani_1.jpg" alt="Shohei Ohtani">
+            <img src="trend_images/07_ohtani_2.jpg" alt="Shohei Ohtani">
+            <img src="trend_images/07_ohtani_3.jpg" alt="Shohei Ohtani">
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-header">
+            <div class="rank-num">07</div>
+            <div class="topic-meta">
+              <div class="topic-en">Shohei Ohtani / MLB Opening Day</div>
+              <div class="topic-zh">大谷翔平 / MLB 开幕日</div>
+            </div>
+            <div class="traffic-badge">4M+ 搜索</div>
+          </div>
+          <div class="hashtags">
+            <span class="tag">#ShoheOhtani</span>
+            <span class="tag">#MLB</span>
+            <span class="tag">#OpeningDay</span>
+            <span class="tag">#Dodgers</span>
+          </div>
+          <ul class="bullets">
+            <li>2026 MLB 开幕日（3月26日），大谷翔平以 2025 年 MVP + 本垒打王身份出战，首场投打两用表现引发全美狂欢，社媒实时讨论量超过超级碗前半场。</li>
+            <li>道奇队与大谷翔平的合同仍是职业体育史上最大合同（$700M / 10年），球迷对每场比赛都保持极高关注度。</li>
+            <li>大谷个人 TikTok 账号粉丝 3 月单月增长 120 万，成为全美体育界增长最快的社媒账号，在非棒球观众群体中也建立了广泛认知。</li>
+          </ul>
+          <div class="ua-section">
+            <div class="ua-label">🎮 UA 素材可复用点</div>
+            <ul class="ua-items">
+              <li><strong>【双栖超人叙事】</strong> 大谷"投手+击球手"的双重身份是美国文化中极罕见的"全能英雄"符号。手游素材可借用"One player, two roles"框架，展示角色多技能 / 多形态切换，传递全能感。</li>
+              <li><strong>【赛季开幕仪式感】</strong> 开幕日本身带有强烈的"新开始"情绪，与新服开启 / 版本更新的营销逻辑高度契合。文案可用"Season starts now / Who's ready to play?"框架，捕获开幕期兴奋情绪。</li>
+              <li><strong>【全球化明星跨圈流量】</strong> 大谷在非棒球受众中也有高知名度，投放明星体育联名 / 运动竞技类素材时，可用其形象化的"全能超人"叙事作为素材锚点，拓展非硬核体育玩家圈层。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────── 08 Jessica Simpson ─────────── -->
+    <div class="trend-card">
+      <div class="card-top">
+        <div class="card-images">
+          <div class="img-trio">
+            <img src="trend_images/08_jessica_1.jpg" alt="Jessica Simpson">
+            <img src="trend_images/08_jessica_2.jpg" alt="Jessica Simpson">
+            <img src="trend_images/08_jessica_3.jpg" alt="Jessica Simpson">
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-header">
+            <div class="rank-num">08</div>
+            <div class="topic-meta">
+              <div class="topic-en">Jessica Simpson Y2K Revival</div>
+              <div class="topic-zh">杰西卡·辛普森 Y2K 复古回潮</div>
+            </div>
+            <div class="traffic-badge">1M+ 搜索</div>
+          </div>
+          <div class="hashtags">
+            <span class="tag">#JessicaSimpson</span>
+            <span class="tag">#Y2K</span>
+            <span class="tag">#Y2KFashion</span>
+            <span class="tag">#2000sAesthetic</span>
+          </div>
+          <ul class="bullets">
+            <li>杰西卡·辛普森宣布回归音乐圈并发布新专辑预告，正值 Y2K（2000年代）美学在 TikTok 强势复活周期，引发大量"当年的她 vs 现在"对比内容爆发。</li>
+            <li>其 2000 年代标志性造型（超低腰牛仔裤、闪亮上衣、大墨镜）被 Z 世代"出土"重新演绎，#Y2KFashion 在 TikTok 单周浏览量超 8 亿次。</li>
+            <li>她的个人品牌"Jessica Simpson Collection"同期宣布与多家零售商的新一轮合作，商业和文化热度双线爆发，成为 3 月末重要的流行文化话题。</li>
+          </ul>
+          <div class="ua-section">
+            <div class="ua-label">🎮 UA 素材可复用点</div>
+            <ul class="ua-items">
+              <li><strong>【Y2K 审美时间差钩子】</strong> "当年 vs 现在"对比结构是 TikTok 高分留存公式。游戏素材可用"2005 you vs 2026 you"或角色复古外观 vs 最新皮肤对比，精准触发 25-35 岁用户怀旧情绪。</li>
+              <li><strong>【闪亮 + 低饱和滤镜美学】</strong> Y2K 视觉特征（玻璃质感、金属光泽、低饱和粉/蓝/银配色）与当前手游皮肤设计趋势高度契合，素材加入这套视觉滤镜，可在 Shorts / Reels 前 3 秒钩住目标受众。</li>
+              <li><strong>【复古回归情绪借势】</strong> "She's back"叙事框架引发用户集体情绪共振，手游"经典角色/活动回归"类运营素材可套用这一公式，制造"不能错过"的稀缺感。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────── 09 Stranger Things ─────────── -->
+    <div class="trend-card">
+      <div class="card-top">
+        <div class="card-images">
+          <div class="img-trio">
+            <img src="trend_images/09_strangerthings_1.jpg" alt="Stranger Things">
+            <img src="trend_images/09_strangerthings_2.jpg" alt="Stranger Things">
+            <img src="trend_images/09_strangerthings_3.jpg" alt="Stranger Things">
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-header">
+            <div class="rank-num">09</div>
+            <div class="topic-meta">
+              <div class="topic-en">Stranger Things: Tales from the Upside Down</div>
+              <div class="topic-zh">《怪奇物语》衍生宇宙</div>
+            </div>
+            <div class="traffic-badge">2M+ 搜索</div>
+          </div>
+          <div class="hashtags">
+            <span class="tag">#StrangerThings</span>
+            <span class="tag">#UpsideDown</span>
+            <span class="tag">#Netflix</span>
+            <span class="tag">#StrangerThingsSeason5</span>
+          </div>
+          <ul class="bullets">
+            <li>Netflix 宣布《怪奇物语》衍生项目《Tales from the Upside Down》开发确认，官宣同时公布第五季（终季）最终回播出时间窗口，引爆粉丝社群。</li>
+            <li>系列衍生宇宙扩展计划曝光：包括动画剧集、舞台剧全球巡演及游戏联名合作，展示 IP 商业化决心，获 Netflix 高优先级资源倾斜。</li>
+            <li>《怪奇物语》在 Netflix 全球播放量历史 Top 5 的地位，使其任何官宣动作都能触发跨平台社媒联动爆发，3 月末话题热度持续两周以上。</li>
+          </ul>
+          <div class="ua-section">
+            <div class="ua-label">🎮 UA 素材可复用点</div>
+            <ul class="ua-items">
+              <li><strong>【黑暗解谜探索钩子】</strong> 颠倒世界（Upside Down）的视觉概念——镜像扭曲的熟悉场景——是极强的好奇心触发器。手游素材可借用"翻转/扭曲现实"视觉特效作为前 3 秒钩子，诱发"这是什么?"的点击冲动。</li>
+              <li><strong>【衍生宇宙 IP 共鸣】</strong> "IP 宇宙扩展"本身是一个强情绪话题，玩家对"系列还没结束"的延续感有天然好感。有丰富世界观的手游可用"The story doesn't end here"框架，强化世界观深度感。</li>
+              <li><strong>【怀旧 80s 霓虹美学】</strong> 剧集标志性的复古霓虹蓝/红配色和 80 年代氛围与 Y2K 复古热叠加，双重情怀共振，素材使用这套视觉语言在当前的 TikTok / Shorts 算法中会获得更高完播率。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─────────── 10 Zendaya ─────────── -->
+    <div class="trend-card">
+      <div class="card-top">
+        <div class="card-images">
+          <div class="img-trio">
+            <img src="trend_images/10_zendaya_1.jpg" alt="Zendaya">
+            <img src="trend_images/10_zendaya_2.jpg" alt="Zendaya">
+            <img src="trend_images/10_zendaya_3.jpg" alt="Zendaya">
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-header">
+            <div class="rank-num">10</div>
+            <div class="topic-meta">
+              <div class="topic-en">Zendaya "The Drama"</div>
+              <div class="topic-zh">赞达亚·科尔曼 全面霸屏</div>
+            </div>
+            <div class="traffic-badge">3M+ 搜索</div>
+          </div>
+          <div class="hashtags">
+            <span class="tag">#Zendaya</span>
+            <span class="tag">#Euphoria</span>
+            <span class="tag">#Dune3</span>
+            <span class="tag">#TimotheeChalamet</span>
+          </div>
+          <ul class="bullets">
+            <li>Zendaya 以《亢奋》第三季 + 《沙丘3》双线同步话题在 3-4 月达到个人热度历史峰值；4 月颁奖季中以《亢奋》获多项表演奖项提名，成为全美讨论度最高的演员之一。</li>
+            <li>其与 Timothée Chalamet 的确认恋情在 3 月底正式公开，社媒情侣话题单日产生超 1200 万条相关内容，#Zendaya 标签连续 5 天位居 X / TikTok 趋势榜首位。</li>
+            <li>个人时尚影响力创历史新高：3 月封面出现在 Vogue US、Vanity Fair、Harper's Bazaar 三本顶级杂志，全球 Google 时尚搜索量达峰值。</li>
+          </ul>
+          <div class="ua-section">
+            <div class="ua-label">🎮 UA 素材可复用点</div>
+            <ul class="ua-items">
+              <li><strong>【多线叙事爆发节点】</strong> Zendaya 同期主演两部爆款作品，制造了"无处不在"的话题密度。手游运营可借鉴这种"多线联动"策略：多个频道同期投放互补角度素材，制造话题包围感，提升跨渠道 Recall。</li>
+              <li><strong>【情侣 CP 话题流量】</strong> #Zendaya + #Chalamet CP 话题引爆情绪，是当前美区 TikTok 互动率最高的内容类型之一。手游"角色情侣/搭档关系"向素材（选择你的队友 / CP 配对玩法）可在此情绪背景下精准触发收藏和分享。</li>
+              <li><strong>【时尚封面级视觉标准】</strong> Zendaya 三刊同封提升了用户对"高质感视觉"的期待阈值，游戏素材整体画质和构图精度在此周期应有意识地拔高，以匹配用户审美状态下的注意力门槛。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ── Footer ── -->
+<div class="page-footer">
+  <div class="footer-note">
+    数据来源：Google Trends RSS（美国） · 图片来源：网络公开资源 · 内容版权归原作者所有 · 仅供营销研究参考
+  </div>
+  <div class="footer-links">
+    <a href="index.html">TikTok 热门报告</a>
+    <a href="../index.html">归档首页</a>
+  </div>
+</div>
+
+</body>
+</html>
