@@ -123,7 +123,7 @@
     border-radius: 16px;
     overflow: hidden;
     display: grid;
-    grid-template-columns: 160px 1fr;
+    grid-template-columns: 260px 1fr;
     transition: border-color 0.2s;
   }
   .video-card:hover { border-color: #fe2c55; }
@@ -131,8 +131,8 @@
 
   .video-cover {
     position: relative;
-    width: 160px;
-    min-height: 285px;
+    width: 260px;
+    height: 464px;
     overflow: hidden;
     flex-shrink: 0;
   }
@@ -141,7 +141,7 @@
     height: 580px;
     border: none;
     display: block;
-    transform: scale(0.492);
+    transform: scale(0.8);
     transform-origin: top left;
   }
   .video-cover .rank-badge {
@@ -170,7 +170,7 @@
   }
   .video-cover .play-btn svg { width: 36px; height: 36px; opacity: 0.9; }
 
-  .video-info { padding: 20px 24px; display: flex; flex-direction: column; gap: 14px; }
+  .video-info { padding: 20px 24px; display: flex; flex-direction: column; gap: 14px; justify-content: space-between; }
 
   .video-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
   .video-title { font-size: 15px; font-weight: 700; color: #fff; line-height: 1.4; }
