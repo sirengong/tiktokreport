@@ -1,0 +1,85 @@
+{
+  "total": 10,
+  "videos": [
+    {
+      "hub_rank": 1,
+      "name": "Pilot Games: Airplane Games",
+      "videoUrl": "",
+      "localVideo": "",
+      "imgSrc": "ads_images_gdd/01_Pilot_Games__Airplane_Games.jpg",
+      "status": "not_found"
+    },
+    {
+      "hub_rank": 2,
+      "name": "Find The Cat - Hidden Objects",
+      "videoUrl": "",
+      "localVideo": "",
+      "imgSrc": "ads_images_gdd/02_Find_The_Cat_-_Hidden_Objects.jpg",
+      "status": "not_found"
+    },
+    {
+      "hub_rank": 3,
+      "name": "Мир домовят: три в ряд",
+      "videoUrl": "",
+      "localVideo": "",
+      "imgSrc": "ads_images_gdd/03_Мир_домовят__три_в_ряд.jpg",
+      "status": "not_found"
+    },
+    {
+      "hub_rank": 4,
+      "name": "Zen Word® - Relax Puzzle Game",
+      "videoUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/762cb6108da0ce30726fd480176ce440.mp4",
+      "localVideo": "C:/Users/gongjue/tiktok-reports/2026-04-01/ads_videos_gdd/04_Zen_Word__-_Relax_Puzzle_Game.mp4",
+      "imgSrc": "ads_images_gdd/05_Zen_Word__-_Relax_Puzzle_Game.jpg",
+      "status": "saved"
+    },
+    {
+      "hub_rank": 5,
+      "name": "Merge Coins— Get Cash Prize",
+      "videoUrl": "",
+      "localVideo": "",
+      "imgSrc": "ads_images_gdd/06_Merge_Coins__Get_Cash_Prize.jpg",
+      "status": "not_found"
+    },
+    {
+      "hub_rank": 6,
+      "name": "Word Chill and Zen",
+      "videoUrl": "",
+      "localVideo": "",
+      "imgSrc": "ads_images_gdd/07_Word_Chill_and_Zen.jpg",
+      "status": "not_found"
+    },
+    {
+      "hub_rank": 7,
+      "name": "Jewel Swap -Magic Match 3 game",
+      "videoUrl": "",
+      "localVideo": "",
+      "imgSrc": "ads_images_gdd/08_Jewel_Swap_-Magic_Match_3_game.jpg",
+      "status": "not_found"
+    },
+    {
+      "hub_rank": 8,
+      "name": "Pick Me Up 3D: Taxi Game",
+      "videoUrl": "",
+      "localVideo": "",
+      "imgSrc": "ads_images_gdd/09_Pick_Me_Up_3D__Taxi_Game.jpg",
+      "status": "not_found"
+    },
+    {
+      "hub_rank": 9,
+      "name": "Color a Day: Paint by Number",
+      "videoUrl": "",
+      "localVideo": "",
+      "imgSrc": "ads_images_gdd/10_Color_a_Day__Paint_by_Number.jpg",
+      "status": "not_found"
+    },
+    {
+      "hub_rank": 10,
+      "name": "Mix Master: AI Merge Game",
+      "videoUrl": "",
+      "localVideo": "",
+      "imgSrc": "ads_images_gdd/10_Mix_Master__AI_Merge_Game.jpg",
+      "status": "not_found"
+    }
+  ]
+}

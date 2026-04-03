@@ -474,6 +474,43 @@ a { text-decoration: none; color: inherit; }
 .cs-desc { font-size: 13px; color: var(--gray3); line-height: 1.7; }
 .cs-badge { display: inline-block; margin-top: 16px; background: var(--bg4); border: 1px solid var(--border); color: var(--gray3); font-size: 11px; padding: 4px 14px; border-radius: 20px; }
 
+/* ─────────── VIDEO MODAL ─────────── */
+#vmbox {
+  display: none; position: fixed; inset: 0; z-index: 9998;
+  background: rgba(0,0,0,0.93); align-items: center; justify-content: center;
+  cursor: zoom-out;
+}
+#vmbox.open { display: flex; }
+#vmbox-close {
+  position: absolute; top: 20px; right: 24px;
+  color: rgba(255,255,255,0.6); font-size: 28px; line-height: 1;
+  cursor: pointer; z-index: 10; transition: color 0.15s;
+}
+#vmbox-close:hover { color: #fff; }
+#vmbox-inner {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  height: 85vh;
+  max-width: 90vw;
+  cursor: default;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 0 60px rgba(0,0,0,0.8);
+}
+#vmbox-iframe { width: 100%; height: 100%; border: none; display: block; background: #000; }
+#vmbox-video  { width: 100%; height: 100%; border: none; display: none; background: #000; }
+.vbox-btn {
+  position: absolute; bottom: 8px; right: 8px; z-index: 20;
+  background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.22);
+  color: rgba(255,255,255,0.8); font-size: 14px; width: 28px; height: 28px;
+  border-radius: 6px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s, border-color 0.15s;
+  pointer-events: auto;
+}
+.vbox-btn:hover { background: rgba(254,44,85,0.75); border-color: rgba(254,44,85,0.5); color: #fff; }
+
 /* ─────────── LIGHTBOX ─────────── */
 #lightbox {
   display: none; position: fixed; inset: 0; z-index: 9999;
@@ -1512,6 +1549,7 @@ a { text-decoration: none; color: inherit; }
           <div class="video-card champion">
             <div class="video-cover">
               <div class="rank-badge gold">1</div>
+              <button class="vbox-btn" onclick="openVbox('https://www.tiktok.com/embed/v2/7616849748359728415','iframe')" title="放大查看">⤢</button>
               <iframe src="https://www.tiktok.com/embed/v2/7616849748359728415" allowfullscreen scrolling="no" allow="encrypted-media;"></iframe>
             </div>
             <div class="video-info">
@@ -1565,6 +1603,7 @@ a { text-decoration: none; color: inherit; }
           <div class="video-card">
             <div class="video-cover">
               <div class="rank-badge">2</div>
+              <button class="vbox-btn" onclick="openVbox('https://www.tiktok.com/embed/v2/7621300668329905422','iframe')" title="放大查看">⤢</button>
               <iframe src="https://www.tiktok.com/embed/v2/7621300668329905422" allowfullscreen scrolling="no" allow="encrypted-media;"></iframe>
             </div>
             <div class="video-info">
@@ -1618,6 +1657,7 @@ a { text-decoration: none; color: inherit; }
           <div class="video-card">
             <div class="video-cover">
               <div class="rank-badge">3</div>
+              <button class="vbox-btn" onclick="openVbox('https://www.tiktok.com/embed/v2/7603344058680888607','iframe')" title="放大查看">⤢</button>
               <iframe src="https://www.tiktok.com/embed/v2/7603344058680888607" allowfullscreen scrolling="no" allow="encrypted-media;"></iframe>
             </div>
             <div class="video-info">
@@ -1671,6 +1711,7 @@ a { text-decoration: none; color: inherit; }
           <div class="video-card">
             <div class="video-cover">
               <div class="rank-badge">4</div>
+              <button class="vbox-btn" onclick="openVbox('https://www.tiktok.com/embed/v2/7605949028395781389','iframe')" title="放大查看">⤢</button>
               <iframe src="https://www.tiktok.com/embed/v2/7605949028395781389" allowfullscreen scrolling="no" allow="encrypted-media;"></iframe>
             </div>
             <div class="video-info">
@@ -1724,6 +1765,7 @@ a { text-decoration: none; color: inherit; }
           <div class="video-card">
             <div class="video-cover">
               <div class="rank-badge">5</div>
+              <button class="vbox-btn" onclick="openVbox('https://www.tiktok.com/embed/v2/7600089922267008278','iframe')" title="放大查看">⤢</button>
               <iframe src="https://www.tiktok.com/embed/v2/7600089922267008278" allowfullscreen scrolling="no" allow="encrypted-media;"></iframe>
             </div>
             <div class="video-info">
@@ -1777,6 +1819,7 @@ a { text-decoration: none; color: inherit; }
           <div class="video-card">
             <div class="video-cover">
               <div class="rank-badge">6</div>
+              <button class="vbox-btn" onclick="openVbox('https://www.tiktok.com/embed/v2/7611573338502090015','iframe')" title="放大查看">⤢</button>
               <iframe src="https://www.tiktok.com/embed/v2/7611573338502090015" allowfullscreen scrolling="no" allow="encrypted-media;"></iframe>
             </div>
             <div class="video-info">
@@ -1830,6 +1873,7 @@ a { text-decoration: none; color: inherit; }
           <div class="video-card">
             <div class="video-cover">
               <div class="rank-badge">7</div>
+              <button class="vbox-btn" onclick="openVbox('https://www.tiktok.com/embed/v2/7601218938181143839','iframe')" title="放大查看">⤢</button>
               <iframe src="https://www.tiktok.com/embed/v2/7601218938181143839" allowfullscreen scrolling="no" allow="encrypted-media;"></iframe>
             </div>
             <div class="video-info">
@@ -1883,6 +1927,7 @@ a { text-decoration: none; color: inherit; }
           <div class="video-card">
             <div class="video-cover">
               <div class="rank-badge">8</div>
+              <button class="vbox-btn" onclick="openVbox('https://www.tiktok.com/embed/v2/7611156273236593951','iframe')" title="放大查看">⤢</button>
               <iframe src="https://www.tiktok.com/embed/v2/7611156273236593951" allowfullscreen scrolling="no" allow="encrypted-media;"></iframe>
             </div>
             <div class="video-info">
@@ -1936,6 +1981,7 @@ a { text-decoration: none; color: inherit; }
           <div class="video-card">
             <div class="video-cover">
               <div class="rank-badge">9</div>
+              <button class="vbox-btn" onclick="openVbox('https://www.tiktok.com/embed/v2/7606026318492273950','iframe')" title="放大查看">⤢</button>
               <iframe src="https://www.tiktok.com/embed/v2/7606026318492273950" allowfullscreen scrolling="no" allow="encrypted-media;"></iframe>
             </div>
             <div class="video-info">
@@ -1988,6 +2034,7 @@ a { text-decoration: none; color: inherit; }
           <div class="video-card">
             <div class="video-cover">
               <div class="rank-badge">10</div>
+              <button class="vbox-btn" onclick="openVbox('https://www.tiktok.com/embed/v2/7596990959116766494','iframe')" title="放大查看">⤢</button>
               <iframe src="https://www.tiktok.com/embed/v2/7596990959116766494" allowfullscreen scrolling="no" allow="encrypted-media;"></iframe>
             </div>
             <div class="video-info">
@@ -2174,6 +2221,7 @@ a { text-decoration: none; color: inherit; }
         <div class="yt-card top">
           <div class="yt-thumb">
             <div class="yt-rank-badge yt-gold">1</div>
+            <button class="vbox-btn" onclick="openVbox('https://www.youtube.com/embed/IqL-ZunFfpk?autoplay=1','iframe')" title="放大查看">⤢</button>
             <iframe class="yt-iframe" src="https://www.youtube.com/embed/IqL-ZunFfpk" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
             <div class="yt-views-chip"><span class="yt-play-icon">▶</span> 6760万 播放</div>
           </div>
@@ -2235,6 +2283,7 @@ a { text-decoration: none; color: inherit; }
         <div class="yt-card">
           <div class="yt-thumb">
             <div class="yt-rank-badge">2</div>
+            <button class="vbox-btn" onclick="openVbox('https://www.youtube.com/embed/purAsH7pXTQ?autoplay=1','iframe')" title="放大查看">⤢</button>
             <iframe class="yt-iframe" src="https://www.youtube.com/embed/purAsH7pXTQ" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
             <div class="yt-views-chip"><span class="yt-play-icon">▶</span> 4560万 播放</div>
           </div>
@@ -2295,6 +2344,7 @@ a { text-decoration: none; color: inherit; }
         <div class="yt-card">
           <div class="yt-thumb">
             <div class="yt-rank-badge">3</div>
+            <button class="vbox-btn" onclick="openVbox('https://www.youtube.com/embed/jCE1Ol3PYDs?autoplay=1','iframe')" title="放大查看">⤢</button>
             <iframe class="yt-iframe" src="https://www.youtube.com/embed/jCE1Ol3PYDs" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
             <div class="yt-views-chip"><span class="yt-play-icon">▶</span> 2820万 播放</div>
           </div>
@@ -2353,6 +2403,7 @@ a { text-decoration: none; color: inherit; }
         <div class="yt-card">
           <div class="yt-thumb">
             <div class="yt-rank-badge">4</div>
+            <button class="vbox-btn" onclick="openVbox('https://www.youtube.com/embed/5jhEoRZXhjE?autoplay=1','iframe')" title="放大查看">⤢</button>
             <iframe class="yt-iframe" src="https://www.youtube.com/embed/5jhEoRZXhjE" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
             <div class="yt-views-chip"><span class="yt-play-icon">▶</span> 2510万 播放</div>
           </div>
@@ -2412,6 +2463,7 @@ a { text-decoration: none; color: inherit; }
         <div class="yt-card">
           <div class="yt-thumb">
             <div class="yt-rank-badge">5</div>
+            <button class="vbox-btn" onclick="openVbox('https://www.youtube.com/embed/I-DFz6Id6DI?autoplay=1','iframe')" title="放大查看">⤢</button>
             <iframe class="yt-iframe" src="https://www.youtube.com/embed/I-DFz6Id6DI" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
             <div class="yt-views-chip"><span class="yt-play-icon">▶</span> 1100万 播放</div>
           </div>
@@ -2470,6 +2522,7 @@ a { text-decoration: none; color: inherit; }
         <div class="yt-card">
           <div class="yt-thumb">
             <div class="yt-rank-badge">6</div>
+            <button class="vbox-btn" onclick="openVbox('https://www.youtube.com/embed/Z9NxQdQ8Rpg?autoplay=1','iframe')" title="放大查看">⤢</button>
             <iframe class="yt-iframe" src="https://www.youtube.com/embed/Z9NxQdQ8Rpg" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
             <div class="yt-views-chip"><span class="yt-play-icon">▶</span> 737万 播放</div>
           </div>
@@ -2528,6 +2581,7 @@ a { text-decoration: none; color: inherit; }
         <div class="yt-card">
           <div class="yt-thumb">
             <div class="yt-rank-badge">7</div>
+            <button class="vbox-btn" onclick="openVbox('https://www.youtube.com/embed/7-heUMQhVko?autoplay=1','iframe')" title="放大查看">⤢</button>
             <iframe class="yt-iframe" src="https://www.youtube.com/embed/7-heUMQhVko" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
             <div class="yt-views-chip"><span class="yt-play-icon">▶</span> 620万 播放</div>
           </div>
@@ -2587,6 +2641,7 @@ a { text-decoration: none; color: inherit; }
         <div class="yt-card">
           <div class="yt-thumb">
             <div class="yt-rank-badge">8</div>
+            <button class="vbox-btn" onclick="openVbox('https://www.youtube.com/embed/tj-9sh8DG5o?autoplay=1','iframe')" title="放大查看">⤢</button>
             <iframe class="yt-iframe" src="https://www.youtube.com/embed/tj-9sh8DG5o" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
             <div class="yt-views-chip"><span class="yt-play-icon">▶</span> 230万 播放</div>
           </div>
@@ -2646,6 +2701,7 @@ a { text-decoration: none; color: inherit; }
         <div class="yt-card">
           <div class="yt-thumb">
             <div class="yt-rank-badge">9</div>
+            <button class="vbox-btn" onclick="openVbox('https://www.youtube.com/embed/0l8tn8hh--Y?autoplay=1','iframe')" title="放大查看">⤢</button>
             <iframe class="yt-iframe" src="https://www.youtube.com/embed/0l8tn8hh--Y" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
             <div class="yt-views-chip"><span class="yt-play-icon">▶</span> 123万 播放</div>
           </div>
@@ -2705,6 +2761,7 @@ a { text-decoration: none; color: inherit; }
         <div class="yt-card">
           <div class="yt-thumb">
             <div class="yt-rank-badge">10</div>
+            <button class="vbox-btn" onclick="openVbox('https://www.youtube.com/embed/4Fb5lCt3r94?autoplay=1','iframe')" title="放大查看">⤢</button>
             <iframe class="yt-iframe" src="https://www.youtube.com/embed/4Fb5lCt3r94" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
             <div class="yt-views-chip"><span class="yt-play-icon">▶</span> 88万 播放</div>
           </div>
@@ -3796,6 +3853,16 @@ a { text-decoration: none; color: inherit; }
   </main>
 </div>
 
+<!-- Video Modal -->
+<div id="vmbox" onclick="closeVbox()">
+  <span id="vmbox-close" onclick="closeVbox()">✕</span>
+  <div id="vmbox-inner" onclick="event.stopPropagation()">
+    <iframe id="vmbox-iframe" src="" allowfullscreen
+      allow="autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    <video id="vmbox-video" controls playsinline></video>
+  </div>
+</div>
+
 <!-- Lightbox -->
 <div id="lightbox" onclick="closeLightbox()">
   <span id="lightbox-close" onclick="closeLightbox()">✕</span>
@@ -3814,7 +3881,32 @@ function closeLightbox() {
   document.getElementById('lightbox').classList.remove('open');
   document.body.style.overflow = '';
 }
-document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+function openVbox(src, type) {
+  var modal = document.getElementById('vmbox');
+  var ifrEl = document.getElementById('vmbox-iframe');
+  var vidEl = document.getElementById('vmbox-video');
+  if (type === 'video') {
+    ifrEl.style.display = 'none'; ifrEl.src = '';
+    vidEl.style.display = 'block'; vidEl.src = src; vidEl.play();
+  } else {
+    vidEl.style.display = 'none'; vidEl.pause(); vidEl.src = '';
+    ifrEl.style.display = 'block'; ifrEl.src = src;
+  }
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeVbox() {
+  var modal = document.getElementById('vmbox');
+  modal.classList.remove('open');
+  var ifrEl = document.getElementById('vmbox-iframe');
+  var vidEl = document.getElementById('vmbox-video');
+  ifrEl.src = '';
+  vidEl.pause(); vidEl.src = ''; vidEl.style.display = 'none';
+  ifrEl.style.display = 'block';
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeLightbox(); closeVbox(); } });
 
 function switchSection(targetId, btn) {
   document.querySelectorAll('.section-panel').forEach(function(p) {
@@ -3825,6 +3917,8 @@ function switchSection(targetId, btn) {
   });
   document.getElementById(targetId).classList.add('active');
   if (btn) btn.classList.add('active');
+  closeVbox();
+  closeLightbox();
   window.scrollTo(0, 0);
 
   // Mark as visited — remove NEW badge and persist
