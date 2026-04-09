@@ -1,0 +1,167 @@
+<!-- SIDEBAR NAV -->
+<button class="nav-item active" data-target="s-overview" onclick="switchSection('s-overview',this)">
+  <span class="ni-icon">🌐</span><span class="ni-label">本期总览</span>
+</button>
+<button class="nav-item" data-target="s-trends" onclick="switchSection('s-trends',this)">
+  <span class="ni-icon">🔥</span><span class="ni-label">热搜分析</span><span class="ni-badge-new">NEW</span>
+</button>
+<button class="nav-item" data-target="s-tiktok" onclick="switchSection('s-tiktok',this)">
+  <span class="ni-icon">🎵</span><span class="ni-label">TikTok 热门</span><span class="ni-badge-new">NEW</span>
+</button>
+<button class="nav-item" data-target="s-youtube" onclick="switchSection('s-youtube',this)">
+  <span class="ni-icon">▶️</span><span class="ni-label">YouTube Shorts</span><span class="ni-badge-new">NEW</span>
+</button>
+<button class="nav-item" data-target="s-memes" onclick="switchSection('s-memes',this)">
+  <span class="ni-icon">😂</span><span class="ni-label">表情包 Memes</span><span class="ni-badge-new">NEW</span>
+</button>
+<button class="nav-item" data-target="s-ads" onclick="switchSection('s-ads',this)">
+  <span class="ni-icon">📢</span><span class="ni-label">平台热门广告</span><span class="ni-badge-new">NEW</span>
+</button>
+
+<!-- OVERVIEW SECTION -->
+<div id="s-overview" class="section-panel active">
+  <div class="sec-inner">
+    <div class="sec-kicker">🌐 跨平台综合分析 · VOL.002</div>
+    <div class="sec-title">本期情报总览</div>
+    <div class="sec-desc">汇总 5 大平台、50 条精选内容的研究结论，提取多平台交叉印证的最强信号，输出本期游戏研发最高优先级行动方向。</div>
+    <div class="stats-row">
+      <div class="stat-pill">📅 <strong>数据周期</strong> 2026.04.02 – 04.09</div>
+      <div class="stat-pill">🌎 <strong>覆盖平台</strong> 热搜 / TikTok / YouTube / Memes / 广告</div>
+      <div class="stat-pill">📊 <strong>内容条目</strong> 50 条精选</div>
+      <div class="stat-pill">🎮 <strong>分析视角</strong> 角色 / 玩法 / 广告三维度</div>
+    </div>
+
+    {{OVERVIEW_SYNTHESIS}}
+
+    <div class="ov-nav-label">前往各板块</div>
+    <div class="ov-nav-grid">
+      <div class="ov-nav-card" onclick="switchSection('s-trends', document.querySelector('[data-target=s-trends]'))">
+        <span class="onc-icon">🔥</span><span class="onc-label">热搜分析</span><span class="onc-count">Google Trends · 10条</span><span class="onc-arrow">→</span>
+      </div>
+      <div class="ov-nav-card" onclick="switchSection('s-tiktok', document.querySelector('[data-target=s-tiktok]'))">
+        <span class="onc-icon">🎵</span><span class="onc-label">TikTok 热门</span><span class="onc-count">美区热门 · 10条</span><span class="onc-arrow">→</span>
+      </div>
+      <div class="ov-nav-card" onclick="switchSection('s-youtube', document.querySelector('[data-target=s-youtube]'))">
+        <span class="onc-icon">▶️</span><span class="onc-label">YouTube Shorts</span><span class="onc-count">Top 10 · 可播放</span><span class="onc-arrow">→</span>
+      </div>
+      <div class="ov-nav-card" onclick="switchSection('s-memes', document.querySelector('[data-target=s-memes]'))">
+        <span class="onc-icon">😂</span><span class="onc-label">表情包 Memes</span><span class="onc-count">Reddit · 10条</span><span class="onc-arrow">→</span>
+      </div>
+      <div class="ov-nav-card" onclick="switchSection('s-ads', document.querySelector('[data-target=s-ads]'))">
+        <span class="onc-icon">📢</span><span class="onc-label">平台热门广告</span><span class="onc-count">Top1% · 10条</span><span class="onc-arrow">→</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TRENDS WRAPPER -->
+<div id="s-trends" class="section-panel">
+  <div class="sec-inner">
+    <div class="sec-kicker">🔥 US Google Trends · 文化热点情报</div>
+    <div class="sec-title">美区热搜 Top 10</div>
+    <div class="sec-desc">基于 Google Trends 美国地区数据，精选 4 月初最具游戏研发灵感价值的 10 大话题。每条按<strong>游戏研发灵感 SOP</strong> 拆解，优先级：玩法/活动 > 角色设计 > 广告。</div>
+    <div class="stats-row">
+      <div class="stat-pill">📅 <strong>数据周期</strong> 2026.04.02 – 04.09</div>
+      <div class="stat-pill">🌎 <strong>地区</strong> 美国</div>
+      <div class="stat-pill">📊 <strong>来源</strong> Google Trends + 人工筛选</div>
+      <div class="stat-pill">🎮 <strong>视角</strong> 游戏研发 · 内容情报</div>
+    </div>
+    <!-- Override trend image styles for better display -->
+    <style>
+    .trend-topic-card .ttc-top { grid-template-columns: 220px 1fr; }
+    .trend-topic-card .ttc-images { width: 220px; }
+    .trend-topic-card .img-trio {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 2px;
+      height: 100%;
+      min-height: 240px;
+    }
+    .trend-topic-card .img-trio img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 3px;
+      cursor: zoom-in;
+      transition: opacity 0.15s;
+      min-height: 0;
+    }
+    </style>
+    {{TRENDS_CONTENT}}
+  </div>
+</div>
+
+<!-- TIKTOK WRAPPER -->
+<div id="s-tiktok" class="section-panel">
+  <div class="sec-inner">
+    <div class="sec-kicker">🎵 TikTok Explore · 热门视频分析</div>
+    <div class="sec-title">TikTok Explore 热门 Top 10</div>
+    <div class="sec-desc">通过 CDP 浏览器实时抓取 TikTok Explore 页面当前热门内容，按<strong>游戏研发灵感 SOP</strong> 拆解，优先级：角色设计 > 广告 > 玩法包装。</div>
+    <div class="stats-row">
+      <div class="stat-pill">📅 <strong>采集时间</strong> 2026-04-09</div>
+      <div class="stat-pill">🌎 <strong>来源</strong> TikTok Explore 页面</div>
+      <div class="stat-pill">🎮 <strong>视角</strong> 游戏研发 · 内容情报</div>
+    </div>
+    {{TIKTOK_CONTENT}}
+  </div>
+</div>
+
+<!-- YOUTUBE WRAPPER -->
+<div id="s-youtube" class="section-panel">
+  <div class="sec-inner">
+    <div class="sec-kicker">▶️ YouTube Shorts · 热门视频分析</div>
+    <div class="sec-title">美区 YouTube Shorts 热门 Top 10</div>
+    <div class="sec-desc">通过 YouTube Data API mostPopular chart 获取美区真实热门 Shorts，按<strong>游戏研发灵感 SOP</strong> 拆解，优先级：广告 > 玩法演出 > 角色展示。</div>
+    <div class="stats-row">
+      <div class="stat-pill">📅 <strong>数据周期</strong> 2026.04.02 – 04.09</div>
+      <div class="stat-pill">🌎 <strong>地区</strong> 美国</div>
+      <div class="stat-pill">📊 <strong>来源</strong> YouTube Data API v3 · mostPopular</div>
+      <div class="stat-pill">🎮 <strong>视角</strong> 游戏研发 · 内容情报</div>
+    </div>
+    <style>
+    .yt-card{background:var(--bg3);border:1px solid var(--border2);border-radius:16px;overflow:hidden;margin-bottom:20px;display:grid;grid-template-columns:200px 1fr;align-items:stretch;transition:border-color .2s}.yt-card:hover{border-color:var(--gray3)}.yt-card.top{border-color:#ff0000}.yt-thumb{position:relative;width:200px;height:356px;background:#000;overflow:hidden;flex-shrink:0}.yt-iframe{width:100%;height:100%;border:0;display:block}.yt-rank-badge{position:absolute;top:8px;left:8px;z-index:10;background:rgba(0,0,0,.8);color:#fff;font-size:14px;font-weight:900;width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);pointer-events:none}.yt-rank-badge.yt-gold{background:var(--gold);color:#000;border-color:transparent}.yt-views-chip{position:absolute;bottom:8px;left:8px;right:8px;background:rgba(0,0,0,.82);color:#fff;font-size:11px;font-weight:700;padding:3px 7px;border-radius:6px;display:flex;align-items:center;gap:5px;pointer-events:none}.yt-play-icon{color:#ff0000;font-size:12px}.yt-info{padding:18px 22px;display:flex;flex-direction:column;gap:12px}.yt-header{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}.yt-title{font-size:15px;font-weight:700;color:var(--white);line-height:1.4}.yt-channel{font-size:12px;font-weight:600;color:#ff4444;white-space:nowrap}.yt-meta{display:flex;gap:14px;background:var(--bg4);border-radius:9px;padding:9px 14px;flex-wrap:wrap}.yt-stat{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:52px}.yt-stat .sv{font-size:14px;font-weight:800;color:var(--white)}.yt-stat .sv.hot{color:#ff4444}.yt-stat .sl{font-size:9px;color:var(--gray3)}.yt-tags{display:flex;flex-wrap:wrap;gap:5px}.yt-tag{font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;letter-spacing:.3px}.yt-tag.hook{background:rgba(255,68,68,.1);color:#ff8080;border:1px solid rgba(255,68,68,.2)}.yt-tag.fmt{background:rgba(74,158,255,.1);color:#8ac4ff;border:1px solid rgba(74,158,255,.2)}
+    </style>
+    {{YOUTUBE_CONTENT}}
+  </div>
+</div>
+
+<!-- MEMES WRAPPER -->
+<div id="s-memes" class="section-panel">
+  <div class="sec-inner">
+    <div class="sec-kicker">😂 Meme 格式情报 · 游戏研发灵感</div>
+    <div class="sec-title">美区 Meme 热榜 Top 10</div>
+    <div class="sec-desc">追踪 2026 年 4 月初美区最具传播力的 Meme 格式与话题。按 4 个维度拆解：<strong>视觉模板</strong>、<strong>情绪结构</strong>、<strong>角色原型</strong>、<strong>Remix 机制</strong>。</div>
+    <div class="stats-row">
+      <div class="stat-pill">📅 <strong>数据周期</strong> 2026.04.02 – 04.09</div>
+      <div class="stat-pill">🌎 <strong>来源</strong> Reddit (r/memes, r/dankmemes, r/gaming, r/MemeEconomy)</div>
+      <div class="stat-pill">🎮 <strong>视角</strong> 游戏研发 · 社区运营 · UGC 设计</div>
+    </div>
+    {{MEMES_CONTENT}}
+  </div>
+</div>
+
+<!-- ADS WRAPPER -->
+<div id="s-ads" class="section-panel">
+  <div class="sec-inner">
+    <div class="sec-kicker">📢 广大大 GUANGDADA.NET · 多平台游戏广告情报</div>
+    <div class="sec-title">全球游戏 Top Ads · 人气值 Top1% · 当日热榜</div>
+    <div class="sec-desc">来自广大大展示广告热榜，筛选条件：人气值 Top1%、品类限角色扮演/策略/益智/动作/模拟/冒险/射击/消除。Top1% 意味着全平台人气前 1% 的高效素材，参考价值极高。每条按<strong>游戏研发灵感 SOP</strong> 拆解，优先级：广告钩子 > 玩法留存 > 角色。</div>
+    <div class="stats-row">
+      <div class="stat-pill">📅 <strong>数据日期</strong> 2026-04-09</div>
+      <div class="stat-pill">🏆 <strong>筛选条件</strong> 人气值 Top1% · 当日热榜</div>
+      <div class="stat-pill">🌐 <strong>平台覆盖</strong> Google / AppLovin / UnityAds / TikTok / Mintegral / IronSource</div>
+      <div class="stat-pill">📢 <strong>展示数量</strong> 10 条精选</div>
+    </div>
+
+    <div class="method-box" style="margin-bottom:24px;">
+      <div class="icon">📊</div>
+      <div>
+        <div class="title">关于数据来源</div>
+        <div class="desc">以上 10 条来自广大大展示广告热榜。条件：人气值 Top1%（全平台前 1% 高效素材）。覆盖渠道包含 Google、AppLovin、UnityAds、TikTok、Mintegral、IronSource 等。指标说明：<strong>人气值</strong> = 平台热度综合评分；<strong>展示估值</strong> = 广告展示量预估；<strong>热度</strong> = 近期投放活跃度。视频素材通过 CDP 从广大大详情页提取并下载本地，9/10 条含可播放视频。</div>
+      </div>
+    </div>
+
+    {{ADS_CONTENT}}
+  </div>
+</div>

@@ -1,0 +1,105 @@
+{
+  "generated_at": "2026-04-09",
+  "source": "guangdada CDP",
+  "total_ads": 10,
+  "ads": [
+    {
+      "rank": 1,
+      "name": "TruckFest: Cooking Game Master",
+      "dev": "Bravestars Games",
+      "thumbUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/991e382411275ce95ec3e50393bd9179.jpg?x-oss-process=image/resize,h_400,lfit",
+      "iconUrl": "https://appcdn-global.zingfront.com/imgs/9c062c03e272aeda9dc0e2892d5c3ad6.jpg?x-oss-process=image/resize,h_100,lfit",
+      "localThumb": "ads_images_gdd/01_TruckFest__Cooking_Game_Master.jpg",
+      "videoUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/0bd634b41f1d11bc2b5238a6f60c141a.mp4",
+      "localVideo": "ads_videos_gdd/01_TruckFest__Cooking_Game_Master.mp4"
+    },
+    {
+      "rank": 2,
+      "name": "東京リベンジャーズ ぱずりべ！全国制覇への道",
+      "dev": "GOODROID,Inc.",
+      "thumbUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/fce9cbadaddf07063d62949bf5be1f7b.jpg?x-oss-process=image/resize,h_400,lfit",
+      "iconUrl": "https://appcdn-global.zingfront.com/imgs/8933c0b4497892162c9ee33e40fbb5b6.jpg?x-oss-process=image/resize,h_100,lfit",
+      "localThumb": "ads_images_gdd/02_東京リベンジャーズ_ぱずりべ_全国制覇への道.jpg",
+      "videoUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/dce1e8691655a9bcfe480c5edb13344b.mp4",
+      "localVideo": "ads_videos_gdd/02_東京リベンジャーズ_ぱずりべ_全国制覇への道.mp4"
+    },
+    {
+      "rank": 3,
+      "name": "Wizardry Variants Daphne",
+      "dev": "株式会社ドリコム",
+      "thumbUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/fe2b8ae29155c4781113d6def1f98bd7.jpg?x-oss-process=image/resize,h_400,lfit",
+      "iconUrl": "https://appcdn-global.zingfront.com/imgs/f7ba2503e67a902fbd17ebe1cf553f34.jpg?x-oss-process=image/resize,h_100,lfit",
+      "localThumb": "ads_images_gdd/03_Wizardry_Variants_Daphne.jpg",
+      "videoUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/052b5fdb51281120dc729c1c02779ee6.mp4",
+      "localVideo": "ads_videos_gdd/03_Wizardry_Variants_Daphne.mp4"
+    },
+    {
+      "rank": 4,
+      "name": "Flip Gun 3D Ragdoll Shooter",
+      "dev": "Casual Games Arena",
+      "thumbUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/01474c19d383efe0854a6ec02d05ebf3.jpg?x-oss-process=image/resize,h_400,lfit",
+      "iconUrl": "https://appcdn-global.zingfront.com/imgs/2eadcaef900743192b88b0c72c0acc57.jpg?x-oss-process=image/resize,h_100,lfit",
+      "localThumb": "ads_images_gdd/04_Flip_Gun_3D_Ragdoll_Shooter.jpg",
+      "videoUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/3572e3f3de3025b288214f3e6f79cb36.mp4",
+      "localVideo": "ads_videos_gdd/04_Flip_Gun_3D_Ragdoll_Shooter.mp4"
+    },
+    {
+      "rank": 5,
+      "name": "Attack On Merge",
+      "dev": "Tara Westover",
+      "thumbUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/15bc54fe9c27b30e78950ae7a852db00.jpg?x-oss-process=image/resize,h_400,lfit",
+      "iconUrl": "https://appcdn-global.zingfront.com/imgs/07d6e7251511aa85832cb858c841f118.jpg?x-oss-process=image/resize,h_100,lfit",
+      "localThumb": "ads_images_gdd/05_Attack_On_Merge.jpg",
+      "videoUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/86cf553ce49ccc6c68c99f192ab505a0/9e68d0068fc35f482b42567e64d3abe0.mp4",
+      "localVideo": "ads_videos_gdd/05_Attack_On_Merge.mp4"
+    },
+    {
+      "rank": 6,
+      "name": "Dawn Watch: Survival",
+      "dev": "32s",
+      "thumbUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/e892d02882f5859e596bc925258e4223.jpg?x-oss-process=image/resize,h_400,lfit",
+      "iconUrl": "https://appcdn-global.zingfront.com/imgs/0eab7792404a16a83b1e49400b5b20f2.jpg?x-oss-process=image/resize,h_100,lfit",
+      "localThumb": "ads_images_gdd/06_Dawn_Watch__Survival.jpg",
+      "videoUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/bb1b58594f326042b6cca9f2d212b62e.mp4",
+      "localVideo": "ads_videos_gdd/06_Dawn_Watch__Survival.mp4"
+    },
+    {
+      "rank": 7,
+      "name": "Solitaire - Classic Card Games",
+      "dev": "Guru Puzzle Game",
+      "thumbUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/5a70110fa66fcd4a45b4ee3587facd2e.jpg?x-oss-process=image/resize,h_400,lfit",
+      "iconUrl": "https://appcdn-global.zingfront.com/imgs/4916ca85a9c2181e52818c07b7425edb.jpg?x-oss-process=image/resize,h_100,lfit",
+      "localThumb": "ads_images_gdd/07_Solitaire_-_Classic_Card_Games.jpg",
+      "videoUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/663bf883d3a7510c1f0915f3fa7f7835.mp4",
+      "localVideo": "ads_videos_gdd/07_Solitaire_-_Classic_Card_Games.mp4"
+    },
+    {
+      "rank": 8,
+      "name": "Panzer Hunter",
+      "dev": "Deli ventures",
+      "thumbUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/e3b4ff84c8201ffafac201ffe9c09e90.jpg?x-oss-process=image/resize,h_400,lfit",
+      "iconUrl": "https://appcdn-global.zingfront.com/imgs/3e68423b5fb0dd209a43fa72fd98b759.jpg?x-oss-process=image/resize,h_100,lfit",
+      "localThumb": "ads_images_gdd/08_Panzer_Hunter.jpg",
+      "videoUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/70686f5eaa0add11787e7f4172824e6b.mp4",
+      "localVideo": "ads_videos_gdd/08_Panzer_Hunter.mp4"
+    },
+    {
+      "rank": 9,
+      "name": "Jigsaw Puzzles & Story",
+      "dev": "Bobodoo Game",
+      "thumbUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/76f3bb88316182817f7db034eea578b7.jpg?x-oss-process=image/resize,h_400,lfit",
+      "iconUrl": "https://appcdn-global.zingfront.com/imgs/cac76222302c335232c869fe9777ed28.jpg?x-oss-process=image/resize,h_100,lfit",
+      "localThumb": "ads_images_gdd/09_Jigsaw_Puzzles___Story.jpg",
+      "videoUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/2847275b01318c9e264011ed4defbb95.mp4",
+      "localVideo": "ads_videos_gdd/09_Jigsaw_Puzzles___Story.mp4"
+    },
+    {
+      "rank": 10,
+      "name": "Angry Birds 2",
+      "dev": "Rovio Entertainment Oyj",
+      "thumbUrl": "",
+      "localThumb": "ads_images_gdd/10_Angry_Birds_2.jpg",
+      "localVideo": "ads_videos_gdd/10_Angry_Birds_2.mp4"
+    }
+  ]
+}

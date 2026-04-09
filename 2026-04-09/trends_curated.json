@@ -1,0 +1,116 @@
+{
+  "generated_at": "2026-04-09",
+  "period": "2026-04-02 to 2026-04-09",
+  "geo": "US",
+  "curation_note": "Manually curated for game dev relevance — replaced sports-heavy raw trends with diverse entertainment/gaming/tech/culture topics that offer visual, narrative, and character design inspiration for a western fantasy card game.",
+  "total_topics": 10,
+  "category_mix": {
+    "entertainment": 4,
+    "gaming": 3,
+    "tech": 1,
+    "culture": 1,
+    "sports_narrative": 1
+  },
+  "topics": [
+    {
+      "rank": 1,
+      "topic": "Star Wars: Maul – Shadow Lord",
+      "topic_zh": "星球大战：摩尔 - 暗影领主",
+      "category": "entertainment",
+      "trafficEstimate": "10M+",
+      "whyTrending": "Disney+ animated series debuted April 6 to a perfect 100% Rotten Tomatoes score. Explores Darth Maul's survival and criminal underworld rise after being bisected in Episode I. Dominating global streaming charts in 30+ countries. Already renewed for Season 2.",
+      "tags": ["#MaulShadowLord", "#StarWars", "#DisneyPlus", "#DarthMaul", "#Animation"],
+      "gameDevRelevance": "Masterclass in villain-protagonist storytelling — a 'fallen but not dead' anti-hero rebuilding power from nothing. The neo-noir crime thriller tone in a fantasy setting is directly applicable to faction leader narratives in a card game. Maul's dual-blade combat and underworld aesthetic offer rich visual inspiration for dark faction character designs."
+    },
+    {
+      "rank": 2,
+      "topic": "The Boys Season 5 (Final Season)",
+      "topic_zh": "黑袍纠察队 第五季（最终季）",
+      "category": "entertainment",
+      "trafficEstimate": "10M+",
+      "whyTrending": "Final season premiered April 8 on Prime Video with 97% Rotten Tomatoes. The cultural phenomenon concludes with Homelander's authoritarian regime at full power, heroes imprisoned in 'Freedom Camps', and Butcher armed with a Supe-killing virus. Massive social media discourse about power corruption themes.",
+      "tags": ["#TheBoys", "#TheBoysS5", "#Homelander", "#PrimeVideo", "#FinalSeason"],
+      "gameDevRelevance": "The show's core theme — corrupted superheroes as tyrants — is gold for card game faction design. Homelander-archetype characters (charismatic but unhinged power figures) resonate deeply with western audiences. The 'virus that kills the powerful' plot device parallels balance mechanics in card games. Strong inspiration for morally gray hero/villain card designs."
+    },
+    {
+      "rank": 3,
+      "topic": "Invincible Season 4 (Record-Breaking Episode)",
+      "topic_zh": "无敌少侠 第四季（破纪录单集）",
+      "category": "entertainment",
+      "trafficEstimate": "5M+",
+      "whyTrending": "Episode 5 'Give Us a Moment' scored 9.8/10 on IMDb — second-highest rated episode in the series. Reclaimed #1 streaming position in 38 countries. The Viltrumite war arc with antagonist Thragg (voiced by Lee Pace) is approaching its climax. Weekly releases driving sustained engagement.",
+      "tags": ["#Invincible", "#InvincibleS4", "#Thragg", "#PrimeVideo", "#Animation"],
+      "gameDevRelevance": "Invincible's power-scaling storytelling (weak hero grows to face galactic threats) is the core loop of card game progression. The Viltrumite faction — an alien warrior race with internal honor codes — is a perfect template for a fantasy card game faction. Thragg as an overwhelmingly powerful antagonist demonstrates how to design aspirational boss-tier cards."
+    },
+    {
+      "rank": 4,
+      "topic": "Daredevil: Born Again Season 2",
+      "topic_zh": "超胆侠：重生 第二季",
+      "category": "entertainment",
+      "trafficEstimate": "5M+",
+      "whyTrending": "Episode 4 'Gloves Off' achieved 9.6 IMDb — highest-rated episode of any live-action MCU Disney+ show ever. Jessica Jones makes her Marvel Studios debut. Matthew Lillard joins as the mysterious Mr. Charles. Weekly releases continuing through May 5.",
+      "tags": ["#DaredevilBornAgain", "#MCU", "#DisneyPlus", "#Daredevil", "#MarvelStudios"],
+      "gameDevRelevance": "Daredevil's street-level vigilante aesthetic — dark alleys, martial arts combat, moral ambiguity — offers a grounded counterpoint to cosmic fantasy. His 'sensing through blindness' mechanic translates beautifully to card game ability design. The show's success proves western audiences crave complex anti-hero characters with physical vulnerabilities but exceptional skill."
+    },
+    {
+      "rank": 5,
+      "topic": "Hades II Console Launch",
+      "topic_zh": "哈迪斯2 主机版发售",
+      "category": "gaming",
+      "trafficEstimate": "5M+",
+      "whyTrending": "Supergiant Games' Hades II launches on PS5 and Xbox Series X|S on April 14 with 120fps support. Named best-reviewed game of 2025 by Metacritic/OpenCritic. Day-one Xbox Game Pass inclusion. The most complete version with all post-launch content and bonus material.",
+      "tags": ["#Hades2", "#HadesII", "#Supergiant", "#XboxGamePass", "#PS5"],
+      "gameDevRelevance": "THE benchmark for how to adapt Greek mythology into modern action gameplay. Hades II's character design (Melinoe, Chronos, the Olympians) is directly relevant to western fantasy card game character art. Its roguelite deckbuilding-adjacent mechanics, relationship systems, and mythology-driven narrative are textbook references for card game designers."
+    },
+    {
+      "rank": 6,
+      "topic": "Diablo IV: Lord of Hatred Expansion",
+      "topic_zh": "暗黑破坏神4：憎恨之主 资料片",
+      "category": "gaming",
+      "trafficEstimate": "5M+",
+      "whyTrending": "Second major expansion launching April 28. Introduces Paladin (holy warrior) and Warlock (demonic caster) as opposing archetypes. New playable region Skovos — first time in Diablo history. Horadric Cube-inspired crafting overhaul. Sweeping skill tree reworks for all eight classes.",
+      "tags": ["#DiabloIV", "#LordOfHatred", "#Blizzard", "#Paladin", "#Warlock"],
+      "gameDevRelevance": "Directly competitive genre reference — dark fantasy with class-based combat. The Paladin vs. Warlock duality (holy vs. demonic) is a classic card game faction tension. Skovos as a new sacred island region demonstrates world-building expansion strategy. The Talisman system and crafting overhaul offer mechanical inspiration for card upgrade systems."
+    },
+    {
+      "rank": 7,
+      "topic": "Pokémon Champions",
+      "topic_zh": "宝可梦冠军对决",
+      "category": "gaming",
+      "trafficEstimate": "5M+",
+      "whyTrending": "Free-to-start competitive tactical battle game launched April 8 on Nintendo Switch and Switch 2. Features new Mega Evolutions (Mega Meganium, Mega Emboar, Mega Feraligatr). Links with Pokémon HOME. Replaces Pokémon TCG as official VGC competitive platform. Mobile version planned for later 2026.",
+      "tags": ["#PokemonChampions", "#Pokemon", "#NintendoSwitch", "#Switch2", "#MegaEvolution"],
+      "gameDevRelevance": "A direct competitor study: how the world's biggest monster-collection IP pivots to a dedicated competitive battle platform. The free-to-start model, cross-platform HOME integration, and transition from physical TCG to digital competitive play are all strategic lessons. Mega Evolution as a power-up mechanic parallels card evolution/awakening systems."
+    },
+    {
+      "rank": 8,
+      "topic": "Agentic AI Revolution",
+      "topic_zh": "AI智能体革命",
+      "category": "tech",
+      "trafficEstimate": "2M+",
+      "whyTrending": "Q1 2026 saw $242B in AI investment (vs $59.6B in Q1 2025). Google released Gemma 4 and Gemini 3 with agentic capabilities. Microsoft Copilot Cowork enables autonomous task execution. Anthropic's Conway operates as always-on AI agent. Agentic AI now functioning on Android devices for real-world tasks (Uber booking, food ordering).",
+      "tags": ["#AgenticAI", "#Gemini3", "#AIAgents", "#GoogleAI", "#CopilotCowork"],
+      "gameDevRelevance": "AI agents are transforming game development pipelines — from procedural content generation to dynamic NPC behavior. For a card game, agentic AI could power intelligent opponent AI, dynamic difficulty adjustment, and personalized card recommendation systems. The 'AI as autonomous teammate' paradigm directly maps to AI companion mechanics in games."
+    },
+    {
+      "rank": 9,
+      "topic": "Stranger Things: Tales from '85",
+      "topic_zh": "怪奇物语：85年的故事",
+      "category": "culture",
+      "trafficEstimate": "2M+",
+      "whyTrending": "Netflix's animated spinoff set between Stranger Things S2-S3 premieres April 23. Designed as an '80s Saturday-morning cartoon aesthetic. New character Nikki Baxter (pink-haired) joins the gang. Limited theatrical release April 18 before streaming debut. New Upside Down monsters and paranormal mystery.",
+      "tags": ["#StrangerThings", "#TalesFrom85", "#Netflix", "#Animation", "#UpsideDown"],
+      "gameDevRelevance": "The '80s nostalgia aesthetic continues to dominate western pop culture — valuable for understanding art direction trends. The animated spinoff format shows how IPs expand into different visual styles while maintaining brand identity. New monster designs from the Upside Down provide creature design references. The pink-haired new character archetype reflects current character design trends in western animation."
+    },
+    {
+      "rank": 10,
+      "topic": "Kenny Omega Returns to AEW",
+      "topic_zh": "肯尼·奥梅加回归AEW",
+      "category": "sports_narrative",
+      "trafficEstimate": "5M+",
+      "whyTrending": "Pro wrestling superstar Kenny Omega returned to AEW after a long absence due to diverticulitis health battle. His comeback story — fighting through a serious illness to return to the ring — generated massive emotional engagement. Trending searches include his health journey, rivalry with MJF, and matches against Will Ospreay.",
+      "tags": ["#KennyOmega", "#AEW", "#ProWrestling", "#Comeback", "#MJF"],
+      "gameDevRelevance": "Pro wrestling is essentially live-action character card design — each wrestler has a distinct visual identity, signature moves (abilities), faction allegiances, and narrative arcs. Kenny Omega's 'comeback from near-death' story is a powerful character archetype for card game lore. His over-the-top moveset and anime-influenced persona bridge western and eastern entertainment aesthetics — exactly the cultural crossover a fantasy card game should study."
+    }
+  ]
+}

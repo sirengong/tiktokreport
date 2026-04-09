@@ -1,0 +1,596 @@
+{
+  "generated": "2026-04-09T10:29:49.074212",
+  "total_videos": 50,
+  "outlier_count": 2,
+  "threshold": 2.0,
+  "topics": {
+    "hashtags": [
+      [
+        "funny",
+        12
+      ],
+      [
+        "dance",
+        12
+      ],
+      [
+        "trend",
+        10
+      ],
+      [
+        "viralvideo",
+        9
+      ],
+      [
+        "fyp\u30b7",
+        9
+      ],
+      [
+        "edit",
+        6
+      ],
+      [
+        "comedy",
+        6
+      ],
+      [
+        "viraltiktok",
+        4
+      ],
+      [
+        "viral_video",
+        4
+      ],
+      [
+        "tiktok",
+        4
+      ],
+      [
+        "prank",
+        4
+      ],
+      [
+        "asmr",
+        4
+      ],
+      [
+        "couple",
+        4
+      ],
+      [
+        "humor",
+        4
+      ],
+      [
+        "dancetrend",
+        4
+      ],
+      [
+        "relatable",
+        4
+      ],
+      [
+        "husbandwife",
+        4
+      ],
+      [
+        "hibachi",
+        2
+      ],
+      [
+        "hibachibaby",
+        2
+      ],
+      [
+        "ninja",
+        2
+      ]
+    ],
+    "sounds": [
+      [
+        "original sound",
+        21
+      ],
+      [
+        "som original",
+        3
+      ],
+      [
+        "Opera",
+        1
+      ],
+      [
+        "Originalton",
+        1
+      ],
+      [
+        "What You Won't Do for Love",
+        1
+      ],
+      [
+        "Teach Me How To Dougie",
+        1
+      ],
+      [
+        "anything",
+        1
+      ],
+      [
+        "Get sturdy DJ",
+        1
+      ],
+      [
+        "Sugar On My Tongue",
+        1
+      ],
+      [
+        "Bad Bih 4 Ya",
+        1
+      ]
+    ],
+    "keywords": [
+      [
+        "trend",
+        7
+      ],
+      [
+        "best",
+        3
+      ],
+      [
+        "love",
+        2
+      ],
+      [
+        "zoom",
+        2
+      ],
+      [
+        "nephew",
+        2
+      ],
+      [
+        "dance",
+        2
+      ],
+      [
+        "people",
+        2
+      ],
+      [
+        "video",
+        2
+      ],
+      [
+        "women",
+        2
+      ],
+      [
+        "bobr",
+        1
+      ],
+      [
+        "thank",
+        1
+      ],
+      [
+        "watching",
+        1
+      ],
+      [
+        "yall",
+        1
+      ],
+      [
+        "sparks",
+        1
+      ],
+      [
+        "whole",
+        1
+      ],
+      [
+        "class",
+        1
+      ],
+      [
+        "pranked",
+        1
+      ],
+      [
+        "teacher",
+        1
+      ],
+      [
+        "pranks",
+        1
+      ],
+      [
+        "sure",
+        1
+      ],
+      [
+        "think",
+        1
+      ],
+      [
+        "loves",
+        1
+      ],
+      [
+        "buttons",
+        1
+      ],
+      [
+        "went",
+        1
+      ],
+      [
+        "crazy",
+        1
+      ],
+      [
+        "awright",
+        1
+      ],
+      [
+        "bestfriend",
+        1
+      ],
+      [
+        "already",
+        1
+      ],
+      [
+        "platform",
+        1
+      ],
+      [
+        "them",
+        1
+      ]
+    ]
+  },
+  "accounts": [
+    "agentoflaughter",
+    "chihuahua_tiny_day",
+    "neafeas",
+    "kimberlykimpena",
+    "omgitsgeraldhuston",
+    ".cameraholic",
+    "malloryroh",
+    "gashi",
+    "itz._.bibii",
+    "fathenfarms",
+    "cash__wow",
+    "jadee.dvx",
+    "yva_nilie",
+    "mops_4us",
+    "rescue__tv",
+    "cw_compay",
+    "lacy",
+    "abbieherbert",
+    "aliyahm411",
+    "alexramirez7470",
+    "woofers67",
+    "selahmolden",
+    "sixeltv_",
+    "ameliamontgomery08",
+    "roshaunrose",
+    "ua.ua.rs",
+    "chamb0i",
+    "camilla",
+    "treydunklive",
+    "rosaliabrazilbr",
+    "jamesandjasmin",
+    "brookemonk_",
+    "a.rio.xx",
+    "africanamericanfam",
+    "siqiwang12www",
+    "originaldelon",
+    "accountwashackedwith50m",
+    "kileypickeringg",
+    "sly.ae",
+    "sherrybutt785",
+    "anakinssssss",
+    "respect.root",
+    "audreyboyd0",
+    "lovelytay111",
+    "itsamyhw",
+    "tessapeay",
+    "samuelgrubbs"
+  ],
+  "outliers": [
+    {
+      "id": "7473994857350974750",
+      "text": "Had to hop on this trend\ud83d\ude02\ud83e\udd7a\ud83d\ude02 #hibachi #hibachibaby #ninja #viral #trending #malloryroh",
+      "createTime": 1740175070,
+      "createTimeISO": "2025-02-21T21:57:50.000Z",
+      "webVideoUrl": "https://www.tiktok.com/@malloryroh/video/7473994857350974750",
+      "diggCount": 28500000,
+      "shareCount": 4400000,
+      "playCount": 168500000,
+      "commentCount": 87200,
+      "collectCount": 1567605,
+      "authorUsername": "malloryroh",
+      "authorNickname": "MalRoh \ud83e\udd8b",
+      "authorFollowers": 76400,
+      "authorFollowing": 375,
+      "authorHearts": 28500000,
+      "authorVerified": false,
+      "videoDuration": 10,
+      "videoHeight": 1024,
+      "videoWidth": 576,
+      "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/ocMpVWAUQIWujfAgkReieGWSfgo2ouAeAAbLLM~tplv-tiktokx-origin.image?dr=9636&x-expires=1775872800&x-signature=sCniNLNcHFvyRqas8XW7gDPk0Po%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8",
+      "hashtags": [
+        {
+          "name": "hibachi"
+        },
+        {
+          "name": "hibachibaby"
+        },
+        {
+          "name": "ninja"
+        },
+        {
+          "id": "20884",
+          "name": "viral"
+        },
+        {
+          "name": "trending"
+        },
+        {
+          "name": "malloryroh"
+        }
+      ],
+      "mentions": [],
+      "isPinned": false,
+      "isAd": false,
+      "musicName": "Opera",
+      "musicAuthor": "Edai",
+      "musicOriginal": false,
+      "_raw": {
+        "id": "7473994857350974750",
+        "text": "Had to hop on this trend\ud83d\ude02\ud83e\udd7a\ud83d\ude02 #hibachi #hibachibaby #ninja #viral #trending #malloryroh",
+        "textLanguage": "en",
+        "createTime": 1740175070,
+        "createTimeISO": "2025-02-21T21:57:50.000Z",
+        "isAd": false,
+        "authorMeta": {
+          "id": "6579144658269110273",
+          "name": "malloryroh",
+          "profileUrl": "https://www.tiktok.com/@malloryroh",
+          "nickName": "MalRoh \ud83e\udd8b",
+          "verified": false,
+          "signature": "There is healing in His name.\u271d\ufe0f\u2728 @Mal | stonesofezer",
+          "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/1c9a146351a2d5b5ae6a0d0f4695b379~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=d83de91f&x-expires=1775872800&x-signature=QxdJ7FyIlmBmMb%2FniN3APDIopi4%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8",
+          "privateAccount": false,
+          "following": 375,
+          "friends": 0,
+          "fans": 76400,
+          "heart": 28500000,
+          "video": 127,
+          "digg": 44100,
+          "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-avt-0068-tx2/1c9a146351a2d5b5ae6a0d0f4695b379~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=d83de91f&x-expires=1775872800&x-signature=QxdJ7FyIlmBmMb%2FniN3APDIopi4%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast8"
+        },
+        "musicMeta": {
+          "musicName": "Opera",
+          "musicAuthor": "Edai",
+          "musicOriginal": false,
+          "musicAlbum": "Still Here",
+          "playUrl": "https://sf16.tiktokcdn-us.com/obj/tos-alisg-ve-2774/547e3c6877cb4e5dae8aaed568de353c",
+          "coverMediumUrl": "https://p19-common.tiktokcdn-us.com/tos-alisg-v-2774/9436725376924d96ac735289f6fd8703~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast8",
+          "musicId": "6756873682817124353",
+          "originalCoverMediumUrl": "https://p19-common.tiktokcdn-us.com/tos-alisg-v-2774/9436725376924d96ac735289f6fd8703~tplv-tiktokx-cropcenter:200:200.jpeg?dr=9584&t=4d5b0474&ps=933b5bde&shp=08d74b56&shcp=81f88b70&idc=useast8"
+        },
+        "webVideoUrl": "https://www.tiktok.com/@malloryroh/video/7473994857350974750",
+        "videoMeta": {
+          "height": 1024,
+          "width": 576,
+          "duration": 10,
+          "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/ocMpVWAUQIWujfAgkReieGWSfgo2ouAeAAbLLM~tplv-tiktokx-origin.image?dr=9636&x-expires=1775872800&x-signature=sCniNLNcHFvyRqas8XW7gDPk0Po%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8",
+          "definition": "540p",
+          "format": "mp4",
+          "transcriptionLink": null,
+          "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/ocMpVWAUQIWujfAgkReieGWSfgo2ouAeAAbLLM~tplv-tiktokx-origin.image?dr=9636&x-expires=1775872800&x-signature=sCniNLNcHFvyRqas8XW7gDPk0Po%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8"
+        },
+        "diggCount": 28500000,
+        "shareCount": 4400000,
+        "playCount": 168500000,
+        "collectCount": 1567605,
+        "commentCount": 87200,
+        "repostCount": 0,
+        "mentions": [],
+        "detailedMentions": [],
+        "hashtags": [
+          {
+            "name": "hibachi"
+          },
+          {
+            "name": "hibachibaby"
+          },
+          {
+            "name": "ninja"
+          },
+          {
+            "id": "20884",
+            "name": "viral"
+          },
+          {
+            "name": "trending"
+          },
+          {
+            "name": "malloryroh"
+          }
+        ],
+        "effectStickers": [
+          {
+            "name": "doll",
+            "ID": "37458759",
+            "stickerStats": {
+              "useCount": 0
+            }
+          }
+        ],
+        "isSlideshow": false,
+        "isPinned": false,
+        "mediaUrls": [],
+        "searchQuery": "viral",
+        "commentsDatasetUrl": null
+      },
+      "_engagement_score": 49121810.0,
+      "_engagement_rate": 64295.56282722513
+    },
+    {
+      "id": "7540744786936892694",
+      "text": "don\u2019t ask how many takes this took #trend #trendingaudio #friends ",
+      "createTime": 1755716466,
+      "createTimeISO": "2025-08-20T19:01:06.000Z",
+      "webVideoUrl": "https://www.tiktok.com/@itsamyhw/video/7540744786936892694",
+      "diggCount": 1900000,
+      "shareCount": 226300,
+      "playCount": 13000000,
+      "commentCount": 4582,
+      "collectCount": 121423,
+      "authorUsername": "itsamyhw",
+      "authorNickname": "itsamyhw",
+      "authorFollowers": 2569,
+      "authorFollowing": 1196,
+      "authorHearts": 1900000,
+      "authorVerified": false,
+      "videoDuration": 15,
+      "videoHeight": 1024,
+      "videoWidth": 576,
+      "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/o8ejeAGTcN1LuLjoR2i9ZEIIAQYMD0XgfWcDI2~tplv-tiktokx-origin.image?dr=9636&x-expires=1775872800&x-signature=4Klcn4UuY1%2BIlxF4z4zmuhZUzrA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+      "hashtags": [
+        {
+          "id": "44895",
+          "name": "trend",
+          "title": "",
+          "cover": ""
+        },
+        {
+          "id": "20055640",
+          "name": "trendingaudio",
+          "title": "",
+          "cover": ""
+        },
+        {
+          "id": "5433",
+          "name": "friends",
+          "title": "Its International Friendship Day! Show us what you and your #Friends get up to and why you love them so much \u2764\ufe0f",
+          "cover": "https://p16-common-sign.tiktokcdn-us.com/tiktok-obj/7cef00dc0262854184f2c0652a4a6cd5.jpeg~tplv-tiktokx-origin.image?dr=9627&x-expires=1775721600&x-signature=oMxiH3z1wur%2FRlSpVWwRkH1SMIk%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5"
+        }
+      ],
+      "mentions": [],
+      "isPinned": false,
+      "isAd": false,
+      "musicName": "original sound",
+      "musicAuthor": "GAMINGbible",
+      "musicOriginal": true,
+      "_raw": {
+        "id": "7540744786936892694",
+        "text": "don\u2019t ask how many takes this took #trend #trendingaudio #friends ",
+        "textLanguage": "en",
+        "createTime": 1755716466,
+        "createTimeISO": "2025-08-20T19:01:06.000Z",
+        "isAd": false,
+        "authorMeta": {
+          "id": "6681734860895814661",
+          "name": "itsamyhw",
+          "profileUrl": "https://www.tiktok.com/@itsamyhw",
+          "nickName": "itsamyhw",
+          "verified": false,
+          "signature": "",
+          "avatar": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/7320925465516965893~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=8c752cfb&x-expires=1775872800&x-signature=UiiuE%2BvnaeXS3i17s9IjT303nj0%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+          "privateAccount": false,
+          "following": 1196,
+          "friends": 0,
+          "fans": 2569,
+          "heart": 1900000,
+          "video": 36,
+          "digg": 38500,
+          "originalAvatarUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/7320925465516965893~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=8c752cfb&x-expires=1775872800&x-signature=UiiuE%2BvnaeXS3i17s9IjT303nj0%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+        },
+        "musicMeta": {
+          "musicName": "original sound",
+          "musicAuthor": "GAMINGbible",
+          "musicOriginal": true,
+          "playUrl": "https://v16-webapp-prime.us.tiktok.com/video/tos/useast5/tos-useast5-v-27dcd7c799-tx/8b28908f1ffe40fcbe39e5fb196ef349/?a=1988&bti=ODszNWYuMDE6&ch=0&cr=0&dr=0&er=0&lr=default&cd=0%7C0%7C0%7C0&br=250&bt=125&ds=5&ft=GcAInInz7Th6~3ePXq8Zmo&mime_type=audio_mpeg&qs=13&rc=M3NldjM6Zml0NzMzNzU8M0BpM3NldjM6Zml0NzMzNzU8M0Bgc3NkcjRvLl9gLS1kMTZzYSNgc3NkcjRvLl9gLS1kMTZzcw%3D%3D&btag=e00078000&expire=1775723368&l=20260409022913DC8351B2D086E53EFFE9&ply_type=3&policy=3&signature=8081f4ec9145a8ce2e56e716d7dee67a&tk=0",
+          "coverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/5e8c8519f5fac526b8027321d67123b6~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=09e4f2b5&x-expires=1775872800&x-signature=MJbRyVu9sy1Dv%2FtPU8PYm1BYPfI%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
+          "musicId": "6743948101884726021",
+          "originalCoverMediumUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-avt-0068/5e8c8519f5fac526b8027321d67123b6~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=09e4f2b5&x-expires=1775872800&x-signature=MJbRyVu9sy1Dv%2FtPU8PYm1BYPfI%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5"
+        },
+        "webVideoUrl": "https://www.tiktok.com/@itsamyhw/video/7540744786936892694",
+        "videoMeta": {
+          "height": 1024,
+          "width": 576,
+          "duration": 15,
+          "coverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/o8ejeAGTcN1LuLjoR2i9ZEIIAQYMD0XgfWcDI2~tplv-tiktokx-origin.image?dr=9636&x-expires=1775872800&x-signature=4Klcn4UuY1%2BIlxF4z4zmuhZUzrA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+          "definition": "540p",
+          "format": "mp4",
+          "transcriptionLink": null,
+          "originalCoverUrl": "https://p16-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/o8ejeAGTcN1LuLjoR2i9ZEIIAQYMD0XgfWcDI2~tplv-tiktokx-origin.image?dr=9636&x-expires=1775872800&x-signature=4Klcn4UuY1%2BIlxF4z4zmuhZUzrA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5"
+        },
+        "diggCount": 1900000,
+        "shareCount": 226300,
+        "playCount": 13000000,
+        "collectCount": 121423,
+        "commentCount": 4582,
+        "repostCount": 0,
+        "mentions": [],
+        "detailedMentions": [],
+        "hashtags": [
+          {
+            "id": "44895",
+            "name": "trend",
+            "title": "",
+            "cover": ""
+          },
+          {
+            "id": "20055640",
+            "name": "trendingaudio",
+            "title": "",
+            "cover": ""
+          },
+          {
+            "id": "5433",
+            "name": "friends",
+            "title": "Its International Friendship Day! Show us what you and your #Friends get up to and why you love them so much \u2764\ufe0f",
+            "cover": "https://p16-common-sign.tiktokcdn-us.com/tiktok-obj/7cef00dc0262854184f2c0652a4a6cd5.jpeg~tplv-tiktokx-origin.image?dr=9627&x-expires=1775721600&x-signature=oMxiH3z1wur%2FRlSpVWwRkH1SMIk%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=9b759fb9&idc=useast5"
+          }
+        ],
+        "effectStickers": [
+          {
+            "name": "makeup kim",
+            "ID": "3539588155",
+            "stickerStats": {
+              "useCount": 0
+            }
+          },
+          {
+            "name": "Green Eyes for Brown Eyes",
+            "ID": "4052972116",
+            "stickerStats": {
+              "useCount": 0
+            }
+          },
+          {
+            "name": "natural",
+            "ID": "4158544983",
+            "stickerStats": {
+              "useCount": 0
+            }
+          }
+        ],
+        "isSlideshow": false,
+        "isPinned": false,
+        "mediaUrls": [],
+        "searchQuery": "trending",
+        "commentsDatasetUrl": null
+      },
+      "_engagement_score": 3259192.0,
+      "_engagement_rate": 126866.17360840795
+    }
+  ]
+}

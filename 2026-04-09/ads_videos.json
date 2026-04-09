@@ -1,0 +1,65 @@
+{
+  "video_map": {
+    "1": "ads_videos_gdd/01_TruckFest__Cooking_Game_Master.mp4",
+    "2": "ads_videos_gdd/02_東京ベンジャーズ.mp4",
+    "3": "ads_videos_gdd/03_Wizardry_Variants_Daphne.mp4",
+    "4": "ads_videos_gdd/04_Flip_Gun_3D_Ragdoll_Shooter.mp4",
+    "5": "ads_videos_gdd/05_Attack_On_Merge.mp4",
+    "6": "ads_videos_gdd/06_Dawn_Watch__Survival.mp4",
+    "7": "ads_videos_gdd/07_Solitaire_-_Classic_Card_Games.mp4",
+    "9": "ads_videos_gdd/09_Jigsaw_Puzzles___Story.mp4",
+    "10": "ads_videos_gdd/10_Angry_Birds_2.mp4"
+  },
+  "extraction": [
+    {
+      "rank": 1,
+      "name": "创意详情新版创意详情操作指南收藏分享单页打开",
+      "videoUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/58f3cd9f1e9063d263b60949bd95f244.mp4"
+    },
+    {
+      "rank": 2,
+      "name": "创意详情新版创意详情操作指南收藏分享单页打开",
+      "videoUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/0bd634b41f1d11bc2b5238a6f60c141a.mp4"
+    },
+    {
+      "rank": 3,
+      "name": "创意详情新版创意详情操作指南收藏分享单页打开",
+      "videoUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/5dbee2ed2d01856835416ea3b2dfe25b.mp4"
+    },
+    {
+      "rank": 4,
+      "name": "创意详情新版创意详情操作指南收藏分享单页打开",
+      "videoUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/042f061fd37bab21129975ce715fb226.mp4"
+    },
+    {
+      "rank": 5,
+      "name": "创意详情新版创意详情操作指南收藏分享单页打开",
+      "videoUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/9fe5d282a179c6e0ac2e05a3c826fb20.mp4"
+    },
+    {
+      "rank": 6,
+      "name": "创意详情新版创意详情操作指南收藏分享单页打开",
+      "videoUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/13c4ade5b5f8ad176d42f8db74e7a8a2.mp4"
+    },
+    {
+      "rank": 7,
+      "name": "创意详情新版创意详情操作指南收藏分享单页打开",
+      "videoUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/ae95abf44d729ea0da0d2d33ae5652dd.mp4"
+    },
+    {
+      "rank": 8,
+      "name": "",
+      "videoUrl": ""
+    },
+    {
+      "rank": 9,
+      "name": "保存筛选条件",
+      "videoUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/70686f5eaa0add11787e7f4172824e6b.mp4"
+    },
+    {
+      "rank": 10,
+      "name": "保存筛选条件",
+      "videoUrl": "https://sp2cdn-idea-global.zingfront.com/sp_opera/001350b3608daa6c3236d43d3033b148.mp4"
+    }
+  ]
+}

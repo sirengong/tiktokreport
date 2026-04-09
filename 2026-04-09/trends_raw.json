@@ -1,0 +1,189 @@
+{
+  "generated_at": "2026-04-09T02:29:00.156737+00:00",
+  "period": "now 7-d",
+  "geo": "US",
+  "total_topics": 10,
+  "topics": [
+    {
+      "rank": 1,
+      "topic": "spurs",
+      "category": "general",
+      "interest": {
+        "peak": 100,
+        "avg": 16.2,
+        "latest": 47
+      },
+      "trafficEstimate": "10M+",
+      "relatedQueries": {
+        "rising": [
+          "where to watch san antonio spurs vs denver nuggets",
+          "where to watch san antonio spurs vs la clippers",
+          "san antonio spurs vs denver nuggets match player stats",
+          "where to watch 76ers vs san antonio spurs",
+          "where to watch portland trail blazers vs san antonio spurs",
+          "spurs vs blazers prediction",
+          "spurs vs trail blazers prediction",
+          "spurs vs trail blazers last game",
+          "spurs vs clippers prediction",
+          "76ers vs san antonio spurs match player stats"
+        ],
+        "top": [
+          "spurs vs",
+          "nuggets",
+          "nuggets spurs",
+          "spurs vs nuggets",
+          "san antonio spurs",
+          "spurs warriors",
+          "warriors",
+          "spurs vs warriors",
+          "spurs game",
+          "76ers"
+        ]
+      }
+    },
+    {
+      "rank": 2,
+      "topic": "deni avdija",
+      "category": "general",
+      "interest": {
+        "peak": 3,
+        "avg": 0.2,
+        "latest": 2
+      },
+      "trafficEstimate": "10M+",
+      "relatedQueries": {
+        "rising": [
+          "deni avdija stats vs spurs",
+          "ayo dosunmu stats",
+          "deni avdija vs spurs",
+          "deni avdija stats vs nuggets",
+          "trail blazers vs nuggets",
+          "deni avdija vs nuggets",
+          "nuggets",
+          "toumani camara"
+        ],
+        "top": [
+          "deni avdija stats",
+          "nba",
+          "toumani camara",
+          "nuggets",
+          "deni avdija vs spurs",
+          "deni avdija vs nuggets",
+          "deni avdija stats vs spurs",
+          "deni avdija stats vs nuggets",
+          "trail blazers vs nuggets",
+          "ayo dosunmu stats"
+        ]
+      }
+    },
+    {
+      "rank": 3,
+      "topic": "kenny omega",
+      "category": "general",
+      "interest": {
+        "peak": 2,
+        "avg": 0.0,
+        "latest": 2
+      },
+      "trafficEstimate": "5M+",
+      "relatedQueries": {
+        "rising": [
+          "kenny omega health",
+          "kenny omega moves",
+          "kenny omega gay?",
+          "kenny omega diverticulitis",
+          "is kenny omega married"
+        ],
+        "top": [
+          "aew kenny omega",
+          "kenny omega wwe",
+          "wwe",
+          "mjf",
+          "kenny omega diverticulitis",
+          "mjf vs kenny omega",
+          "will ospreay",
+          "njpw",
+          "chris jericho",
+          "kenny omega age"
+        ]
+      }
+    },
+    {
+      "rank": 4,
+      "topic": "telemundo",
+      "category": "general",
+      "interest": {
+        "peak": 4,
+        "avg": 1.0,
+        "latest": 4
+      },
+      "trafficEstimate": "5M+"
+    },
+    {
+      "rank": 5,
+      "topic": "dylan harper",
+      "category": "general",
+      "interest": {
+        "peak": 2,
+        "avg": 0.4,
+        "latest": 2
+      },
+      "trafficEstimate": "2M+"
+    },
+    {
+      "rank": 6,
+      "topic": "puerto cabello vs atlético mineiro",
+      "category": "general",
+      "interest": {
+        "peak": 4,
+        "avg": 0.0,
+        "latest": 4
+      },
+      "trafficEstimate": "2M+"
+    },
+    {
+      "rank": 7,
+      "topic": "kevin o'leary",
+      "category": "general",
+      "interest": {
+        "peak": 16,
+        "avg": 0.4,
+        "latest": 16
+      },
+      "trafficEstimate": "2M+"
+    },
+    {
+      "rank": 8,
+      "topic": "david bednar",
+      "category": "general",
+      "interest": {
+        "peak": 21,
+        "avg": 0.5,
+        "latest": 4
+      },
+      "trafficEstimate": "1M+"
+    },
+    {
+      "rank": 9,
+      "topic": "toluca vs la galaxy",
+      "category": "general",
+      "interest": {
+        "peak": 43,
+        "avg": 0.4,
+        "latest": 43
+      },
+      "trafficEstimate": "1M+"
+    },
+    {
+      "rank": 10,
+      "topic": "bloom",
+      "category": "general",
+      "interest": {
+        "peak": 100,
+        "avg": 66.4,
+        "latest": 100
+      },
+      "trafficEstimate": "1M+"
+    }
+  ]
+}
