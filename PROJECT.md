@@ -54,19 +54,16 @@ mkdir -p "$REPORT_DIR/trend_images" "$REPORT_DIR/yt_images" \
 ```bash
 python3 ~/.claude/skills/trends-research/scripts/fetch_trends.py \
   --output "$REPORT_DIR/trends_raw.json" --top-n 15 --timeframe "now 7-d"
-# 之后 CDP 浏览器为每个话题下载 3 张图片到 trend_images/
 ```
+> ⚠️ **采集后先展示话题列表给用户确认**。体育赛事占比过高时，用 web 搜索补充游戏/影视/文化话题。
+> 确认后用 CDP + Google Images 为每个话题下载 3 张图片到 `trend_images/`
 
-**Step 3 — TikTok 热门（默认全平台 trending）**
+**Step 3 — TikTok 热门（CDP Explore 页面）**
 ```bash
-python3 ~/.claude/skills/tiktok-research/scripts/fetch_tiktok.py \
-  --days 7 --limit 50 --output "$REPORT_DIR/tiktok_raw.json"
-# 可选：--search-queries "cosplay" "fantasy"  定向搜索
-# 可选：--hashtags characterdesign oc          按话题标签
-# 可选：--usernames @MrBeast @tiktok          回退到指定账号
-python3 ~/.claude/skills/tiktok-research/scripts/analyze_posts.py \
-  --input "$REPORT_DIR/tiktok_raw.json" \
-  --output "$REPORT_DIR/tiktok_outliers.json" --threshold 2.0
+# ⚠️ 不使用 Apify 搜索模式（日期过滤无效）
+# 改用 CDP 直接爬 TikTok Explore 页面
+# Claude 通过 CDP eval 提取当前 Explore 页面的热门视频
+```
 ```
 
 **Step 4 — YouTube Shorts（默认美区 trending）**
@@ -89,17 +86,17 @@ python3 ~/.claude/skills/westradar/scripts/fetch_memes.py \
 ```
 
 **Step 6 — 广大大广告（⚠️ 必须当天完成，不能事后补）**
-```bash
-# 6a. 抓取元数据 + 缩略图
-python3 ~/.claude/skills/ads-research/scripts/fetch_guangdada.py \
-  --output "$REPORT_DIR/ads_raw.json" \
-  --images-dir "$REPORT_DIR/ads_images_gdd" \
-  --top 10 --page display-ads
 
-# 6b. 抓取视频（单页打开方案）
-python3 ~/.claude/skills/ads-research/scripts/fetch_ads_with_video.py \
-  --output "$REPORT_DIR/ads_videos.json" \
-  --videos-dir "$REPORT_DIR/ads_videos_gdd"
+> ⚠️ **用户手动设置筛选条件**（人气值Top1% + 游戏分类），Claude **绝不触碰筛选**。
+> ⚠️ **HTML 类型广告跳过**，只提取有视频的广告，顺延补位至 10 条。
+> ⚠️ 关闭弹窗只用 **ESC 键**，禁用 `[class*=close]` 通配符选择器。
+
+```
+流程：
+1. 用户在浏览器中打开广大大并设好筛选条件
+2. Claude 通过 CDP eval 从当前页面提取广告元数据 + 缩略图
+3. Claude 逐个点击"详情"提取视频 URL，每次用 ESC 关闭并验证弹窗已关
+4. 下载视频和缩略图到本地
 ```
 
 > ⚠️ **广告视频必须当天抓**：广大大热榜每日更新，当天不抓次日就找不到原始素材了
@@ -125,13 +122,22 @@ Claude 将自动：
 > ⚠️ **Claude 必须在此阶段暂停，等待用户确认后才能进行 Phase 4 推送。**
 > HTML 生成完毕后，Claude 主动告知用户"报告已生成，请审核后告诉我是否推送"，不得自行执行 git push。
 
+**本地预览**：`python3 -m http.server 8080`，访问 `http://localhost:8080/$DATE/hub.html`
+（YouTube iframe 不支持 file:// 协议，必须用 HTTP 服务器预览）
+
 检查清单：
-- [ ] 总览板块：跨平台信号是否准确
+- [ ] 总览板块：跨平台信号卡片 + 信号矩阵表是否完整
+- [ ] 热搜板块：10 条 + 每条 3 张真实图片（非占位符）
+- [ ] TikTok 板块：方法论框 + 指标行 + 视频嵌入 + 数据表 + 趋势分析
+- [ ] YouTube 板块：视频/缩略图展示 + 数据总览表
+- [ ] Memes 板块：方法论框 + 结论框 + 10 张图片
+- [ ] 广告板块：方法论框 + 结论框 + 视频播放 + ⤢ 弹窗
 - [ ] 每板块结论框：方向是否与西幻卡牌游戏相关
-- [ ] 广告板块：视频是否正常播放，⤢ 弹窗是否正常
-- [ ] TikTok / YouTube：⤢ 弹窗是否正常
 - [ ] A 级洞察数量是否合理（通常 10-18 条）
-- [ ] 分享卡片图片显示是否正常
+- [ ] share-card.html：填入真实内容（非占位符）
+- [ ] index.html：新期卡片已添加
+- [ ] 侧栏：全部期刊导航正确
+- [ ] 广告视频与游戏名称一一对应
 
 如需调整，告诉 Claude 具体问题即可。调整完毕、确认无误后，再明确说「推送」或「发布」，Claude 才执行 Phase 4。
 
