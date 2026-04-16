@@ -1,0 +1,119 @@
+{
+  "generated_at": "2026-04-16",
+  "source": "TikTok Explore Page (scrolled)",
+  "total_pool": 45,
+  "top_n": 10,
+  "note": "Deduped against Vol.001 & Vol.002; 0-view and news/political videos excluded; selected for cultural/game-design relevance",
+  "top_videos": [
+    {
+      "rank": 1,
+      "creator": "Collins Key",
+      "caption": "#boneka #brainrot",
+      "views": "20.9M",
+      "views_num": 20900000,
+      "link": "https://www.tiktok.com/@collinskey/video/7616849748359728415",
+      "videoId": "7616849748359728415",
+      "theme": "Brainrot Character / AI Doll Meme",
+      "note": "Brainrot/boneka content from a major creator (20.9M views); #boneka + #brainrot signals a merge of Indonesian doll-meme and Italian brainrot"
+    },
+    {
+      "rank": 2,
+      "creator": "Boiledburgers",
+      "caption": "Time for work!",
+      "views": "17.3M",
+      "views_num": 17300000,
+      "link": "https://www.tiktok.com/@boiledburgers/video/7603816463446641950",
+      "videoId": "7603816463446641950",
+      "theme": "Animated Character / Work Humor",
+      "note": "High-view animated character video; Boiledburgers known for absurdist character humor. 'Time for work!' as a motivational/comedic phrase"
+    },
+    {
+      "rank": 3,
+      "creator": "shecid °❀⋆.ೃ࿔*:･",
+      "caption": "hair or no hair I'm still me 🤍 #chemohairloss #ovariancancer #cancersucks #chemotherapysideeffects #ovariancancerawareness",
+      "views": "11.7M",
+      "views_num": 11700000,
+      "link": "https://www.tiktok.com/@shecidavila/video/7612095485444230414",
+      "videoId": "7612095485444230414",
+      "theme": "Identity / Resilience / Transformation",
+      "note": "Cancer hair loss journey — viral 11.7M. Identity persistence despite physical transformation; strong emotional hook around authenticity"
+    },
+    {
+      "rank": 4,
+      "creator": "71Cent",
+      "caption": "Yo wassup khols ❤️ #babyboo #danceoftheday #dance #funny",
+      "views": "10.9M",
+      "views_num": 10900000,
+      "link": "https://www.tiktok.com/@71cent/video/7604571763346836750",
+      "videoId": "7604571763346836750",
+      "theme": "Dance / Performance / Gen-Z Energy",
+      "note": "#babyboo dance challenge; street-energy performance style trending heavily with younger audiences"
+    },
+    {
+      "rank": 5,
+      "creator": "HALEYYBAYLEE",
+      "caption": "IM SCARED YALL @E! News",
+      "views": "8.8M",
+      "views_num": 8800000,
+      "link": "https://www.tiktok.com/@haleyybaylee/video/7602396806672108813",
+      "videoId": "7602396806672108813",
+      "theme": "Celebrity Reaction / Fear Hook",
+      "note": "8.8M views reaction content tagged @E! News; fear/shock hook is one of the highest-engagement openers on TikTok"
+    },
+    {
+      "rank": 6,
+      "creator": "Sweetheart Baby",
+      "caption": "Do you understand this story? She betrayed her. Do you think they are best friends? #barbie #funny #shorts #cartoon #story",
+      "views": "4.6M",
+      "views_num": 4600000,
+      "link": "https://www.tiktok.com/@zvsmdmf/video/7617513225063566623",
+      "videoId": "7617513225063566623",
+      "theme": "Cartoon Storytelling / Betrayal Narrative",
+      "note": "AI-animated Barbie betrayal story. Audience engagement hook: 'Do you understand? Do you think they are friends?' — drives comments. Cartoon friend-betrayal archetype"
+    },
+    {
+      "rank": 7,
+      "creator": "The Gabriels",
+      "caption": "Before you judge me: I saved his life",
+      "views": "3.6M",
+      "views_num": 3600000,
+      "link": "https://www.tiktok.com/@evaandjavier/video/7623962732919819534",
+      "videoId": "7623962732919819534",
+      "theme": "Moral Dilemma / Redemption Hook",
+      "note": "3.6M; 'Before you judge me' subverts assumptions — strong narrative opener for hero/morally grey character arcs"
+    },
+    {
+      "rank": 8,
+      "creator": "Mariam Marks",
+      "caption": "Who put the muffins in the freezer? #muffins @Tiagz #shrek #donkey #prank",
+      "views": "3.4M",
+      "views_num": 3400000,
+      "link": "https://www.tiktok.com/@mariammarksart/video/7611781668784901406",
+      "videoId": "7611781668784901406",
+      "theme": "Nostalgia IP / Shrek Humor",
+      "note": "Shrek/Donkey continues as evergreen TikTok IP; #muffins prank format. Indicates enduring strength of ogre/sidekick comedy archetypes"
+    },
+    {
+      "rank": 9,
+      "creator": "Awais Games",
+      "caption": "Amazing Balloon Challenge 😂🥰 #gaming #gametok #mobilegaming #satisfying #challenge",
+      "views": "3M",
+      "views_num": 3000000,
+      "link": "https://www.tiktok.com/@awais.games4/video/7610205006804897038",
+      "videoId": "7610205006804897038",
+      "theme": "Mobile Gaming / Satisfying Challenges",
+      "note": "3M views #mobilegaming balloon challenge — satisfying casual gameplay loop. Strong signal for tap/puzzle mechanic appeal"
+    },
+    {
+      "rank": 10,
+      "creator": "tungtung.sahur67",
+      "caption": "Tung tung finds gold fridge #italianbrainrot #tungtungtungsahur #tralalerotralala",
+      "views": "2M",
+      "views_num": 2000000,
+      "link": "https://www.tiktok.com/@tungtung.sahur6763/video/7620826343135038734",
+      "videoId": "7620826343135038734",
+      "theme": "Italian Brainrot / AI Character Lore",
+      "note": "Tung Tung Tung Sahur confirmed viral in this batch (also ranks 41-42). Italian Brainrot: AI-generated pseudo-Italian named creatures with elaborate fan lore. Strong character/IP design signal"
+    }
+  ]
+}

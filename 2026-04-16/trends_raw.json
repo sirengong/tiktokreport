@@ -1,0 +1,165 @@
+{
+  "generated_at": "2026-04-16T04:58:25.904436+00:00",
+  "period": "now 7-d",
+  "geo": "US",
+  "total_topics": 10,
+  "topics": [
+    {
+      "rank": 1,
+      "topic": "kyle hurt",
+      "category": "general",
+      "interest": {
+        "peak": 2,
+        "avg": 0.0,
+        "latest": 2
+      },
+      "trafficEstimate": "10M+",
+      "relatedQueries": {
+        "rising": [
+          "kyle hurt dodgers"
+        ],
+        "top": [
+          "kyle hurt dodgers",
+          "kyle hurt stats"
+        ]
+      }
+    },
+    {
+      "rank": 2,
+      "topic": "nba games",
+      "category": "gaming",
+      "interest": {
+        "peak": 21,
+        "avg": 5.7,
+        "latest": 19
+      },
+      "trafficEstimate": "10M+",
+      "relatedQueries": {
+        "rising": [
+          "why is there no nba games today",
+          "why no nba games today",
+          "why are there no nba games today",
+          "hornets vs heat",
+          "magic vs 76ers",
+          "trail blazers vs suns",
+          "what nba games matter today",
+          "warriors vs clippers",
+          "davion mitchell",
+          "nba play in"
+        ],
+        "top": [
+          "nba today",
+          "nba games tonight",
+          "nba play in",
+          "nba playoffs",
+          "nba standings",
+          "mlb games",
+          "nba schedule",
+          "nba games schedule",
+          "nba games on tonight",
+          "basketball games"
+        ]
+      }
+    },
+    {
+      "rank": 3,
+      "topic": "dodgers schedule",
+      "category": "general",
+      "interest": {
+        "peak": 3,
+        "avg": 0.9,
+        "latest": 3
+      },
+      "trafficEstimate": "5M+",
+      "relatedQueries": {
+        "top": [
+          "la dodgers schedule",
+          "la dodgers",
+          "dodgers game",
+          "dodgers schedule today",
+          "mlb dodgers schedule",
+          "los angeles dodgers schedule",
+          "lakers",
+          "angels"
+        ]
+      }
+    },
+    {
+      "rank": 4,
+      "topic": "warriors roster",
+      "category": "general",
+      "interest": {
+        "peak": 1,
+        "avg": 0.0,
+        "latest": 1
+      },
+      "trafficEstimate": "5M+"
+    },
+    {
+      "rank": 5,
+      "topic": "dodgers",
+      "category": "general",
+      "interest": {
+        "peak": 100,
+        "avg": 17.5,
+        "latest": 100
+      },
+      "trafficEstimate": "2M+"
+    },
+    {
+      "rank": 6,
+      "topic": "dalton rushing",
+      "category": "general",
+      "interest": {
+        "peak": 8,
+        "avg": 0.1,
+        "latest": 8
+      },
+      "trafficEstimate": "2M+"
+    },
+    {
+      "rank": 7,
+      "topic": "fired football coach new job",
+      "category": "general",
+      "interest": {
+        "peak": 1,
+        "avg": 0.0,
+        "latest": 1
+      },
+      "trafficEstimate": "2M+"
+    },
+    {
+      "rank": 8,
+      "topic": "espn nba",
+      "category": "entertainment",
+      "interest": {
+        "peak": 5,
+        "avg": 1.7,
+        "latest": 5
+      },
+      "trafficEstimate": "1M+"
+    },
+    {
+      "rank": 9,
+      "topic": "bruno mars setlist",
+      "category": "general",
+      "interest": {
+        "peak": 3,
+        "avg": 0.4,
+        "latest": 2
+      },
+      "trafficEstimate": "1M+"
+    },
+    {
+      "rank": 10,
+      "topic": "padres",
+      "category": "general",
+      "interest": {
+        "peak": 100,
+        "avg": 13.6,
+        "latest": 88
+      },
+      "trafficEstimate": "1M+"
+    }
+  ]
+}
