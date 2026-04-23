@@ -526,126 +526,251 @@ a { text-decoration: none; color: inherit; }
       <div class="stat-pill">🎮 <strong>分析视角</strong> 角色 / 玩法 / 广告三维度</div>
     </div>
 
+    <!-- ════ A 方案：3 个本周判断（取代原 9 卡 ov-signal） ════ -->
+
+    <style>
+      .v2-judgments { display: flex; flex-direction: column; gap: 18px; margin-bottom: 36px; }
+      .v2-judg { border: 1px solid var(--border); border-radius: 12px; background: var(--bg2); overflow: hidden; }
+      .v2-judg-head { display: flex; align-items: center; gap: 12px; padding: 16px 22px 12px; border-bottom: 1px solid var(--border); }
+      .v2-judg-num { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; flex-shrink: 0; }
+      .v2-judg-char .v2-judg-num { background: rgba(254,44,85,0.15); color: #fe2c55; border: 1px solid rgba(254,44,85,0.4); }
+      .v2-judg-play .v2-judg-num { background: rgba(255,197,51,0.15); color: #ffc533; border: 1px solid rgba(255,197,51,0.4); }
+      .v2-judg-ad   .v2-judg-num { background: rgba(37,244,238,0.12); color: #25f4ee; border: 1px solid rgba(37,244,238,0.4); }
+      .v2-judg-meta { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+      .v2-judg-cat { font-size: 11px; font-weight: 700; color: var(--gray3); letter-spacing: 1.5px; text-transform: uppercase; }
+      .v2-judg-tier { font-size: 11px; padding: 3px 9px; border-radius: 4px; font-weight: 700; background: rgba(255,68,68,0.15); color: #ff6b6b; border: 1px solid rgba(255,68,68,0.35); }
+      .v2-judg-body { padding: 18px 22px 22px; }
+      .v2-judg-claim { font-size: 19px; font-weight: 800; color: var(--white); line-height: 1.45; margin-bottom: 18px; }
+      .v2-judg-claim em { font-style: normal; color: #ff6b6b; padding: 0 2px; }
+      .v2-judg-evidence { display: flex; flex-direction: column; gap: 8px; padding: 14px 16px; background: var(--bg3); border-radius: 8px; margin-bottom: 16px; border-left: 3px solid var(--border2); }
+      .v2-judg-ev-label { font-size: 10px; font-weight: 700; color: var(--gray3); letter-spacing: 1px; margin-bottom: 2px; }
+      .v2-judg-ev-row { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.5; color: #ccc; }
+      .v2-judg-ev-pill { flex-shrink: 0; font-size: 10px; padding: 2px 8px; border-radius: 3px; font-weight: 700; min-width: 56px; text-align: center; }
+      .v2-judg-ev-trend  { background: #4285f4; color: #fff; }
+      .v2-judg-ev-tt     { background: #222; color: #fff; border: 1px solid #555; }
+      .v2-judg-ev-yt     { background: #ff0000; color: #fff; }
+      .v2-judg-ev-meme   { background: #ff4500; color: #fff; }
+      .v2-judg-ev-ad     { background: #e76e22; color: #fff; }
+      .v2-judg-ev-num { color: var(--white); font-weight: 700; }
+      .v2-judg-action { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; background: linear-gradient(135deg, rgba(254,44,85,0.08), rgba(254,44,85,0.02)); border: 1px solid rgba(254,44,85,0.3); border-radius: 8px; }
+      .v2-judg-act-icon { font-size: 18px; flex-shrink: 0; line-height: 1.4; }
+      .v2-judg-act-body { flex: 1; }
+      .v2-judg-act-label { font-size: 11px; font-weight: 800; color: #fe2c55; letter-spacing: 1px; margin-bottom: 4px; }
+      .v2-judg-act-text { font-size: 13px; line-height: 1.6; color: #e0e0e0; }
+      .v2-judg-act-text strong { color: #fff; }
+      .v2-judg-warn { margin-top: 10px; font-size: 12px; color: #ffa726; padding: 8px 12px; background: rgba(255,167,38,0.06); border-left: 3px solid #ffa726; border-radius: 4px; }
+      .v2-aux-note { font-size: 12px; color: var(--gray3); padding: 14px 18px; background: var(--bg3); border-radius: 8px; border: 1px dashed var(--border2); margin-bottom: 28px; line-height: 1.7; }
+      .v2-aux-note strong { color: var(--gray2); }
+      /* 顶部图片三连 */
+      .v2-judg-imgs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+      .v2-judg-img-card { position: relative; height: 150px; border-radius: 8px; overflow: hidden; background: #1a1a1a; cursor: pointer; transition: transform 0.18s, box-shadow 0.18s; }
+      .v2-judg-img-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(254,44,85,0.25); }
+      .v2-judg-img-card img, .v2-judg-img-card video { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.82); }
+      .v2-judg-img-overlay { position: absolute; left: 0; right: 0; bottom: 0; padding: 8px 10px 10px; background: linear-gradient(transparent, rgba(0,0,0,0.92)); color: #fff; font-size: 12px; line-height: 1.4; pointer-events: none; }
+      .v2-judg-img-pill { display: inline-block; font-size: 9px; font-weight: 800; padding: 2px 6px; border-radius: 3px; margin-bottom: 4px; letter-spacing: 0.3px; }
+      .v2-judg-img-cap { font-weight: 600; }
+      /* 关键词跳转链接 */
+      .v2-jump { color: #4dabff; cursor: pointer; text-decoration: underline dotted; text-underline-offset: 3px; transition: color 0.15s; }
+      .v2-jump:hover { color: #ff6b6b; text-decoration: underline solid; }
+    </style>
+
     <div class="tk-section-title" style="margin-bottom:14px;">
-      <span>本期最强跨平台信号</span>
-      <span class="num" style="color:var(--gray3);">多来源印证 = 更高优先级</span>
+      <span>本期最值得关注的 3 个跨源观察</span>
+      <span class="num" style="color:var(--gray3);">三来源印证 · 重点参考</span>
     </div>
 
-    <div class="ov-synthesis">
-      <!-- 角色设计 -->
-      <div class="ov-syn-card ov-syn-char">
-        <div class="ov-syn-header">
-          <span class="ov-syn-icon">🎭</span>
-          <span class="ov-syn-title">角色设计方向</span>
-          <span class="ov-syn-priority">Trends 优先</span>
+    <div class="v2-judgments">
+
+      <!-- 判断 #1 角色 -->
+      <div class="v2-judg v2-judg-char">
+        <div class="v2-judg-head">
+          <div class="v2-judg-num">1</div>
+          <div class="v2-judg-meta">
+            <div class="v2-judg-cat">🎭 角色设计灵感 · Trends 优先</div>
+          </div>
+          <span class="v2-judg-tier">★★★ 三来源印证</span>
         </div>
-        <div class="ov-syn-big">AI 出图快验 × 守护型搭档<br>× 英雄变体收集</div>
-        <div class="ov-signals">
-          <div class="ov-signal">
-            <div class="ov-signal-badges">
-              <span class="ov-plat-pill" style="background:#222;border:1px solid #555;">TikTok</span>
-              <span class="ov-plat-pill" style="background:#4285f4;">热搜</span>
-              <span class="ov-plat-pill" style="background:#ff0000;">YouTube</span>
-              <span class="ov-signal-star">★ 三来源印证</span>
+        <div class="v2-judg-body">
+          <div class="v2-judg-claim">「<em>成年人 × AI/年幼伙伴</em>」搭档原型在本周三大平台同步爆发,情感穿透力明显高于独立 hero,是值得关注的角色组合方向。</div>
+
+          <!-- 图片三连：点击跳转到对应板块条目 -->
+          <div class="v2-judg-imgs">
+            <div class="v2-judg-img-card" onclick="jumpTo('s-trends','trend-4')" title="跳转到热搜 #4 Pragmata">
+              <img src="trend_images/04_pragmata_1.jpg" alt="Pragmata">
+              <div class="v2-judg-img-overlay">
+                <span class="v2-judg-img-pill v2-judg-ev-trend">🔥 热搜 #4</span>
+                <div class="v2-judg-img-cap">Pragmata · AI 少女搭档</div>
+              </div>
             </div>
-            <div class="ov-signal-text"><strong>「成年人保护 AI/年幼伙伴」搭档原型跨三大平台同步爆发</strong>——Trends T#4 Pragmata「孤独工程师 + AI 少女」2M+ 搜索验证「成年人 + AI 孩童」是欧美最具情感穿透力的搭档原型;TikTok TT#5 父亲看见女儿和小男孩的反应 10.7M 播放,"保护型反差"是本期角色信号最高点;YouTube Y#1 Goofy Recaps「Speed Made His Day」41.9M 播放 + 互动分 127M(全 YouTube 第一),"暖心守护"碾压一切设计剧本。<strong>护卫型搭档是 AI 角色快验闭环的最优起点——一周内可出 50+ 视觉草图测试不同组合</strong></div>
+            <div class="v2-judg-img-card" onclick="jumpTo('s-youtube','yt-1')" title="跳转到 YouTube #1 Speed">
+              <img src="yt_images/01_Goofy_Recaps.jpg" alt="Speed Made His Day">
+              <div class="v2-judg-img-overlay">
+                <span class="v2-judg-img-pill v2-judg-ev-yt">▶️ YouTube #1</span>
+                <div class="v2-judg-img-cap">Speed · 暖心守护 41.9M</div>
+              </div>
+            </div>
+            <div class="v2-judg-img-card" onclick="jumpTo('s-tiktok','tt-5')" title="跳转到 TikTok #5 父亲反应">
+              <img src="tiktok_images/05_addreurbgsyz3.jpg" alt="父亲反应">
+              <div class="v2-judg-img-overlay">
+                <span class="v2-judg-img-pill v2-judg-ev-tt">🎵 TikTok #5</span>
+                <div class="v2-judg-img-cap">父亲反应 · 保护型反差</div>
+              </div>
+            </div>
           </div>
-          <div class="ov-signal">
-            <div class="ov-signal-badges">
-              <span class="ov-plat-pill" style="background:#4285f4;">热搜</span>
-              <span class="ov-plat-pill" style="background:#ff0000;">YouTube</span>
-              <span class="ov-signal-star">★ 双来源印证</span>
+
+          <div class="v2-judg-evidence">
+            <div class="v2-judg-ev-label">📌 跨源证据</div>
+            <div class="v2-judg-ev-row">
+              <span class="v2-judg-ev-pill v2-judg-ev-trend">热搜</span>
+              <div><span class="v2-jump" onclick="jumpTo('s-trends','trend-4')"><strong>Pragmata「孤独工程师 + AI 少女」</strong></span>(Capcom 新 IP) <span class="v2-judg-ev-num">2M+</span> 搜索, 验证「成年人 + AI 孩童」是欧美最具情感穿透力的搭档原型</div>
             </div>
-            <div class="ov-signal-text"><strong>「英雄变体 / 反派觉醒」叙事是 AI 出图最高 ROI 验证目标</strong>——Trends T#5 Avengers: Secret Wars 多宇宙预热 5M+ 搜索,验证「同一英雄的不同变体(皮肤 / 对偶 / 堕落版本)」具备强商业价值;YouTube Y#7 MenZuration「Villains aren't born, they are made」23.5M 播放 + 60 秒满格 + 评论 10.6K,"反派起源故事 + 怀旧老歌"是欧美 fan edit 永久流量公式。<strong>一个核心英雄一周可出 20+ 变体方案,黑化版本是收集欲最强的子类</strong></div>
+            <div class="v2-judg-ev-row">
+              <span class="v2-judg-ev-pill v2-judg-ev-yt">YouTube</span>
+              <div><span class="v2-jump" onclick="jumpTo('s-youtube','yt-1')"><strong>Goofy Recaps「Speed Made His Day」</strong></span>偶遇粉丝拥抱 <span class="v2-judg-ev-num">41.9M</span> 播放 / <span class="v2-judg-ev-num">互动 127M</span>(全 YouTube 第一), 暖心守护碾压一切设计剧本</div>
+            </div>
+            <div class="v2-judg-ev-row">
+              <span class="v2-judg-ev-pill v2-judg-ev-tt">TikTok</span>
+              <div><span class="v2-jump" onclick="jumpTo('s-tiktok','tt-5')"><strong>父亲看见女儿和小男孩的反应</strong></span> <span class="v2-judg-ev-num">10.7M</span> 播放, "保护型反差"是本期角色信号最高点</div>
+            </div>
           </div>
-          <div class="ov-signal">
-            <div class="ov-signal-badges">
-              <span class="ov-plat-pill" style="background:#222;border:1px solid #555;">TikTok</span>
-              <span class="ov-plat-pill" style="background:#ff4500;">Memes</span>
-              <span class="ov-signal-star">★ 双来源印证</span>
+          <div class="v2-judg-action">
+            <span class="v2-judg-act-icon">💡</span>
+            <div class="v2-judg-act-body">
+              <div class="v2-judg-act-label">可联想的方向</div>
+              <div class="v2-judg-act-text">这个搭档原型对 <strong>AI 角色快验链路</strong>是个不错的起点 —— 同样的"成年人 + 年幼/AI 伙伴"骨架, 可以衍生出不同人设/职业/世界观的多种变体。如果延伸到"<strong>英雄变体收集</strong>"维度, 黑化或反派版本通常是收集欲最强的子类, 也比较适合 AI 出图快速验证。</div>
             </div>
-            <div class="ov-signal-text"><strong>"被 AI/UGC 二创" 已成为顶级角色设计前置条件</strong>——TikTok TT#8 POKKO AI 翻拍 71Cent 舞蹈 9.4M 播放,板块内同期出现 AI 二创循环 = AI 已成为角色二创标准工具;Memes M#7「source: me」31.8K 赞验证欧美 Z 世代「不需要权威认证」的反权威自信,UGC 门槛接近零。<strong>西幻角色应天然预留"被 AI 二创"的视觉锚点——辨识度极强的轮廓 + 单一视觉钩子(标志性头盔 / 发色 / 发光符文)</strong></div>
           </div>
         </div>
-        <div class="ov-syn-conclusion">🏷 建议优先:「成年人 + AI 伙伴」做角色快验起点,「英雄变体 / 反派觉醒」做 IP 深度收集,「AI 二创预留锚点」做病毒分发——三层架构覆盖从核心情感到泛 UGC 受众</div>
       </div>
 
-      <!-- 玩法/留存 -->
-      <div class="ov-syn-card ov-syn-play">
-        <div class="ov-syn-header">
-          <span class="ov-syn-icon">⚔️</span>
-          <span class="ov-syn-title">玩法/留存方向</span>
-          <span class="ov-syn-priority">广告 优先</span>
+      <!-- 判断 #2 玩法 -->
+      <div class="v2-judg v2-judg-play">
+        <div class="v2-judg-head">
+          <div class="v2-judg-num">2</div>
+          <div class="v2-judg-meta">
+            <div class="v2-judg-cat">⚔️ 活动/玩法灵感 · 广告 优先</div>
+          </div>
+          <span class="v2-judg-tier" style="background:rgba(255,197,51,0.15);color:#ffc533;border-color:rgba(255,197,51,0.4);">★★★ 三来源印证</span>
         </div>
-        <div class="ov-syn-big">30 秒极简爽点 × 跨代对决<br>× 日常仪式收集</div>
-        <div class="ov-signals">
-          <div class="ov-signal">
-            <div class="ov-signal-badges">
-              <span class="ov-plat-pill" style="background:#e76e22;">广告</span>
-              <span class="ov-plat-pill" style="background:#4285f4;">热搜</span>
-              <span class="ov-plat-pill" style="background:#222;border:1px solid #555;">TikTok</span>
-              <span class="ov-signal-star">★ 三来源印证</span>
+        <div class="v2-judg-body">
+          <div class="v2-judg-claim">「<em>30 秒可见数字增长</em>」循环已成为当前美区休闲赛道的<em>通用节奏</em>,模拟经营类辅助玩法可以参考这个节奏来设计留存钩子。</div>
+
+          <div class="v2-judg-imgs">
+            <div class="v2-judg-img-card" onclick="jumpTo('s-ads','ad-2')" title="跳转到广告 #2 My Cooking Idle">
+              <video src="ads_videos_gdd/02_My_Cooking_Idle.mp4" autoplay muted loop playsinline></video>
+              <div class="v2-judg-img-overlay">
+                <span class="v2-judg-img-pill v2-judg-ev-ad">📢 广告 #2</span>
+                <div class="v2-judg-img-cap">My Cooking Idle · 30s 经营循环</div>
+              </div>
             </div>
-            <div class="ov-signal-text"><strong>「30 秒单一爽点循环」是当前美区休闲赛道的硬规则</strong>——广告 A#2 My Cooking Idle 30s 跑完整个升级循环(产出 → 收钱 → 升级 → 解锁)人气 1760,A#4/A#6/A#9/A#10 四条「假装失败 → 突然神操作」反差钩子均在 22-45s 区间且全部 Top1%;Trends T#6 Color Hunting 1 分钟轻量收集 2M+ 搜索;TikTok TT#7 Temu Failed 9.7M 播放验证"失败即内容"。<strong>西幻卡牌「模拟经营辅助玩法」必须做 30 秒可见数字增长的休闲循环——离线产出 + 升级解锁 + 即时音效反馈三件套</strong></div>
-          </div>
-          <div class="ov-signal">
-            <div class="ov-signal-badges">
-              <span class="ov-plat-pill" style="background:#ff0000;">YouTube</span>
-              <span class="ov-plat-pill" style="background:#4285f4;">热搜</span>
-              <span class="ov-signal-star">★ 双来源印证</span>
+            <div class="v2-judg-img-card" onclick="jumpTo('s-trends','trend-6')" title="跳转到热搜 #6 Color Hunting">
+              <img src="trend_images/06_color_hunting_1.jpg" alt="Color Hunting">
+              <div class="v2-judg-img-overlay">
+                <span class="v2-judg-img-pill v2-judg-ev-trend">🔥 热搜 #6</span>
+                <div class="v2-judg-img-cap">Color Hunting · UGC 日常收集</div>
+              </div>
             </div>
-            <div class="ov-signal-text"><strong>「跨代际 / 同源对决」是叙事现成、选边动力强的赛季框架</strong>——YouTube Y#3 印度宿舍 vs 舍管奶奶奶茶挑战 47.5M(本期 YouTube 播放冠军),"调皮少女 vs 古板长辈"二元对抗结构跨文化通用;Y#8 ISSEI VS Mom 33.9M 验证"无国界跨代际表情对决";Trends T#1 76ers vs Knicks 兄弟之城对决 10M+ 搜索,"同源对手"是叙事密度最高的阵营战母题。<strong>「同源阵营内战」赛季玩法可直接落地——同一帝国分裂的两个王子争位 + BO7 系列赛副本</strong></div>
-          </div>
-          <div class="ov-signal">
-            <div class="ov-signal-badges">
-              <span class="ov-plat-pill" style="background:#4285f4;">热搜</span>
-              <span class="ov-plat-pill" style="background:#ff4500;">Memes</span>
-              <span class="ov-signal-star">★ 双来源印证</span>
+            <div class="v2-judg-img-card" onclick="jumpTo('s-tiktok','tt-7')" title="跳转到 TikTok #7 Temu Failed">
+              <img src="tiktok_images/07_Sweet_kitty.jpg" alt="Temu Failed">
+              <div class="v2-judg-img-overlay">
+                <span class="v2-judg-img-pill v2-judg-ev-tt">🎵 TikTok #7</span>
+                <div class="v2-judg-img-cap">Temu Failed · 失败即内容</div>
+              </div>
             </div>
-            <div class="ov-signal-text"><strong>「日常仪式 + 微挑战」是次日留存最稳的轻量钩子</strong>——Trends T#6 Color Hunting「每日寻找一种颜色」UGC 收集结构验证"单次任务 1 分钟、持续参与 = 完整色彩日记";T#3 Met Gala 限时红毯仪式提供"每年一度"的高密度时装周框架;Memes M#1「Don't give me hope」68.8K 赞印证「先吊胃口再失望」<strong>反信号</strong>——游戏内严禁用「显示稀有奖励但实际不掉落」的假希望模式,会触发玩家信任危机。<strong>日常微挑战的"被抓 / 不被抓"二元结果,比叙事更适合 push notification 钩子</strong></div>
           </div>
+
+          <div class="v2-judg-evidence">
+            <div class="v2-judg-ev-label">📌 跨源证据</div>
+            <div class="v2-judg-ev-row">
+              <span class="v2-judg-ev-pill v2-judg-ev-ad">广告</span>
+              <div><span class="v2-jump" onclick="jumpTo('s-ads','ad-2')"><strong>My Cooking Idle</strong></span> <span class="v2-judg-ev-num">30s</span> 跑完整个升级循环(产出 → 收钱 → 升级 → 解锁)人气 1760; <span class="v2-jump" onclick="jumpTo('s-ads','ad-4')"><strong>Cash Merge</strong></span> / <span class="v2-jump" onclick="jumpTo('s-ads','ad-6')"><strong>Nut Sort</strong></span> / <span class="v2-jump" onclick="jumpTo('s-ads','ad-9')"><strong>Arrow Rush</strong></span> / <span class="v2-jump" onclick="jumpTo('s-ads','ad-10')"><strong>3D Bolt</strong></span> 四条「假装失败 → 突然神操作」反差钩子均在 <span class="v2-judg-ev-num">22-45s</span> + 全部 Top1%</div>
+            </div>
+            <div class="v2-judg-ev-row">
+              <span class="v2-judg-ev-pill v2-judg-ev-trend">热搜</span>
+              <div><span class="v2-jump" onclick="jumpTo('s-trends','trend-6')"><strong>Color Hunting</strong></span>「每日寻找一种颜色」UGC 收集 <span class="v2-judg-ev-num">2M+</span> 搜索, 单次 1 分钟即可参与, 持续累积 = 完整色彩日记</div>
+            </div>
+            <div class="v2-judg-ev-row">
+              <span class="v2-judg-ev-pill v2-judg-ev-tt">TikTok</span>
+              <div><span class="v2-jump" onclick="jumpTo('s-tiktok','tt-7')"><strong>Sweet kitty「Temu Failed」</strong></span> <span class="v2-judg-ev-num">9.7M</span> 播放, 验证"失败即内容"——奖励反馈不必非得是好结果</div>
+            </div>
+          </div>
+          <div class="v2-judg-action">
+            <span class="v2-judg-act-icon">💡</span>
+            <div class="v2-judg-act-body">
+              <div class="v2-judg-act-label">可联想的方向</div>
+              <div class="v2-judg-act-text">「<strong>离线产出 + 升级解锁 + 即时反馈</strong>」是欧美休闲爆款的通用骨架, 30 秒爽点循环可作为奖励反馈窗口的参考标尺。再延伸一层, 「<strong>同源阵营内战</strong>」类型的叙事框架(比如同帝国分裂的两个王子争位) 是本期叙事密度最高的赛季题材, 也值得纳入选题池。</div>
+            </div>
+          </div>
+          <div class="v2-judg-warn">⚠ 反向参考:Memes M#1「Don't give me hope」(68.8K 赞) 反映出玩家对「显示稀有奖励但实际不掉落」类假希望机制的敏感, 此类设计若不慎触发会容易引起信任反弹。</div>
         </div>
-        <div class="ov-syn-conclusion">🏷 建议优先:「30 秒爽点循环」做模拟经营副玩法,「同源阵营内战」做核心赛季框架,「日常仪式收集」做次日留存钩子——三层节奏让每分钟游戏时间都有可见回报</div>
       </div>
 
-      <!-- 广告制作 -->
-      <div class="ov-syn-card ov-syn-ad">
-        <div class="ov-syn-header">
-          <span class="ov-syn-icon">📢</span>
-          <span class="ov-syn-title">广告制作方向</span>
-          <span class="ov-syn-priority">广告 优先</span>
+      <!-- 判断 #3 广告 -->
+      <div class="v2-judg v2-judg-ad">
+        <div class="v2-judg-head">
+          <div class="v2-judg-num">3</div>
+          <div class="v2-judg-meta">
+            <div class="v2-judg-cat">📢 广告制作灵感 · 广告 优先</div>
+          </div>
+          <span class="v2-judg-tier" style="background:rgba(37,244,238,0.12);color:#25f4ee;border-color:rgba(37,244,238,0.4);">★★★ 三来源印证</span>
         </div>
-        <div class="ov-syn-big">反差 / 反转钩子 × 反派觉醒 MV<br>× 自嘲式真实感</div>
-        <div class="ov-signals">
-          <div class="ov-signal">
-            <div class="ov-signal-badges">
-              <span class="ov-plat-pill" style="background:#e76e22;">广告</span>
-              <span class="ov-plat-pill" style="background:#ff0000;">YouTube</span>
-              <span class="ov-plat-pill" style="background:#222;border:1px solid #555;">TikTok</span>
-              <span class="ov-signal-star">★ 三来源印证</span>
+        <div class="v2-judg-body">
+          <div class="v2-judg-claim">「<em>反差 / 反转钩子</em>」是本期跨平台复用率最高的开场公式,「<em>反派觉醒 + 怀旧 BGM</em>」60 秒 MV 形式则是 BOSS trailer 的成熟参考模板。</div>
+
+          <div class="v2-judg-imgs">
+            <div class="v2-judg-img-card" onclick="jumpTo('s-ads','ad-4')" title="跳转到广告 #4 Cash Merge">
+              <video src="ads_videos_gdd/04_Cash_Merge_2248.mp4" autoplay muted loop playsinline></video>
+              <div class="v2-judg-img-overlay">
+                <span class="v2-judg-img-pill v2-judg-ev-ad">📢 广告 #4</span>
+                <div class="v2-judg-img-cap">Cash Merge · 反差钩子</div>
+              </div>
             </div>
-            <div class="ov-signal-text"><strong>「反差 / 反转钩子」是本期跨平台最高复用率的开场公式</strong>——广告四连(A#4 Cash Merge / A#6 Nut Sort / A#9 Arrow Rush / A#10 3D Bolt Master)全部使用「假装失败 → 突然神操作」开场,前 3s 故意展示糟糕局面诱导观众"我能做得更好";YouTube Y#2 Mappelz「Bro Is A Lost Cause 💀」32.7M、Y#9「Humbled Him Real Quick」23.4M、Y#4 Crimes Witness 反向推搡 30.7M(本期 YT 评论冠军)三条全部"嚣张 → 反杀"结构;TikTok TT#5 父亲反应 10.7M 验证"反应镜头"格式完播率最高。<strong>西幻卡牌"合成觉醒"类副玩法广告可直接套用——前 3s 卡牌差 1 抽保底失败 → 突然双倍触发 → 金光爆破</strong></div>
+            <div class="v2-judg-img-card" onclick="jumpTo('s-youtube','yt-7')" title="跳转到 YouTube #7 反派觉醒 MV">
+              <img src="yt_images/07_MenZuration.jpg" alt="Villains aren't born">
+              <div class="v2-judg-img-overlay">
+                <span class="v2-judg-img-pill v2-judg-ev-yt">▶️ YouTube #7</span>
+                <div class="v2-judg-img-cap">Villains MV · BOSS trailer 模板</div>
+              </div>
+            </div>
+            <div class="v2-judg-img-card" onclick="jumpTo('s-youtube','yt-2')" title="跳转到 YouTube #2 Bro Is A Lost Cause">
+              <img src="yt_images/02_Mappelz.jpg" alt="Bro Is A Lost Cause">
+              <div class="v2-judg-img-overlay">
+                <span class="v2-judg-img-pill v2-judg-ev-yt">▶️ YouTube #2</span>
+                <div class="v2-judg-img-cap">Bro Is A Lost Cause · 嚣张 → 反杀</div>
+              </div>
+            </div>
           </div>
-          <div class="ov-signal">
-            <div class="ov-signal-badges">
-              <span class="ov-plat-pill" style="background:#ff0000;">YouTube</span>
-              <span class="ov-plat-pill" style="background:#4285f4;">热搜</span>
-              <span class="ov-plat-pill" style="background:#ff4500;">Memes</span>
-              <span class="ov-signal-star">★ 三来源印证</span>
+
+          <div class="v2-judg-evidence">
+            <div class="v2-judg-ev-label">📌 跨源证据</div>
+            <div class="v2-judg-ev-row">
+              <span class="v2-judg-ev-pill v2-judg-ev-ad">广告</span>
+              <div><strong>4 条 Top1% 广告</strong>(<span class="v2-jump" onclick="jumpTo('s-ads','ad-4')">Cash Merge</span> / <span class="v2-jump" onclick="jumpTo('s-ads','ad-6')">Nut Sort</span> / <span class="v2-jump" onclick="jumpTo('s-ads','ad-9')">Arrow Rush</span> / <span class="v2-jump" onclick="jumpTo('s-ads','ad-10')">3D Bolt</span>) 全部前 3s 故意展示糟糕局面诱导"我能做得更好",再突然神操作翻盘</div>
             </div>
-            <div class="ov-signal-text"><strong>「反派觉醒 / 认知拼图」MV 剪辑是 BOSS 介绍 trailer 的现成模板</strong>——YouTube Y#7 MenZuration「Villains aren't born, they are made」配 Panic! At The Disco 经典老歌 23.5M 播放 + 60 秒满格,证明"反派起源 + 怀旧老歌"是 fan edit 永久流量公式;Trends T#5 Avengers Secret Wars 多宇宙变体「黑化版本英雄」是 Marvel 多宇宙叙事最强商业验证;Memes M#2「dangerously close to connecting the dots」57.8K 赞 + 893 评论印证"拼图觉醒"叙事张力。<strong>西幻 BOSS 卡介绍直接套用:60 秒短预告 + 选定一首怀旧 / 史诗 BGM 作系列反派统一音乐符号</strong></div>
+            <div class="v2-judg-ev-row">
+              <span class="v2-judg-ev-pill v2-judg-ev-yt">YouTube</span>
+              <div><span class="v2-jump" onclick="jumpTo('s-youtube','yt-2')"><strong>Mappelz「Bro Is A Lost Cause 💀」</strong></span> <span class="v2-judg-ev-num">32.7M</span>、<span class="v2-jump" onclick="jumpTo('s-youtube','yt-9')"><strong>「Humbled Him Real Quick」</strong></span> <span class="v2-judg-ev-num">23.4M</span>、<span class="v2-jump" onclick="jumpTo('s-youtube','yt-4')"><strong>Crimes Witness 反向推搡</strong></span> <span class="v2-judg-ev-num">30.7M</span> (本期评论冠军) 三条全部"嚣张 → 反杀"结构</div>
+            </div>
+            <div class="v2-judg-ev-row">
+              <span class="v2-judg-ev-pill v2-judg-ev-yt">YouTube</span>
+              <div><span class="v2-jump" onclick="jumpTo('s-youtube','yt-7')"><strong>MenZuration「Villains aren't born, they are made」</strong></span>配 Panic! At The Disco 老歌 <span class="v2-judg-ev-num">23.5M</span> + 60 秒满格, 反派起源 + 怀旧 BGM = fan edit 永久流量公式</div>
+            </div>
           </div>
-          <div class="ov-signal">
-            <div class="ov-signal-badges">
-              <span class="ov-plat-pill" style="background:#222;border:1px solid #555;">TikTok</span>
-              <span class="ov-plat-pill" style="background:#ff4500;">Memes</span>
-              <span class="ov-signal-star">★ 双来源印证</span>
+          <div class="v2-judg-action">
+            <span class="v2-judg-act-icon">💡</span>
+            <div class="v2-judg-act-body">
+              <div class="v2-judg-act-label">可联想的方向</div>
+              <div class="v2-judg-act-text">反差钩子可联想到<strong>合成/觉醒类副玩法的广告骨架</strong> —— 比如"卡牌差 1 抽保底失败 → 突然双倍触发 → 金光爆破"这种节奏。BOSS 介绍 trailer 也可以试一下 <strong>60 秒 MV 形式</strong>, 搭配一首怀旧/史诗 BGM 作为反派系列的统一音乐符号。另外文案上, <strong>适度的自嘲</strong>(如"source: 我自己玩了 200 小时") 通常比纯官方背书更容易亲近 Z 世代受众。</div>
             </div>
-            <div class="ov-signal-text"><strong>「自嘲式真实感」是对抗权威背书疲劳的现成抗体</strong>——TikTok TT#5 父亲反应 10.7M、TT#7 Temu Failed 9.7M 两条共同验证"我承认我的人生很 uncomfortable"是 Z 世代核心情感语言;Memes M#5「Serious is the worst」36.1K 赞证明欧美对"过度严肃"的集体逆反,M#7「source: me」31.8K 赞 + M#10「Worst. Reviews. I. Have. Ever. Seen.」1610 评论印证"反权威自嘲"完整公式。<strong>西幻广告必须保留 30%+ 自嘲 / 破第四面墙桥段——「source: 我自己玩了 200 小时」比官方背书可信度更高</strong></div>
           </div>
         </div>
-        <div class="ov-syn-conclusion">🏷 建议优先:「反差 / 反转钩子」做开场 3 秒锚点,「反派觉醒 MV」做 BOSS 卡 60 秒 trailer,「自嘲式真实感」做 UGC 化文案——三层广告结构覆盖从超休闲到中重度全品类受众</div>
       </div>
+
+    </div>
+
+    <!-- 二级信号说明 -->
+    <div class="v2-aux-note">
+      📂 <strong>本期完整 9 项跨源信号</strong>(含 6 项 ★★ 双来源信号与 3 项反向参考) 已分散在下方 5 个板块的结论框中, 可点击「前往各板块」按需深入。本页聚焦的是跨源印证最强的 3 个观察 —— 围绕主线「<strong style="color:#ff6b6b">AI 角色验证闭环</strong>」, 它们刚好分别落在<strong>角色 / 玩法 / 广告</strong>三个维度, 可作为本期参考思考的起点。
     </div>
 
     <!-- 信号矩阵 -->
@@ -784,7 +909,7 @@ a { text-decoration: none; color: inherit; }
         <div class="video-grid">
 
           <!-- TK #1 imnorag - Hummingbird visitor -->
-          <div class="video-card champion">
+          <div id="tt-1" class="video-card champion">
             <div class="video-cover">
               <div class="rank-badge gold">1</div>
               <button class="vbox-btn" onclick="openVbox('https://www.tiktok.com/embed/v2/7603282923076209951','iframe')" title="放大查看">⤢</button>
@@ -855,7 +980,7 @@ a { text-decoration: none; color: inherit; }
           </div>
 
           <!-- TK #2 Catutu - Cat compilation -->
-          <div class="video-card">
+          <div id="tt-2" class="video-card">
             <div class="video-cover">
               <div class="rank-badge">2</div>
               <button class="vbox-btn" onclick="openVbox('https://www.tiktok.com/embed/v2/7599837313052593429','iframe')" title="放大查看">⤢</button>
@@ -926,7 +1051,7 @@ a { text-decoration: none; color: inherit; }
           </div>
 
           <!-- TK #3 power.scene.edits - "When you decide to play a full song" BGM hunt meta -->
-          <div class="video-card">
+          <div id="tt-3" class="video-card">
             <div class="video-cover">
               <div class="rank-badge">3</div>
               <button class="vbox-btn" onclick="openVbox('https://www.tiktok.com/embed/v2/7625124120098770206','iframe')" title="放大查看">⤢</button>
@@ -995,7 +1120,7 @@ a { text-decoration: none; color: inherit; }
           </div>
 
           <!-- TK #4 71Cent - babyboo dance returns -->
-          <div class="video-card">
+          <div id="tt-4" class="video-card">
             <div class="video-cover">
               <div class="rank-badge">4</div>
               <button class="vbox-btn" onclick="openVbox('https://www.tiktok.com/embed/v2/7604571763346836750','iframe')" title="放大查看">⤢</button>
@@ -1065,7 +1190,7 @@ a { text-decoration: none; color: inherit; }
           </div>
 
           <!-- TK #5 addreurbgsyz3 - Dad's reaction -->
-          <div class="video-card">
+          <div id="tt-5" class="video-card">
             <div class="video-cover">
               <div class="rank-badge">5</div>
               <button class="vbox-btn" onclick="openVbox('https://www.tiktok.com/embed/v2/7597730086900469022','iframe')" title="放大查看">⤢</button>
@@ -1136,7 +1261,7 @@ a { text-decoration: none; color: inherit; }
           </div>
 
           <!-- TK #6 lexusrichards2 - Camera roll find -->
-          <div class="video-card">
+          <div id="tt-6" class="video-card">
             <div class="video-cover">
               <div class="rank-badge">6</div>
               <button class="vbox-btn" onclick="openVbox('https://www.tiktok.com/embed/v2/7616084046807960863','iframe')" title="放大查看">⤢</button>
@@ -1207,7 +1332,7 @@ a { text-decoration: none; color: inherit; }
           </div>
 
           <!-- TK #7 Sweet kitty - Temu failed -->
-          <div class="video-card">
+          <div id="tt-7" class="video-card">
             <div class="video-cover">
               <div class="rank-badge">7</div>
               <button class="vbox-btn" onclick="openVbox('https://www.tiktok.com/embed/v2/7621512453699980557','iframe')" title="放大查看">⤢</button>
@@ -1278,7 +1403,7 @@ a { text-decoration: none; color: inherit; }
           </div>
 
           <!-- TK #8 POKKO - AI dance recreate -->
-          <div class="video-card">
+          <div id="tt-8" class="video-card">
             <div class="video-cover">
               <div class="rank-badge">8</div>
               <button class="vbox-btn" onclick="openVbox('https://www.tiktok.com/embed/v2/7609112456161545502','iframe')" title="放大查看">⤢</button>
@@ -1348,7 +1473,7 @@ a { text-decoration: none; color: inherit; }
           </div>
 
           <!-- TK #9 Serene - Religious painting (visual ref only) -->
-          <div class="video-card">
+          <div id="tt-9" class="video-card">
             <div class="video-cover">
               <div class="rank-badge">9</div>
               <button class="vbox-btn" onclick="openVbox('https://www.tiktok.com/embed/v2/7611339751471336717','iframe')" title="放大查看">⤢</button>
@@ -1419,7 +1544,7 @@ a { text-decoration: none; color: inherit; }
           </div>
 
           <!-- TK #10 eli - School farewell -->
-          <div class="video-card">
+          <div id="tt-10" class="video-card">
             <div class="video-cover">
               <div class="rank-badge">10</div>
               <button class="vbox-btn" onclick="openVbox('https://www.tiktok.com/embed/v2/7598224107842325790','iframe')" title="放大查看">⤢</button>
@@ -1570,7 +1695,7 @@ a { text-decoration: none; color: inherit; }
     <div class="yt-grid">
 
       <!-- YT #1 Goofy Recaps -->
-      <div class="yt-card">
+      <div id="yt-1" class="yt-card">
         <div class="yt-cover">
           <div class="yt-rank gold">1</div>
           <button class="vbox-btn" onclick="openVbox('https://www.youtube.com/embed/4Nu_RCtoScg?autoplay=1','iframe')" title="放大查看">⤢</button>
@@ -1632,7 +1757,7 @@ a { text-decoration: none; color: inherit; }
       </div>
 
       <!-- YT #2 Mappelz -->
-      <div class="yt-card">
+      <div id="yt-2" class="yt-card">
         <div class="yt-cover">
           <div class="yt-rank">2</div>
           <button class="vbox-btn" onclick="openVbox('https://www.youtube.com/embed/GGN215TFF6g?autoplay=1','iframe')" title="放大查看">⤢</button>
@@ -1694,7 +1819,7 @@ a { text-decoration: none; color: inherit; }
       </div>
 
       <!-- YT #3 Shreemani Tripathi -->
-      <div class="yt-card">
+      <div id="yt-3" class="yt-card">
         <div class="yt-cover">
           <div class="yt-rank">3</div>
           <button class="vbox-btn" onclick="openVbox('https://www.youtube.com/embed/_xtbjsDjVsY?autoplay=1','iframe')" title="放大查看">⤢</button>
@@ -1756,7 +1881,7 @@ a { text-decoration: none; color: inherit; }
       </div>
 
       <!-- YT #4 Crimes Witness -->
-      <div class="yt-card">
+      <div id="yt-4" class="yt-card">
         <div class="yt-cover">
           <div class="yt-rank">4</div>
           <button class="vbox-btn" onclick="openVbox('https://www.youtube.com/embed/3qHAdkaao2w?autoplay=1','iframe')" title="放大查看">⤢</button>
@@ -1818,7 +1943,7 @@ a { text-decoration: none; color: inherit; }
       </div>
 
       <!-- YT #5 ZESTY -->
-      <div class="yt-card">
+      <div id="yt-5" class="yt-card">
         <div class="yt-cover">
           <div class="yt-rank">5</div>
           <button class="vbox-btn" onclick="openVbox('https://www.youtube.com/embed/vdG-zeLXJKs?autoplay=1','iframe')" title="放大查看">⤢</button>
@@ -1880,7 +2005,7 @@ a { text-decoration: none; color: inherit; }
       </div>
 
       <!-- YT #6 Box Of Vengeance -->
-      <div class="yt-card">
+      <div id="yt-6" class="yt-card">
         <div class="yt-cover">
           <div class="yt-rank">6</div>
           <button class="vbox-btn" onclick="openVbox('https://www.youtube.com/embed/uF2GeYUzTt8?autoplay=1','iframe')" title="放大查看">⤢</button>
@@ -1942,7 +2067,7 @@ a { text-decoration: none; color: inherit; }
       </div>
 
       <!-- YT #7 MenZuration -->
-      <div class="yt-card">
+      <div id="yt-7" class="yt-card">
         <div class="yt-cover">
           <div class="yt-rank">7</div>
           <button class="vbox-btn" onclick="openVbox('https://www.youtube.com/embed/dbz5RunybyQ?autoplay=1','iframe')" title="放大查看">⤢</button>
@@ -2004,7 +2129,7 @@ a { text-decoration: none; color: inherit; }
       </div>
 
       <!-- YT #8 ISSEI -->
-      <div class="yt-card">
+      <div id="yt-8" class="yt-card">
         <div class="yt-cover">
           <div class="yt-rank">8</div>
           <button class="vbox-btn" onclick="openVbox('https://www.youtube.com/embed/9drEq9NKYd0?autoplay=1','iframe')" title="放大查看">⤢</button>
@@ -2066,7 +2191,7 @@ a { text-decoration: none; color: inherit; }
       </div>
 
       <!-- YT #9 HopeleesCore -->
-      <div class="yt-card">
+      <div id="yt-9" class="yt-card">
         <div class="yt-cover">
           <div class="yt-rank">9</div>
           <button class="vbox-btn" onclick="openVbox('https://www.youtube.com/embed/kCm2bKg26gw?autoplay=1','iframe')" title="放大查看">⤢</button>
@@ -2128,7 +2253,7 @@ a { text-decoration: none; color: inherit; }
       </div>
 
       <!-- YT #10 Wholesome Wendy -->
-      <div class="yt-card">
+      <div id="yt-10" class="yt-card">
         <div class="yt-cover">
           <div class="yt-rank">10</div>
           <button class="vbox-btn" onclick="openVbox('https://www.youtube.com/embed/xa9h8-6dl_Q?autoplay=1','iframe')" title="放大查看">⤢</button>
@@ -2257,7 +2382,7 @@ a { text-decoration: none; color: inherit; }
         </div>
 
         <!-- Meme #1 -->
-        <div class="meme-card">
+        <div id="meme-1" class="meme-card">
           <div class="meme-thumb">
             <div class="meme-rank">1</div>
             <div class="meme-format-badge">经典台词复用 · 图片宏</div>
@@ -2315,7 +2440,7 @@ a { text-decoration: none; color: inherit; }
         </div>
 
         <!-- Meme #2 -->
-        <div class="meme-card">
+        <div id="meme-2" class="meme-card">
           <div class="meme-thumb">
             <div class="meme-rank">2</div>
             <div class="meme-format-badge">悬疑反应 · 图片宏</div>
@@ -2373,7 +2498,7 @@ a { text-decoration: none; color: inherit; }
         </div>
 
         <!-- Meme #3 -->
-        <div class="meme-card">
+        <div id="meme-3" class="meme-card">
           <div class="meme-thumb">
             <div class="meme-rank">3</div>
             <div class="meme-format-badge">民生吐槽 · 图片宏</div>
@@ -2431,7 +2556,7 @@ a { text-decoration: none; color: inherit; }
         </div>
 
         <!-- Meme #4 -->
-        <div class="meme-card">
+        <div id="meme-4" class="meme-card">
           <div class="meme-thumb">
             <div class="meme-rank">4</div>
             <div class="meme-format-badge">宏观吐槽 · 图片宏</div>
@@ -2489,7 +2614,7 @@ a { text-decoration: none; color: inherit; }
         </div>
 
         <!-- Meme #5 -->
-        <div class="meme-card">
+        <div id="meme-5" class="meme-card">
           <div class="meme-thumb">
             <div class="meme-rank">5</div>
             <div class="meme-format-badge">性格反讽 · 图片宏</div>
@@ -2547,7 +2672,7 @@ a { text-decoration: none; color: inherit; }
         </div>
 
         <!-- Meme #6 -->
-        <div class="meme-card">
+        <div id="meme-6" class="meme-card">
           <div class="meme-thumb">
             <div class="meme-rank">6</div>
             <div class="meme-format-badge">完美主义反讽 · 图片宏</div>
@@ -2605,7 +2730,7 @@ a { text-decoration: none; color: inherit; }
         </div>
 
         <!-- Meme #7 -->
-        <div class="meme-card">
+        <div id="meme-7" class="meme-card">
           <div class="meme-thumb">
             <div class="meme-rank">7</div>
             <div class="meme-format-badge">反权威造梗 · 图片宏</div>
@@ -2663,7 +2788,7 @@ a { text-decoration: none; color: inherit; }
         </div>
 
         <!-- Meme #8 -->
-        <div class="meme-card">
+        <div id="meme-8" class="meme-card">
           <div class="meme-thumb">
             <div class="meme-rank">8</div>
             <div class="meme-format-badge">克制吐槽 · 图片宏</div>
@@ -2721,7 +2846,7 @@ a { text-decoration: none; color: inherit; }
         </div>
 
         <!-- Meme #9 -->
-        <div class="meme-card">
+        <div id="meme-9" class="meme-card">
           <div class="meme-thumb">
             <div class="meme-rank">9</div>
             <div class="meme-format-badge">时事政治 · 图片宏</div>
@@ -2779,7 +2904,7 @@ a { text-decoration: none; color: inherit; }
         </div>
 
         <!-- Meme #10 -->
-        <div class="meme-card">
+        <div id="meme-10" class="meme-card">
           <div class="meme-thumb">
             <div class="meme-rank">10</div>
             <div class="meme-format-badge">强调断句 · 图片宏</div>
@@ -2978,7 +3103,7 @@ a { text-decoration: none; color: inherit; }
         </div>
 
         <!-- ═══ 01 76ERS VS KNICKS ═══ -->
-        <div class="trend-topic-card">
+        <div id="trend-1" class="trend-topic-card">
           <div class="ttc-top">
             <div class="ttc-images"><div class="img-trio">
               <img src="trend_images/01_76ers_knicks_1.jpg" alt="Philadelphia 76ers vs New York Knicks – NBA Playoff" onclick="openLightbox(this)">
@@ -3037,7 +3162,7 @@ a { text-decoration: none; color: inherit; }
         </div>
 
         <!-- ═══ 02 TRUMP-IRAN ═══ -->
-        <div class="trend-topic-card">
+        <div id="trend-2" class="trend-topic-card">
           <div class="ttc-top">
             <div class="ttc-images"><div class="img-trio">
               <img src="trend_images/02_trump_iran_1.jpg" alt="Trump-Iran Ceasefire Extension – International News" onclick="openLightbox(this)">
@@ -3094,7 +3219,7 @@ a { text-decoration: none; color: inherit; }
         </div>
 
         <!-- ═══ 03 MET GALA 2026 ═══ -->
-        <div class="trend-topic-card">
+        <div id="trend-3" class="trend-topic-card">
           <div class="ttc-top">
             <div class="ttc-images"><div class="img-trio">
               <img src="trend_images/03_met_gala_2026_1.jpg" alt="Met Gala 2026 Preview – Fashion Mood Board" onclick="openLightbox(this)">
@@ -3152,7 +3277,7 @@ a { text-decoration: none; color: inherit; }
         </div>
 
         <!-- ═══ 04 PRAGMATA ═══ -->
-        <div class="trend-topic-card">
+        <div id="trend-4" class="trend-topic-card">
           <div class="ttc-top">
             <div class="ttc-images"><div class="img-trio">
               <img src="trend_images/04_pragmata_1.jpg" alt="Pragmata – Capcom Original Sci-Fi IP" onclick="openLightbox(this)">
@@ -3211,7 +3336,7 @@ a { text-decoration: none; color: inherit; }
         </div>
 
         <!-- ═══ 05 AVENGERS SECRET WARS ═══ -->
-        <div class="trend-topic-card">
+        <div id="trend-5" class="trend-topic-card">
           <div class="ttc-top">
             <div class="ttc-images"><div class="img-trio">
               <img src="trend_images/05_avengers_secret_wars_1.jpg" alt="Avengers: Secret Wars – Marvel Multiverse Preview" onclick="openLightbox(this)">
@@ -3269,7 +3394,7 @@ a { text-decoration: none; color: inherit; }
         </div>
 
         <!-- ═══ 06 COLOR HUNTING ═══ -->
-        <div class="trend-topic-card">
+        <div id="trend-6" class="trend-topic-card">
           <div class="ttc-top">
             <div class="ttc-images"><div class="img-trio">
               <img src="trend_images/06_color_hunting_1.jpg" alt="Color Hunting Challenge – TikTok UGC Trend" onclick="openLightbox(this)">
@@ -3326,7 +3451,7 @@ a { text-decoration: none; color: inherit; }
         </div>
 
         <!-- ═══ 07 CUBS GAME ═══ -->
-        <div class="trend-topic-card">
+        <div id="trend-7" class="trend-topic-card">
           <div class="ttc-top">
             <div class="ttc-images"><div class="img-trio">
               <img src="trend_images/07_cubs_game_1.jpg" alt="Chicago Cubs Game at Wrigley Field" onclick="openLightbox(this)">
@@ -3383,7 +3508,7 @@ a { text-decoration: none; color: inherit; }
         </div>
 
         <!-- ═══ 08 UNCOMFORTABLE LIFE ═══ -->
-        <div class="trend-topic-card">
+        <div id="trend-8" class="trend-topic-card">
           <div class="ttc-top">
             <div class="ttc-images"><div class="img-trio">
               <img src="trend_images/08_uncomfortable_life_1.jpg" alt="Uncomfortable Life – TikTok Comedy Format" onclick="openLightbox(this)">
@@ -3440,7 +3565,7 @@ a { text-decoration: none; color: inherit; }
         </div>
 
         <!-- ═══ 09 BIG HOPS ═══ -->
-        <div class="trend-topic-card">
+        <div id="trend-9" class="trend-topic-card">
           <div class="ttc-top">
             <div class="ttc-images"><div class="img-trio">
               <img src="trend_images/09_big_hops_1.jpg" alt="Big Hops – Indie 3D Platformer" onclick="openLightbox(this)">
@@ -3497,7 +3622,7 @@ a { text-decoration: none; color: inherit; }
         </div>
 
         <!-- ═══ 10 SPLATOON RAIDERS ═══ -->
-        <div class="trend-topic-card">
+        <div id="trend-10" class="trend-topic-card">
           <div class="ttc-top">
             <div class="ttc-images"><div class="img-trio">
               <img src="trend_images/10_splatoon_raiders_1.jpg" alt="Splatoon Raiders – Nintendo Switch 2 Roadmap" onclick="openLightbox(this)">
@@ -3609,7 +3734,7 @@ a { text-decoration: none; color: inherit; }
         <div class="ads-grid">
 
           <!-- Ad #1 Zynga Poker: Texas Holdem Game -->
-          <div class="ad-card">
+          <div id="ad-1" class="ad-card">
             <div class="ad-thumb">
               <div class="ad-rank">1</div>
               <div class="ad-perf-tag">Top1%</div>
@@ -3674,7 +3799,7 @@ a { text-decoration: none; color: inherit; }
           </div>
 
           <!-- Ad #2 My Cooking Idle -->
-          <div class="ad-card">
+          <div id="ad-2" class="ad-card">
             <div class="ad-thumb">
               <div class="ad-rank">2</div>
               <div class="ad-perf-tag">Top1%</div>
@@ -3738,7 +3863,7 @@ a { text-decoration: none; color: inherit; }
           </div>
 
           <!-- Ad #3 kwai.com -->
-          <div class="ad-card">
+          <div id="ad-3" class="ad-card">
             <div class="ad-thumb">
               <div class="ad-rank">3</div>
               <div class="ad-perf-tag">Top1%</div>
@@ -3802,7 +3927,7 @@ a { text-decoration: none; color: inherit; }
           </div>
 
           <!-- Ad #4 Cash Merge 2248 -->
-          <div class="ad-card">
+          <div id="ad-4" class="ad-card">
             <div class="ad-thumb">
               <div class="ad-rank">4</div>
               <div class="ad-perf-tag">Top1%</div>
@@ -3866,7 +3991,7 @@ a { text-decoration: none; color: inherit; }
           </div>
 
           <!-- Ad #5 Warzone Commander -->
-          <div class="ad-card">
+          <div id="ad-5" class="ad-card">
             <div class="ad-thumb">
               <div class="ad-rank">5</div>
               <div class="ad-perf-tag">Top1%</div>
@@ -3930,7 +4055,7 @@ a { text-decoration: none; color: inherit; }
           </div>
 
           <!-- Ad #6 Nut Sort Relax -->
-          <div class="ad-card">
+          <div id="ad-6" class="ad-card">
             <div class="ad-thumb">
               <div class="ad-rank">6</div>
               <div class="ad-perf-tag">Top1%</div>
@@ -3994,7 +4119,7 @@ a { text-decoration: none; color: inherit; }
           </div>
 
           <!-- Ad #7 超能戰爭 -->
-          <div class="ad-card">
+          <div id="ad-7" class="ad-card">
             <div class="ad-thumb">
               <div class="ad-rank">7</div>
               <div class="ad-perf-tag">Top1%</div>
@@ -4058,7 +4183,7 @@ a { text-decoration: none; color: inherit; }
           </div>
 
           <!-- Ad #8 Welcome to tengine! -->
-          <div class="ad-card">
+          <div id="ad-8" class="ad-card">
             <div class="ad-thumb">
               <div class="ad-rank">8</div>
               <div class="ad-perf-tag">Top1%</div>
@@ -4122,7 +4247,7 @@ a { text-decoration: none; color: inherit; }
           </div>
 
           <!-- Ad #9 Arrow Rush: Solve & Earn -->
-          <div class="ad-card">
+          <div id="ad-9" class="ad-card">
             <div class="ad-thumb">
               <div class="ad-rank">9</div>
               <div class="ad-perf-tag">Top1%</div>
@@ -4186,7 +4311,7 @@ a { text-decoration: none; color: inherit; }
           </div>
 
           <!-- Ad #10 3D Bolt Master -->
-          <div class="ad-card">
+          <div id="ad-10" class="ad-card">
             <div class="ad-thumb">
               <div class="ad-rank">10</div>
               <div class="ad-perf-tag">Top1%</div>
@@ -4340,6 +4465,22 @@ function openLightbox(src) {
   document.getElementById('lightbox-img').src = src;
   document.getElementById('lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
+}
+
+// Vol.004 新增：从 Overview 关键词跳转到对应板块的具体条目
+function jumpTo(sectionId, anchorId) {
+  var btn = document.querySelector('[data-target="' + sectionId + '"]');
+  if (btn) switchSection(sectionId, btn);
+  setTimeout(function() {
+    var el = document.getElementById(anchorId);
+    if (el) {
+      el.scrollIntoView({behavior: 'smooth', block: 'center'});
+      el.style.transition = 'box-shadow 0.4s';
+      el.style.boxShadow = '0 0 0 3px #fe2c55';
+      setTimeout(function() { el.style.boxShadow = ''; }, 1800);
+    }
+  }, 80);
+  return false;
 }
 
 function closeLightbox() {
