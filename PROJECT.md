@@ -56,7 +56,8 @@ python3 ~/.claude/skills/trends-research/scripts/fetch_trends.py \
   --output "$REPORT_DIR/trends_raw.json" --top-n 15 --timeframe "now 7-d"
 ```
 > ⚠️ **采集后先展示话题列表给用户确认**。体育赛事占比过高时，用 web 搜索补充游戏/影视/文化话题。
-> 确认后用 CDP + Google Images 为每个话题下载 3 张图片到 `trend_images/`
+> ⚠️ **历史去重**：补充话题前 grep 前 3 期 hub.html，已讲过的话题（如 Coachella/Euphoria S3/The Boys/MJ biopic）必须替换。
+> ⚠️ **图片下载用 Bing 不用 Google**：Google `tbm=isch` 反爬 + 懒加载抓不到图（Vol.004 验证 0/30 成功）；Bing `a.iusc[m]` 属性内 JSON `murl` 字段是真实 URL（30/30 成功）。脚本参考 `2026-04-23/_fetch_trend_images_bing.py`
 
 **Step 3 — TikTok 热门（CDP Explore 页面）**
 > ⚠️ 不使用 Apify 搜索模式（日期过滤无效），改用 CDP 直接爬 TikTok Explore 页面
@@ -115,6 +116,10 @@ subagent 输出：`$REPORT_DIR/blueprints/{板块}.md`
 3. **再做 overview 蓝图**（依赖 5 份蓝图作为综合依据，不能并行）
 4. 主对话审核 overview（重点看 ov-signal 跨源印证是否真实有 ≥2 平台证据）
 
+> ⚠️ **caption 信息严重不足时禁止凭账号名编造**（Vol.004 教训：TikTok #3 caption 仅 `#fyp`，账号名 `power.scene.edits` 字面像"震撼场景剪辑"，subagent 编造了"影视/角色高燃混剪"，但实际视频是真人日常 + meta 钩子）。蓝图需明确标注"内容不可判断"或降级 B/C，**严禁靠账号名脑补内容**。
+
+> ⚠️ **subagent 容易卡死**（流式看门狗 600s 无进度即超时）。Vol.004 中 ads 蓝图 + youtube fragment 各有一次 stall。**重启时用精简 prompt**：限制 Read 文件范围、明确"禁止读其他板块/PROJECT.md 全文/其他无关文件"、要求 200 字内返回。重启后通常秒过。
+
 #### Phase 2b · 写 HTML fragment（约 20 分钟）
 
 每板块独立调一个 **写作 subagent**，输入：
@@ -155,11 +160,17 @@ cat $DIR/poc_ads_section.html >> $OUT
 tail -n +$M $VOL_PREV >> $OUT
 ```
 
-拼接后主对话改 4 处：
+拼接后主对话改 5 处：
 1. `<header>` 里的 Vol 编号 + 日期
 2. sidebar `sidebar-group-label` Vol 编号 + 日期
 3. sidebar 「全部期刊」加本期 + 旧期标识降级
 4. 旧期 hub.html 侧栏也加本期链接（防 Phase 4 漏 commit）
+5. **localStorage key `wrXXX_visited` → `wr{当期}_visited`**（3 处全局替换）。Vol.004 教训：key 写死会读到上期访问记录、把本期所有 NEW 标签清掉。
+   ```bash
+   # Vol.005 拼接时跑：
+   sed -i 's/wr004_visited/wr005_visited/g' hub.html
+   grep -c "wr005_visited" hub.html  # 期望输出 3
+   ```
 
 校验：`grep -n 'id="s-' hub.html` 应输出 6 行，顺序 overview/tiktok/youtube/memes/trends/ads。
 
@@ -340,26 +351,41 @@ C 观察储备 — 先记着
 
 广大大热榜每日轮替，当天采集的广告次日可能已下榜。**元数据和视频必须在同一天完成**。
 
-### 视频采集方案（单页打开）
+### 视频采集方案（modal 直抓 · Vol.004 起，2026-04-23 验证 10/10 全成功）
+
+> ⚠️ **「单页打开」按钮在 Vol.004 已失效**（点击不弹新 tab）。改用 modal 直抓 video src 方案。
 
 ```
-Step 1  运行 fetch_guangdada.py → 拿到 10 条广告 + 缩略图
-Step 2  运行 fetch_ads_with_video.py（对同一批广告）：
-         点卡片 → 弹出「创意详情」modal
-         → 点右上角「单页打开」→ 新 tab 打开独立详情页
-         → 提取 <video src="...cdn.../xxx.mp4"> 直链
+Step 1  运行 fetch_guangdada.py → 拿到 10 条广告 + 元数据
+         （注：thumbUrl 当前 DOM 抓不到，缩略图全空，但视频可补）
+Step 2  运行 _fetch_ads_video_simple.py（参考 Vol.004 留档脚本）：
+         click 卡片 → 等 modal 弹出 → 直接读 [role=dialog] video src
          → 下载到 ads_videos_gdd/
+         → ESC 关 modal → 下一个
          → 输出 ads_videos.json
-Step 3  运行 patch_ad_videos.py → hub.html 广告区 img 替换为 video + ⤢ 按钮
+Step 3  写 fragment 时直接用 ads_videos_gdd/{rank:02d}_{slug}.mp4 + autoplay muted loop
 ```
 
 ### 相关脚本
 
 | 脚本 | 状态 | 路径 |
 |------|------|------|
-| `fetch_guangdada.py` | ✅ 可用 | `~/.claude/skills/ads-research/scripts/` |
-| `fetch_ads_with_video.py` | ✅ 可用 | 同上 |
-| `patch_ad_videos.py` | ✅ 可用 | `~/patch_ad_videos.py` |
+| `fetch_guangdada.py` | ✅ 可用（仅元数据，thumbUrl 失效） | `~/.claude/skills/ads-research/scripts/` |
+| `fetch_ads_with_video.py` | ❌ 失效（单页打开按钮 click 不响应） | 同上（待修） |
+| `_fetch_ads_video_simple.py` | ✅ Vol.004 验证可用 | `~/tiktok-reports/2026-04-23/` 留档 |
+| `patch_ad_videos.py` | 未使用（Vol.004 起 fragment 直引用视频，不需 patch） | `~/patch_ad_videos.py` |
+
+### 视频抓取 JS 核心（modal 弹出后）
+
+```js
+(function(){
+  var dlg = document.querySelector('[role=dialog]');
+  if(!dlg) return JSON.stringify({state:'no_dlg'});
+  var v = dlg.querySelector('video');
+  var src = v.src || (v.querySelector('source') && v.querySelector('source').src) || '';
+  return JSON.stringify({state:'ok', src:src, poster:v.poster||''});
+})()
+```
 
 ---
 
@@ -457,3 +483,38 @@ GEMINI_API_KEY=AIzaxxxx            # AI 视频分析（Gemini）
 - 尝试过 `height: 100%` + stretch → 文字短的卡片被图片撑高
 - 尝试过 absolute 定位 → 布局崩溃
 - **结论**：保持固定 240px，接受此限制。
+
+### 广大大缩略图 thumbUrl 失效（Vol.004 起）
+- `fetch_guangdada.py` 抓的 `thumbUrl` / `appIconUrl` 均为空（DOM 结构变化）
+- 影响仅限 hub.html 加载时的占位图，不影响视频展示
+- **暂解**：广告卡直接用视频 autoplay 替代缩略图
+- **彻底修复**：待重写 fetch_guangdada.py 的 extract_ads selector
+
+---
+
+## 九、版本变更日志
+
+### Vol.004 · 2026-04-23
+
+**新增/修复**
+- ✅ 广告视频采集换 modal 直抓方案（旧"单页打开"按钮失效，新方案 10/10 全成功）
+- ✅ Trends 图片下载换 Bing Images（旧 Google Images 0/30，新 Bing 30/30）
+- ✅ localStorage key 升级为 `wr004_visited`（修复 NEW 标签残留 bug）
+- ✅ Trends 强化历史去重（grep 前 3 期 hub.html 排除已讲过话题）
+- ✅ subagent stall 处理流程：精简 prompt 重启
+
+**已知问题**
+- ⚠️ `fetch_ads_with_video.py` 单页打开方案失效（待修脚本，临时方案见第四章）
+- ⚠️ `fetch_guangdada.py` thumbUrl 抓不到（仅占位图受影响）
+- ⚠️ subagent 容易在 600s 无进度后被流式看门狗杀掉
+
+**经验教训**
+- caption 信息严重不足时（如仅 `#fyp`）禁止靠账号名脑补内容；必须降级 B/C 或显式标"内容不可判断"
+- subagent 启动 prompt 必须明确限制 Read 文件范围 + 返回字数上限，否则容易 stall
+- 数据源跨期重复是常态（Coachella/Euphoria/The Boys 都被前 3 期讲过）；Trends 选题必须 grep 历史排查
+
+### Vol.003 · 2026-04-16
+
+- 修复 openVbox JS 函数缺失（被 Vol.002 → Vol.003 重构误删）
+- 引入「蓝图 + subagent」流水线（替代主对话亲自写 hub.html）
+- 6 个板块模板沉淀到 `templates/`

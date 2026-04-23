@@ -4335,6 +4335,8 @@ function closeVideo(e) {
 }
 
 function openLightbox(src) {
+  // 兼容两种调用：openLightbox('url') 或 openLightbox(imgElement)
+  if (src && typeof src !== 'string') src = src.src || src.getAttribute && src.getAttribute('src');
   document.getElementById('lightbox-img').src = src;
   document.getElementById('lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
