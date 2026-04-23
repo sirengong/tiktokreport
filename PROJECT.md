@@ -500,8 +500,18 @@ GEMINI_API_KEY=AIzaxxxx            # AI 视频分析（Gemini）
 - ✅ 广告视频采集换 modal 直抓方案（旧"单页打开"按钮失效，新方案 10/10 全成功）
 - ✅ Trends 图片下载换 Bing Images（旧 Google Images 0/30，新 Bing 30/30）
 - ✅ localStorage key 升级为 `wr004_visited`（修复 NEW 标签残留 bug）
+- ✅ Memes lightbox 兼容 DOM 元素入参（onclick="openLightbox(this)" 旧函数签名只收 string）
 - ✅ Trends 强化历史去重（grep 前 3 期 hub.html 排除已讲过话题）
 - ✅ subagent stall 处理流程：精简 prompt 重启
+- ✅ Met Gala 红毯图裁剪 + object-position: top（避开胸部正中焦点，share-card 友好化）
+
+**Overview 板块 v2 重构**（2026-04-23 老板反馈后落地）
+- ❌ v1 (9 卡 ov-syn-card) 弃用：信息密度过高、缺判断、像信息汇总
+- ✅ v2 (3 卡 v2-judg) 上线：聚焦本期跨源印证最强 3 个观察，每卡含图片三连 + 跳转链接
+- ✅ 文案语气从「指令式」改「参考式」：禁用「必须 / 立刻 / 严禁 / 硬规则 / 现成模板 / 碾压」等词
+- ✅ 平台定位：情报雷达（information broker），不是策略指令交付
+- ✅ 关键词跳转：50 张数据卡批量加 id (`tt/yt/meme/trend/ad-N`)，jumpTo() 函数支持切板块 + scrollIntoView + 1.8s 红框高亮
+- ✅ 模板沉淀：`templates/overview_blueprint_template.md` 升级到 v2，5 板块模板加 "卡 id 命名规范"
 
 **已知问题**
 - ⚠️ `fetch_ads_with_video.py` 单页打开方案失效（待修脚本，临时方案见第四章）
@@ -512,6 +522,8 @@ GEMINI_API_KEY=AIzaxxxx            # AI 视频分析（Gemini）
 - caption 信息严重不足时（如仅 `#fyp`）禁止靠账号名脑补内容；必须降级 B/C 或显式标"内容不可判断"
 - subagent 启动 prompt 必须明确限制 Read 文件范围 + 返回字数上限，否则容易 stall
 - 数据源跨期重复是常态（Coachella/Euphoria/The Boys 都被前 3 期讲过）；Trends 选题必须 grep 历史排查
+- **Overview 不是分析的搬运，是判断的输出**——信息密度高 ≠ 价值高，3 个清晰判断 > 9 个堆叠信号
+- **平台定位决定语气**——情报雷达不应使用指令式语言，要让读者自己拿判断，不替他做决定
 
 ### Vol.003 · 2026-04-16
 
