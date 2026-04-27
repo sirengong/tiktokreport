@@ -16,6 +16,15 @@
 > - ✅ A/B/C 标签: **A 契合度高** (2026-04-30 起，不再用"A 直接可用") / B 结构借鉴 / C 观察储备
 > - **完整禁用词清单 + verb 替换表见 [`overview_blueprint_template.md` 第 1 节"关于文案语气"](overview_blueprint_template.md)**
 
+> **🕊️ 留白机制（Vol.005+ 起 · Memes 板块用 ma4 4 列结构）**：
+> 当某条 meme **与某维度（视觉 / 情绪 / 角色 / Remix）关联较弱**时（如政治民生 / 政要肖像 / 合规风险），**允许该列诚实留白**。
+> - 留白列写法：`<div>` → `<div class="ma4-col-empty">`，内部 `<ul class="ma4-list">` 改为 `<div class="ma4-empty-note">说明文字</div>`
+> - 评分用 `ga-score-empty` + `视觉 —` / `情绪 —` 等替代数字
+> - 全留白 meme（4 列全空）= 强制 `ga-label-c`，且数据总览表评级也要同步为 C
+> - conclusion-box 引用留白 meme 必须用反向措辞（已留白 / 仅作情绪信号观察 / ⚠️ 不输出借鉴方向）
+> - 详细规则见 [`overview_blueprint_template.md` 第 1 节"留白机制"](overview_blueprint_template.md)
+
+
 
 > 本文件是 Memes 板块的「字段清单 + 写作约束」。每期分析阶段须按此模板填出 `memes.md`，
 > 写作 subagent 严格按填好的 `memes.md` + 上一期对应板块的 HTML 格式写出最终 hub.html。

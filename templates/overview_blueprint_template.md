@@ -81,6 +81,111 @@
 
 ---
 
+### 🕊️ 留白机制（Vol.005+ 起 · 全板块同步执行）
+
+> **核心原则**：当某条数据**与某维度（角色 / 玩法 / 广告）关联较弱**时，**允许该栏诚实留白**，不要硬编借鉴方向。
+> 老板/同事反馈触发该机制：原三栏强制分析导致 meta 类、政治类、合规类内容被硬编（如 TikTok #3 BGM hunt meta 被硬编成"影视/角色高燃混剪"）。
+> Vol.004 实战：50 张卡中 14 张应用留白（28%，72% 仍保留实质分析），不影响内容密度。
+
+#### 何时启用留白？
+
+| 触发场景 | 例子 | 全留白还是部分留白 |
+|---------|------|-----------------|
+| 政治议题 | Trump-Iran 停火 / Trump 选举 / 国际地缘冲突 | **全留白**（三栏都不输出） |
+| 政要肖像 + 国家政策 | Tuvalu Minister 气候发言 / 美国就业政策 meme | **全留白** |
+| 合规风险品类 | 博彩（Zynga Poker / Casino）/ 加密货币 / 烟酒 | **全留白** |
+| 文化/宗教敏感 | 古兰经经文 / 宗教仪式 | **部分留白**（角色玩法可保留情绪结构，广告维度留白） |
+| meta 共鸣 / 平台自指 | "When you decide to play the full song" | **部分留白**（角色维度留白，玩法/广告可保留） |
+| 评分≤2 的纯休闲玩法 | Nut Sort / 拼图类无角色信号 | **部分留白**（角色单栏） |
+| 强行扯不出干货 | 体育赛事日常报道 / 文化节事件 | **部分留白** 或 **全留白** 视实际 |
+
+#### 留白卡 vs 保留卡的判断顺序
+
+1. 先看本条数据的核心价值在哪个维度（角色 / 玩法 / 广告）
+2. 该维度有具体可借鉴的方向 → 保留
+3. 找不到具体方向，只能靠"硬扯角色原型 / 套用一个游戏类比" → 该维度留白
+4. **三个维度都找不到** = 全留白卡 = 强制 `ga-label-c`「C 观察储备」
+
+#### CSS Class（与 hub.html 同步）
+
+3 列板块（trends / tiktok / youtube / ads）：
+```html
+<!-- 留白栏 -->
+<div class="ga-col ga-col-empty">
+  <div class="ga-col-header">🎭 角色设计</div>
+  <div class="ga-empty-note">本条 X 维度关联较弱（一句解释 ≤25 字）</div>
+</div>
+
+<!-- 评分行留白项 -->
+<span class="ga-score ga-score-empty">角色 —</span>
+```
+
+4 列板块（memes ma4 结构）：
+```html
+<div class="ma4-col-empty">
+  <div class="ma4-col-header">📐 视觉模板</div>
+  <div class="ma4-empty-note">说明文字</div>
+</div>
+```
+
+#### 必备 CSS（hub.html `<style>` 末尾，已沉淀）
+```css
+.ga-col-empty .ga-col-header { opacity: 0.92; }
+.ga-empty-note { color: #aaa; font-size: 11px; line-height: 1.6; padding: 6px 0 0; font-style: italic; }
+.ga-score-empty { opacity: 0.88; color: var(--gray2); }
+.ga-score-empty b { color: var(--gray2); font-weight: 400; }
+.ma4-cols > div.ma4-col-empty .ma4-col-header { opacity: 0.92; }
+.ma4-cols > div.ma4-col-empty .ma4-empty-note { color: #aaa; font-size: 11px; line-height: 1.6; padding: 6px 0 0; font-style: italic; }
+```
+
+#### 留白文案风格
+
+- **诚实**：直接说"本条 X 维度关联较弱"，不回避
+- **简短**：≤25 字一句话，再补一个"为什么"
+- **柔和**：不用"严禁/禁止"，用"不建议/不输出/仅作"
+- **保留警告功能**：政治/合规类要带 ⚠️，明确"不建议直接复用"
+
+参考已落地的 14 张卡（Vol.004）：
+- "本条是 meta 共鸣类内容，与角色设计维度无明显关联"
+- "本条为国际政治议题，不适合直接转化为角色设计"
+- "⚠️ 涉及具体国家民生议题，视觉模板不建议直接挪用"
+- "博彩品类合规风险高，不输出玩法借鉴方向"
+
+#### 评分行处理
+
+- 留白栏对应的评分项用 `<span class="ga-score ga-score-empty">X —</span>`
+- **不要用 0/5 或 1/5**（暗示低分），用 `—` 表示该维度无评分
+- 全留白卡的所有 4 项评分都用 `—`
+- 部分留白卡只有留白栏对应的评分项用 `—`
+
+#### 全留白卡 = 强制 C 观察储备
+
+- 全留白卡的 `ga-label` **必须**改为 `ga-label-c`，文字 `C 观察储备`
+- 部分留白卡（单栏空）维持原评级（A/B/C），评级不应被一栏拖累
+
+#### 数据总览表评级同步
+
+- 各板块数据总览表（如 Memes 表第 7 列）的评级要和卡片端 `ga-label` 同步
+- 全留白卡 → 表中评级颜色 `#888`（灰）+ 字母 `C`
+- subagent 改 `ga-label` 时**必须同时检查并更新数据总览表对应行**
+
+#### conclusion-box 引用留白卡的措辞规则
+
+留白卡若被 conclusion-box 引用，**必须用反向措辞**，不要再当借鉴模板讨论：
+
+- ✅ 允许措辞：「已三栏全留白」「不输出借鉴方向」「仅作情绪信号观察」「⚠️ 行业现象记录」「玩家集体焦虑情绪信号」
+- ❌ 禁止措辞：「借鉴模板」「可参考」「值得套用」（哪怕加 ⚠️ 前缀也不行）
+
+参考 Vol.004 hub.html 的 3 个 conclusion 重写示例（Memes 社媒/UGC 栏 / Trends 广告栏 / Ads 广告栏）。
+
+#### 留白率监控
+
+- 健康区间：**留白覆盖率 < 30%**
+- Vol.004 实测 28%（健康但偏高）
+- 留白率 > 30% 表示采集层面引入了过多无关内容，需考虑前置过滤（见 PROJECT.md "下期待办"）
+
+---
+
 ## 0. CSS Class 完整审计（必须 100% 复用 · 唯一真相源 = 上期 hub.html）
 
 > 写作 subagent **第一步**：Read 上期 hub.html overview 区间，输出此清单作为审计痕迹。

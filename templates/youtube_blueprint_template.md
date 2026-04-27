@@ -18,6 +18,16 @@
 > - ✅ A/B/C 标签: **A 契合度高** (2026-04-30 起，不再用"A 直接可用") / B 结构借鉴 / C 观察储备
 > - **完整禁用词清单 + verb 替换表见 [`overview_blueprint_template.md` 第 1 节"关于文案语气"](overview_blueprint_template.md)**
 
+> **🕊️ 留白机制（Vol.005+ 起 · 同 Overview v2）**：
+> 当某条数据**与某维度（角色 / 玩法 / 广告）关联较弱**时（如 meta 共鸣 / 政治议题 / 合规风险 / 文化敏感），**允许该栏诚实留白**，不要硬编借鉴方向。
+> - 留白栏写法：`<div class="ga-col">` → `<div class="ga-col ga-col-empty">`，内部 `<ul>` 改为 `<div class="ga-empty-note">本条 X 维度关联较弱（一句解释，≤25 字）</div>`
+> - 评分写法：`<span class="ga-score">X <b>N</b>/5</span>` → `<span class="ga-score ga-score-empty">X —</span>`（用 — 替代低分数字，避免低分暗示）
+> - 全留白卡（3 栏全空）= 强制 `ga-label-c`「C 观察储备」；部分留白卡（单栏空）维持原评级
+> - **数据总览表评级要同步**：全留白卡在数据总览表中的评级也必须是 C
+> - **conclusion-box 引用留白卡时必须用反向措辞**：「已留白」「不输出借鉴方向」「仅作情绪信号观察」「⚠️ 行业现象记录」等，不要再当借鉴模板讨论
+> - 详细 CSS class 清单 + 文案风格见 [`overview_blueprint_template.md` 第 1 节"留白机制"](overview_blueprint_template.md)
+
+
 
 > 本文件是 YouTube Shorts 板块的「字段清单 + 写作约束」。每期分析阶段须按此模板填出 `youtube.md`，
 > 写作 subagent 严格按填好的 `youtube.md` + 上一期对应板块的 HTML 格式写出最终 hub.html。
