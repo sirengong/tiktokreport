@@ -329,6 +329,43 @@ echo "  function openLightbox: $(grep -c 'function openLightbox' $HUB)  期望 1
 
 ### Phase 4 · 发布
 
+#### 4a. ★ index.html 同步检查（2026-04-30 起强制）
+
+> Vol.004 教训：发布后才发现首页 Vol 卡片的 A 级数与 hub.html 实际数对不上、描述还有「公式可移植」等指令式措辞、未提到留白机制。
+
+发布前必须核对 index.html 中本期 featured 卡片：
+
+```bash
+HUB=$REPORT_DIR/hub.html
+IDX=index.html
+
+echo "=== A 级数同步检查 ==="
+HUB_A=$(grep -c 'A 契合度高' $HUB)
+IDX_A=$(grep -A 0 'A级洞察' $IDX | grep -oE '<div class="m-val hot">\d+' | grep -oE '\d+' | head -1)
+echo "  hub.html A 卡数: $HUB_A"
+echo "  index.html 描述: $IDX_A"
+[ "$HUB_A" = "$IDX_A" ] && echo "  ✓ 一致" || echo "  ✗ 不一致, 需更新 index.html"
+
+echo "=== index.html 描述禁用词扫描 ==="
+sed -n '/2026-04-23\|2026-XX-XX/,/<\/a>/p' $IDX | \
+  grep -oE '必须|立刻|严禁|碾压|最强判断|可移植|直接套用|永久流量公式|最优'
+echo "(期望 0 行命中)"
+
+echo "=== 留白机制说明检查 ==="
+grep -c '留白' $IDX
+echo "(本期如有应用留白机制, 期望 ≥ 1)"
+```
+
+人工核对：
+
+- [ ] **A 级数与 hub.html 同步**：`grep -c 'A 契合度高' hub.html` == index.html 中 `A 级洞察` 数字
+- [ ] **描述无指令式措辞**：扫描禁用词清单（必须 / 可移植 / 直接套用 / 最强 / 最优 等），命中 = 0
+- [ ] **描述提到留白机制**（本期如有应用）：如"与游戏题材关联较弱的维度允许留白"
+- [ ] **本期 featured 卡的 href + 日期 + Vol 号都正确**
+- [ ] **上期 featured class 已移除**（降级为普通卡）
+
+#### 4b. 推送
+
 ```bash
 cd /c/Users/gongjue/tiktok-reports
 
