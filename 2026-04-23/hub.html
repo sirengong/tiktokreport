@@ -202,6 +202,16 @@ a { text-decoration: none; color: inherit; }
 .ga-label-b { background: rgba(255,180,0,0.12); border: 1px solid rgba(255,180,0,0.3); color: #ffc533; }
 .ga-label-c { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--gray3); }
 
+/* ── 留白栏 (Vol.005+ 起，无关联维度允许诚实留白) ── */
+/* 留白文字色调 = #aaa（同正常 ga-list），靠 italic 区分；标题/评分仅轻微弱化 */
+.ga-col-empty .ga-col-header { opacity: 0.92; }
+.ga-empty-note { color: #aaa; font-size: 11px; line-height: 1.6; padding: 6px 0 0; font-style: italic; }
+.ga-score-empty { opacity: 0.88; color: var(--gray2); }
+.ga-score-empty b { color: var(--gray2); font-weight: 400; }
+/* meme 4 列同款留白 */
+.ma4-cols > div.ma4-col-empty .ma4-col-header { opacity: 0.92; }
+.ma4-cols > div.ma4-col-empty .ma4-empty-note { color: #aaa; font-size: 11px; line-height: 1.6; padding: 6px 0 0; font-style: italic; }
+
 /* ── YouTube Card ── */
 .yt-grid { display: flex; flex-direction: column; gap: 20px; margin-bottom: 36px; }
 .yt-card {
@@ -1085,12 +1095,9 @@ a { text-decoration: none; color: inherit; }
               </ul>
               <div class="game-analysis">
                 <div class="ga-cols">
-                  <div class="ga-col">
+                  <div class="ga-col ga-col-empty">
                     <div class="ga-col-header">🎭 角色设计</div>
-                    <ul class="ga-list">
-                      <li><strong>本条角色信号弱</strong>：内容是 meta 共鸣，无可复用人物原型</li>
-                      <li>仅可借鉴「真人居家场景」的真实质感（拉美家庭/普通客厅）作为社区图陪衬</li>
-                    </ul>
+                    <div class="ga-empty-note">本条是 meta 共鸣类内容，与角色设计维度无明显关联</div>
                   </div>
                   <div class="ga-col">
                     <div class="ga-col-header">⚔️ 玩法/活动</div>
@@ -1109,7 +1116,7 @@ a { text-decoration: none; color: inherit; }
                   </div>
                 </div>
                 <div class="ga-score-row">
-                  <span class="ga-score">角色 <b>1</b>/5</span>
+                  <span class="ga-score ga-score-empty">角色 —</span>
                   <span class="ga-score">玩法 <b>3</b>/5</span>
                   <span class="ga-score">广告 <b>4</b>/5</span>
                   <span class="ga-score">适配 <b>3</b>/5</span>
@@ -1523,19 +1530,15 @@ a { text-decoration: none; color: inherit; }
                       <li>慢节奏内容承接休闲玩家留存</li>
                     </ul>
                   </div>
-                  <div class="ga-col">
+                  <div class="ga-col ga-col-empty">
                     <div class="ga-col-header">🎬 广告制作</div>
-                    <ul class="ga-list">
-                      <li><strong>「ASMR 制作过程」结构</strong>：手部特写 + 慢镜头 + 环境音</li>
-                      <li>无配音 / 无文字 / 仅有 BGM 即可</li>
-                      <li>⚠️ 跨文化敏感度高：仅参考"沉浸式手作"视觉语言，禁止挪用具体宗教元素</li>
-                    </ul>
+                    <div class="ga-empty-note">⚠️ 含具体宗教元素，跨文化敏感度高，不输出广告借鉴方向</div>
                   </div>
                 </div>
                 <div class="ga-score-row">
                   <span class="ga-score">角色 <b>3</b>/5</span>
                   <span class="ga-score">玩法 <b>3</b>/5</span>
-                  <span class="ga-score">广告 <b>3</b>/5</span>
+                  <span class="ga-score ga-score-empty">广告 —</span>
                   <span class="ga-score">适配 <b>2</b>/5</span>
                   <span class="ga-label ga-label-c">C 仅参考</span>
                 </div>
@@ -2036,12 +2039,9 @@ a { text-decoration: none; color: inherit; }
           <div style="font-size:12px;color:var(--gray2);line-height:1.6;">印度频道 Box Of Vengeance 切开软球展示内部结构，纯解压无对话。19.8M 播放但 890K 点赞——点赞率 4.5%，本期最高之一。"剖开未知物体"满足"知道里面是什么"的原始好奇心，适配西幻"宝箱开启/装备分解"演出。建议把每件装备的分解动画做成 5 秒级 ASMR 体验。</div>
           <div class="game-analysis">
             <div class="ga-cols">
-              <div class="ga-col">
+              <div class="ga-col ga-col-empty">
                 <div class="ga-col-header">🎭 角色设计</div>
-                <ul class="ga-list">
-                  <li><strong>"工匠/拆解者"原型</strong>；戴手套+刀具的匠人形象，适合炼金/分解 NPC</li>
-                  <li>无台词角色定位：动作即性格</li>
-                </ul>
+                <div class="ga-empty-note">本条核心是物体拆解 ASMR，关联角色仅手部特写，角色维度信号过弱</div>
               </div>
               <div class="ga-col">
                 <div class="ga-col-header">⚔️ 玩法/活动</div>
@@ -2059,7 +2059,7 @@ a { text-decoration: none; color: inherit; }
               </div>
             </div>
             <div class="ga-score-row">
-              <span class="ga-score">角色 <b>2</b>/5</span><span class="ga-score">玩法 <b>3</b>/5</span><span class="ga-score">广告 <b>4</b>/5</span><span class="ga-score">适配 <b>2</b>/5</span>
+              <span class="ga-score ga-score-empty">角色 —</span><span class="ga-score">玩法 <b>3</b>/5</span><span class="ga-score">广告 <b>4</b>/5</span><span class="ga-score">适配 <b>2</b>/5</span>
               <span class="ga-label ga-label-c">C 仅参考</span>
             </div>
           </div>
@@ -2284,31 +2284,22 @@ a { text-decoration: none; color: inherit; }
           <div style="font-size:12px;color:var(--gray2);line-height:1.6;">23 秒滑冰女孩在花样表演中精准接住飞向她的国旗——意外但庄严的体育英雄瞬间。27.6M 播放但评论仅 1.4K，属于"惊叹完即划走"的纯爽点内容。点赞率 1.7%，频道"Wholesome Wendy"专注"温暖瞬间"垂类。这是"QTE 完美命中"演出在游戏内的现实参照，完美执行的瞬间值得专门慢镜+音效。</div>
           <div class="game-analysis">
             <div class="ga-cols">
-              <div class="ga-col">
+              <div class="ga-col ga-col-empty">
                 <div class="ga-col-header">🎭 角色设计</div>
-                <ul class="ga-list">
-                  <li><strong>"运动型女英雄"原型</strong>；优雅+精准的女性角色定位</li>
-                  <li>国旗/荣誉符号绑定：为角色赋予"代表某阵营"的仪式感</li>
-                </ul>
+                <div class="ga-empty-note">滑冰荣耀是体育英雄真实瞬间，转译成西幻女英雄过于牵强</div>
               </div>
-              <div class="ga-col">
+              <div class="ga-col ga-col-empty">
                 <div class="ga-col-header">⚔️ 玩法/活动</div>
-                <ul class="ga-list">
-                  <li><strong>"完美 QTE 慢镜"机制</strong>；关键操作成功触发慢动作+特殊音效</li>
-                  <li>运动主题节庆活动：玩家在限时关卡中完成花式表演</li>
-                </ul>
+                <div class="ga-empty-note">QTE 慢镜是通用演出，本条仅纯爽点情绪信号，玩法关联较弱</div>
               </div>
-              <div class="ga-col">
+              <div class="ga-col ga-col-empty">
                 <div class="ga-col-header">🎬 广告制作</div>
-                <ul class="ga-list">
-                  <li><strong>"意外英雄瞬间"23 秒结构</strong>；前 5 秒铺垫表演，后 3 秒高光定格</li>
-                  <li>🎌 emoji + ⛸️ 双图标标题，锁定特定运动垂类受众</li>
-                </ul>
+                <div class="ga-empty-note">体育垂类素材结构与西幻卡牌买量受众错位，不输出借鉴方向</div>
               </div>
             </div>
             <div class="ga-score-row">
-              <span class="ga-score">角色 <b>3</b>/5</span><span class="ga-score">玩法 <b>3</b>/5</span><span class="ga-score">广告 <b>3</b>/5</span><span class="ga-score">适配 <b>3</b>/5</span>
-              <span class="ga-label ga-label-b">B 结构借鉴</span>
+              <span class="ga-score ga-score-empty">角色 —</span><span class="ga-score ga-score-empty">玩法 —</span><span class="ga-score ga-score-empty">广告 —</span><span class="ga-score ga-score-empty">适配 —</span>
+              <span class="ga-label ga-label-c">C 观察储备</span>
             </div>
           </div>
         </div>
@@ -2376,7 +2367,7 @@ a { text-decoration: none; color: inherit; }
             </div>
             <div class="cb-col">
               <div class="cb-col-title" style="color:#fe2c55"><span class="dot" style="background:#fe2c55"></span> 社媒/UGC 方向</div>
-              <div class="cb-col-body"><span class="cb-highlight">#4 评论引爆王</span>「current jobs narrative」2197 评论本期最高,反映「身边事吐槽」型 meme 的 UGC 引爆力——游戏失败截图配「current 抽卡 narrative in a nutshell」是较成熟的参考模板,UGC 自传播潜力较强。<span class="cb-highlight">#7 自来源造梗</span>「source: me」31.8K 赞,呈现「我自己就是出处」反权威幽默,广告文案可参考「source: 我自己玩了 200 小时」对抗官方背书疲劳。<span class="cb-highlight">⚠️ #3 荷兰房价 / #4 美国就业 / #9 Tuvalu 气候</span>三条均涉及国际政治/民生议题——<strong>不建议直接用于游戏内容/广告素材</strong>,仅可提取「弱者被系统压抑」「连点成线觉醒」叙事结构,<strong>应避免</strong>触碰具体国家/政策/事件本体。<span class="cb-highlight">#10 强调式句式</span>「Worst. Reviews. I. Have. Ever. Seen.」一字一顿格式可参考用于活动 banner 标题。</div>
+              <div class="cb-col-body"><span class="cb-highlight">#7 自来源造梗</span>「source: me」31.8K 赞,呈现「我自己就是出处」反权威幽默,广告文案可参考「source: 我自己玩了 200 小时」对抗官方背书疲劳。<span class="cb-highlight">#10 强调式句式</span>「Worst. Reviews. I. Have. Ever. Seen.」一字一顿格式可参考用于活动 banner 标题。<br><br><span class="cb-highlight">⚠️ 政治/民生敏感观察(#3 荷兰房价 / #4 美国就业 / #9 Tuvalu 气候)</span>三条评论数与赞数虽高,但内容均涉及国际政治民生议题,本期已对这三张卡作<strong>三栏全留白</strong>处理——<strong>仅作玩家集体焦虑情绪的信号观察</strong>:其中 #4 评论数 2197 是本期最高,反映欧美受众对「就业 / 经济叙事」的反感强度,游戏内容若涉及类似议题方向需要谨慎,避免触发玩家反感(具体借鉴方向不输出)。</div>
             </div>
           </div>
         </div>
@@ -2515,40 +2506,28 @@ a { text-decoration: none; color: inherit; }
             <div class="meme-desc">国际民生议题——荷兰房价危机引发跨国共鸣。37.7K 赞 + 883 评论,呈现欧美玩家对「住房不可及」的集体焦虑,但该 meme 核心是政治议题,⚠️ 不建议直接复用图像/文案,仅提取「弱者被系统压抑」叙事结构。</div>
             <div class="meme-analysis-4">
               <div class="ma4-cols">
-                <div>
+                <div class="ma4-col-empty">
                   <div class="ma4-col-header">📐 视觉模板</div>
-                  <ul class="ma4-list">
-                    <li><strong>对比型吐槽图</strong>:理想 vs 现实双图对比;格式可参考但内容⚠️ 不建议直接挪用</li>
-                    <li>⚠️ 应避免在游戏内/广告素材中影射任何具体国家房价/民生政策——文化敏感度较高,不建议直接挪用</li>
-                  </ul>
+                  <div class="ma4-empty-note">⚠️ 涉及具体国家民生议题，视觉模板不建议直接挪用</div>
                 </div>
-                <div>
+                <div class="ma4-col-empty">
                   <div class="ma4-col-header">😈 情绪结构</div>
-                  <ul class="ma4-list">
-                    <li><strong>系统性无力感</strong>:不是个人失败,而是「系统让你失败」——比单纯抱怨更深一层的结构性愤怒</li>
-                    <li>⚠️ 评论区(883)情绪化较高——具体国家政策讨论;此情绪强度较高但应避免在游戏内复制,不建议直接挪用</li>
-                  </ul>
+                  <div class="ma4-empty-note">情绪强度高但与具体政策挂钩，不输出借鉴方向；仅作文化情绪观察</div>
                 </div>
-                <div>
+                <div class="ma4-col-empty">
                   <div class="ma4-col-header">🎭 角色原型</div>
-                  <ul class="ma4-list">
-                    <li><strong>被剥夺的小人物</strong>:努力但难以企及的角色原型;可参考西幻卡牌中「失地农民」「被流放贵族」等设定</li>
-                    <li>⚠️ 角色背景应避免与现实国家/政策挂钩;仅借「努力但被系统压垮」骨架构建虚构世界悲剧,不建议直接挪用</li>
-                  </ul>
+                  <div class="ma4-empty-note">角色原型若与现实国家挂钩易引争议，本条不输出借鉴方向</div>
                 </div>
-                <div>
+                <div class="ma4-col-empty">
                   <div class="ma4-col-header">🔄 Remix 机制</div>
-                  <ul class="ma4-list">
-                    <li><strong>结构可参考</strong>:「努力 X 仍然够不到 Y」的对比叙事;但⚠️ 应避开所有现实政治指涉</li>
-                    <li>⚠️ 不建议直接 UGC 化此模板——任何复用都可能触发文化/地缘争议,应避免直接挪用</li>
-                  </ul>
+                  <div class="ma4-empty-note">⚠️ 不建议 UGC 化此模板，任何复用都可能触发文化 / 地缘争议</div>
                 </div>
               </div>
               <div class="ga-score-row">
-                <span class="ga-score">视觉 <b>3</b>/5</span>
-                <span class="ga-score">情绪 <b>4</b>/5</span>
-                <span class="ga-score">角色 <b>3</b>/5</span>
-                <span class="ga-score">Remix <b>2</b>/5</span>
+                <span class="ga-score ga-score-empty">视觉 —</span>
+                <span class="ga-score ga-score-empty">情绪 —</span>
+                <span class="ga-score ga-score-empty">角色 —</span>
+                <span class="ga-score ga-score-empty">Remix —</span>
                 <span class="ga-label ga-label-c">C 观察储备</span>
               </div>
             </div>
@@ -2573,41 +2552,29 @@ a { text-decoration: none; color: inherit; }
             <div class="meme-desc">本期评论最高(2197)——「就业市场叙事」触发欧美玩家较深的集体焦虑。涉及美国就业政策/经济话题,⚠️ 游戏内不建议直接复用,仅提取「官方叙事 vs 真实体验」反差叙事结构。</div>
             <div class="meme-analysis-4">
               <div class="ma4-cols">
-                <div>
+                <div class="ma4-col-empty">
                   <div class="ma4-col-header">📐 视觉模板</div>
-                  <ul class="ma4-list">
-                    <li><strong>「官方说法 vs 现实」对比格式</strong>:上方政府/媒体叙事,下方真实体验;反差结构较可能是 2197 评论的引爆点</li>
-                    <li>⚠️ 视觉模板可参考(双层对比),但不建议直接复用——应避免在游戏内/广告中影射具体国家就业政策</li>
-                  </ul>
+                  <div class="ma4-empty-note">⚠️ 涉及美国就业政策影射，视觉模板不建议直接挪用</div>
                 </div>
-                <div>
+                <div class="ma4-col-empty">
                   <div class="ma4-col-header">😈 情绪结构</div>
-                  <ul class="ma4-list">
-                    <li><strong>★ 叙事不信任怒火</strong>:对「权威表态」的系统性不信任——欧美 Z 世代较核心情绪;触发本期评论数最高</li>
-                    <li>情绪烈度较强:愤怒 + 嘲讽 + 共鸣三重叠加;比 #1 假希望更具攻击性</li>
-                  </ul>
+                  <div class="ma4-empty-note">情绪强度高但与具体国家政策挂钩，不输出借鉴方向；仅作文化情绪观察</div>
                 </div>
-                <div>
+                <div class="ma4-col-empty">
                   <div class="ma4-col-header">🎭 角色原型</div>
-                  <ul class="ma4-list">
-                    <li><strong>识破谎言的觉醒者</strong>:与 #2 connecting the dots 属同一原型脉络——「我看穿了体制」型角色</li>
-                    <li>⚠️ 西幻设定中可联想到「揭穿王室谎言的吟游诗人」等纯虚构原型,不建议直接复用——应避免与现实政体挂钩</li>
-                  </ul>
+                  <div class="ma4-empty-note">「觉醒者」原型若与现实政体挂钩易引争议，本条不输出借鉴方向</div>
                 </div>
-                <div>
+                <div class="ma4-col-empty">
                   <div class="ma4-col-header">🔄 Remix 机制</div>
-                  <ul class="ma4-list">
-                    <li><strong>通用对比句式</strong>:「The current [话题] narrative in a nutshell」+ 反差图;游戏可参考「The current 抽卡 narrative」做自嘲营销</li>
-                    <li>⚠️ UGC 化时建议去政治化,不建议直接复用——仅保留「官方说法 vs 真实体验」骨架,抽卡概率/玩法体验吐槽是较安全的靶点</li>
-                  </ul>
+                  <div class="ma4-empty-note">⚠️ 不建议 UGC 化此模板，任何复用都可能触发政治争议</div>
                 </div>
               </div>
               <div class="ga-score-row">
-                <span class="ga-score">视觉 <b>3</b>/5</span>
-                <span class="ga-score">情绪 <b>5</b>/5</span>
-                <span class="ga-score">角色 <b>3</b>/5</span>
-                <span class="ga-score">Remix <b>4</b>/5</span>
-                <span class="ga-label ga-label-b">B 结构借鉴</span>
+                <span class="ga-score ga-score-empty">视觉 —</span>
+                <span class="ga-score ga-score-empty">情绪 —</span>
+                <span class="ga-score ga-score-empty">角色 —</span>
+                <span class="ga-score ga-score-empty">Remix —</span>
+                <span class="ga-label ga-label-c">C 观察储备</span>
               </div>
             </div>
           </div>
@@ -2863,40 +2830,28 @@ a { text-decoration: none; color: inherit; }
             <div class="meme-desc">Tuvalu 部长气候变化主题(海平面上升淹没岛国)的政治讽刺 meme,26.5K 赞,呈现欧美对气候议题的关注度,但 ⚠️ 不建议直接用于游戏内容。仅作为「灾难叙事」结构的观察存档。</div>
             <div class="meme-analysis-4">
               <div class="ma4-cols">
-                <div>
+                <div class="ma4-col-empty">
                   <div class="ma4-col-header">📐 视觉模板</div>
-                  <ul class="ma4-list">
-                    <li><strong>真实政治人物图</strong>:含真实国家政要肖像,⚠️ 不建议直接复用——版权 + 政治双红线</li>
-                    <li>⚠️ 视觉模板不建议参考——与真实政治人物/国家挂钩的素材均可能触发审查风险,应避免直接挪用</li>
-                  </ul>
+                  <div class="ma4-empty-note">⚠️ 含真实政要肖像 + 国家议题，版权与政治双红线，不输出借鉴方向</div>
                 </div>
-                <div>
+                <div class="ma4-col-empty">
                   <div class="ma4-col-header">😈 情绪结构</div>
-                  <ul class="ma4-list">
-                    <li><strong>气候末世焦虑</strong>:岛国消失的具象化叙事,可触发欧美中产环保情绪共鸣</li>
-                    <li>⚠️ 情绪结构可作为「灾难叙事」素材库观察——但应避免直接转化为游戏剧情,不建议直接挪用</li>
-                  </ul>
+                  <div class="ma4-empty-note">气候末世叙事与现实政治深度绑定，不转化为游戏剧情，仅作情绪观察</div>
                 </div>
-                <div>
+                <div class="ma4-col-empty">
                   <div class="ma4-col-header">🎭 角色原型</div>
-                  <ul class="ma4-list">
-                    <li><strong>濒亡文明守护者</strong>:可参考抽象原型——西幻卡牌中可联想到「守护即将湮没古城」的悲剧英雄</li>
-                    <li>⚠️ 角色背景应避免与现实国家/气候议题挂钩;仅借「文明终结」骨架构建虚构悲剧,不建议直接挪用</li>
-                  </ul>
+                  <div class="ma4-empty-note">角色原型若与现实国家/气候议题挂钩易引争议，不输出借鉴方向</div>
                 </div>
-                <div>
+                <div class="ma4-col-empty">
                   <div class="ma4-col-header">🔄 Remix 机制</div>
-                  <ul class="ma4-list">
-                    <li><strong>⚠️ 不建议任何形式 UGC 化</strong>——气候 + 真实政要双重敏感,应避免直接挪用</li>
-                    <li>⚠️ 仅作为情报观察存档:欧美社群对气候叙事的接受度仍较高,但游戏复用门槛较高,不建议直接挪用</li>
-                  </ul>
+                  <div class="ma4-empty-note">⚠️ 不建议任何形式 UGC 化——气候 + 真实政要双重敏感</div>
                 </div>
               </div>
               <div class="ga-score-row">
-                <span class="ga-score">视觉 <b>2</b>/5</span>
-                <span class="ga-score">情绪 <b>4</b>/5</span>
-                <span class="ga-score">角色 <b>3</b>/5</span>
-                <span class="ga-score">Remix <b>1</b>/5</span>
+                <span class="ga-score ga-score-empty">视觉 —</span>
+                <span class="ga-score ga-score-empty">情绪 —</span>
+                <span class="ga-score ga-score-empty">角色 —</span>
+                <span class="ga-score ga-score-empty">Remix —</span>
                 <span class="ga-label ga-label-c">C 观察储备</span>
               </div>
             </div>
@@ -3001,7 +2956,7 @@ a { text-decoration: none; color: inherit; }
               <td class="num-cell">37.0K</td>
               <td class="num-cell" style="color:#ff4444;">2197 🏆</td>
               <td class="num-cell">图片宏</td>
-              <td class="num-cell"><span style="color:#fbbf24;font-weight:700;">B</span></td>
+              <td class="num-cell"><span style="color:#888;font-weight:700;">C</span></td>
             </tr>
             <tr>
               <td class="rank-num">5</td>
@@ -3097,7 +3052,7 @@ a { text-decoration: none; color: inherit; }
             </div>
             <div class="cb-col">
               <div class="cb-col-title" style="color:#fe2c55"><span class="dot" style="background:#fe2c55"></span> 广告创意方向</div>
-              <div class="cb-col-body"><span class="cb-highlight">「Uncomfortable life」自嘲反差结构</span>是本期 ROI 表现值得关注的广告母题——「我的人生很 uncomfortable，但游戏里我是王」的反差落点较适配模拟经营广告，钩子前 2 秒易达成情感共鸣。<span class="cb-highlight">Big Hops 的「萌系跳跃 + ASMR 满足感」</span>提供休闲广告舒适型钩子的参考模板。<span class="cb-highlight">Met Gala 红毯走位镜头</span>（慢镜头 → 闪光灯爆破 → 转身定格）可作为「英雄登场 reveal」广告高级感开场的成熟参考。<span class="cb-highlight">Splatoon Raiders 路线图官宣</span>展示了「分层揭秘 + 倒计时悬念」的玩法预告广告通用节奏，值得参考。<span class="cb-highlight">⚠️ Trump-Iran 停火话题不建议直接用于广告素材</span>，仅作为「不确定性背景下，玩家寻求掌控感」的情绪洞察参考。</div>
+              <div class="cb-col-body"><span class="cb-highlight">「Uncomfortable life」自嘲反差结构</span>是本期 ROI 表现值得关注的广告母题——「我的人生很 uncomfortable，但游戏里我是王」的反差落点较适配模拟经营广告，钩子前 2 秒易达成情感共鸣。<span class="cb-highlight">Big Hops 的「萌系跳跃 + ASMR 满足感」</span>提供休闲广告舒适型钩子的参考模板。<span class="cb-highlight">Met Gala 红毯走位镜头</span>（慢镜头 → 闪光灯爆破 → 转身定格）可作为「英雄登场 reveal」广告高级感开场的成熟参考。<span class="cb-highlight">Splatoon Raiders 路线图官宣</span>展示了「分层揭秘 + 倒计时悬念」的玩法预告广告通用节奏，值得参考。<span class="cb-highlight">⚠️ #2 Trump-Iran 停火话题已三栏全留白</span>——不输出具体借鉴方向，仅作为「不确定性背景下，玩家寻求掌控感」的宏观情绪洞察记录，避免在游戏内/广告中触碰类似议题。</div>
             </div>
           </div>
         </div>
@@ -3183,34 +3138,21 @@ a { text-decoration: none; color: inherit; }
               </ul>
               <div class="game-analysis">
                 <div class="ga-cols">
-                  <div class="ga-col">
+                  <div class="ga-col ga-col-empty">
                     <div class="ga-col-header">🎭 角色设计</div>
-                    <ul class="ga-list">
-                      <li><strong>「和谈使者」中立外交家原型</strong>：在两个对立阵营间斡旋的外交官/使者角色——非战斗系英雄，技能围绕「降低敌意 / 临时停战 / 资源共享」，提供差异化的「叙事英雄」设计方向，规避政治敏感性</li>
-                      <li><strong>「乱世守望者」角色弧光</strong>：在动荡时代选择守护平民 / 难民的英雄——情感共鸣强但表达克制，避免任何具体政治符号联想，仅提取「乱世中的人性光辉」普世母题</li>
-                      <li><strong>视觉关键词</strong>：中性长袍设计（不指向具体文化） / 橄榄枝/和平鸽符号 / 金属与布料柔和混搭 / 暖色调避免政治化配色 / 持卷轴/信件而非武器</li>
-                    </ul>
+                    <div class="ga-empty-note">本条为国际政治议题，不适合直接转化为角色设计；保留作为玩家情绪底色记录</div>
                   </div>
-                  <div class="ga-col">
+                  <div class="ga-col ga-col-empty">
                     <div class="ga-col-header">⚔️ 玩法/活动</div>
-                    <ul class="ga-list">
-                      <li><strong>「停火协议」赛季机制</strong>：阵营战进入特定阶段后强制触发「停火窗口」（如 24 小时不可发起 PvP），让玩家专注建设和恢复——避免长期高压消耗玩家热情，是节奏管理的优秀机制设计</li>
-                      <li><strong>「资源谈判」社交玩法</strong>：阵营间允许通过谈判机制交换资源（如 A 阵营用粮食换 B 阵营的木材），降低纯对抗带来的情绪疲劳，引入合作维度的复杂博弈</li>
-                      <li><strong>「重建期」赛季后玩法</strong>：每个对抗赛季后设置「重建期」，玩家专注修复城邦、慰问伤员、获取专属重建奖励——节奏设计参考现实「战后重建」叙事，情感留存深度高</li>
-                      <li><strong>「掌控感」核心玩法导向</strong>：当前国际不确定性背景下，玩家对「自己掌控的小王国 / 庄园」具有更强情感需求，模拟经营内容的市场窗口处于历史高位，应加大该方向投入</li>
-                    </ul>
+                    <div class="ga-empty-note">玩法层面没有适合直接借鉴的机制；仅可作为「玩家寻求掌控感」的宏观背景参考</div>
                   </div>
-                  <div class="ga-col">
+                  <div class="ga-col ga-col-empty">
                     <div class="ga-col-header">🎬 广告制作</div>
-                    <ul class="ga-list">
-                      <li><strong>⚠️ 严格禁止</strong>：广告中绝不使用任何政治人物形象、地缘政治符号、宗教元素或冲突暗示——平台必拒审，且极易引发玩家群体撕裂，风险极高</li>
-                      <li><strong>「在不确定的世界里，建一个属于你的国度」叙事</strong>：用「掌控 vs 失控」的情绪对比展示游戏的稳定感价值——「外界一切都在变，唯有你的王国永远属于你」是当前情绪背景下较有代表性的间接广告母题</li>
-                      <li><strong>「平静与建设」长广告结构</strong>：30 秒长广告展示玩家逐步建设王国的舒缓节奏，配合温和音乐和细腻光影——逆当前焦虑情绪下行的「治愈型广告」反而更具差异化竞争力</li>
-                    </ul>
+                    <div class="ga-empty-note">⚠️ 政治议题不建议进入任何广告素材；本条仅作为情绪底色观察，不输出具体广告借鉴方向</div>
                   </div>
                 </div>
                 <div class="ga-score-row">
-                  <span class="ga-score">角色 <b>1</b>/5</span><span class="ga-score">玩法 <b>2</b>/5</span><span class="ga-score">广告 <b>1</b>/5</span><span class="ga-score">适配 <b>2</b>/5</span>
+                  <span class="ga-score ga-score-empty">角色 —</span><span class="ga-score ga-score-empty">玩法 —</span><span class="ga-score ga-score-empty">广告 —</span><span class="ga-score ga-score-empty">适配 —</span>
                   <span class="ga-label ga-label-c">C 观察储备</span>
                 </div>
               </div>
@@ -3472,13 +3414,9 @@ a { text-decoration: none; color: inherit; }
               </ul>
               <div class="game-analysis">
                 <div class="ga-cols">
-                  <div class="ga-col">
+                  <div class="ga-col ga-col-empty">
                     <div class="ga-col-header">🎭 角色设计</div>
-                    <ul class="ga-list">
-                      <li><strong>「家族传承」英雄子类</strong>：祖父辈→父辈→当前英雄的三代传承叙事——同一家族不同世代的英雄变体可作为「传承皮肤」系列，配合赛季活动逐步解锁，强化情感深度</li>
-                      <li><strong>「城市守护者」英雄原型</strong>：以特定城邦为根的世袭英雄——一生只为这座城市而战，「家乡守护」叙事是欧美玩家最深层的情感钩子之一，与体育城市文化高度同源</li>
-                      <li><strong>视觉关键词</strong>：复古球衣纹样转化为披风 / 应援棒球棒武器化 / 球场常春藤元素融入护甲 / 复古配色（蓝白红）/ 百年场馆建筑风格转化为城邦地标</li>
-                    </ul>
+                    <div class="ga-empty-note">本条核心是体育城市文化，强行转译为西幻英雄原型偏牵强，仅保留玩法/广告维度</div>
                   </div>
                   <div class="ga-col">
                     <div class="ga-col-header">⚔️ 玩法/活动</div>
@@ -3499,7 +3437,7 @@ a { text-decoration: none; color: inherit; }
                   </div>
                 </div>
                 <div class="ga-score-row">
-                  <span class="ga-score">角色 <b>2</b>/5</span><span class="ga-score">玩法 <b>3</b>/5</span><span class="ga-score">广告 <b>3</b>/5</span><span class="ga-score">适配 <b>2</b>/5</span>
+                  <span class="ga-score ga-score-empty">角色 —</span><span class="ga-score">玩法 <b>3</b>/5</span><span class="ga-score">广告 <b>3</b>/5</span><span class="ga-score">适配 <b>2</b>/5</span>
                   <span class="ga-label ga-label-c">C 观察储备</span>
                 </div>
               </div>
@@ -3652,14 +3590,9 @@ a { text-decoration: none; color: inherit; }
                       <li><strong>视觉关键词</strong>：荧光色系（霓虹粉、电光蓝、酸柠绿）/ 街头服饰元素 / 涂鸦笔刷质感 / 反叛姿态构图 / 「Z 世代」配色（粉紫、撞色拼接）</li>
                     </ul>
                   </div>
-                  <div class="ga-col">
+                  <div class="ga-col ga-col-empty">
                     <div class="ga-col-header">⚔️ 玩法/活动</div>
-                    <ul class="ga-list">
-                      <li><strong>「领地涂色」PvP 玩法</strong>：直接借鉴 Splatoon 核心玩法——双方比拼「占领区域」而非单纯击杀，把传统对战 PvP 转化为「策略涂色」型对抗，降低操作门槛同时提升策略深度</li>
-                      <li><strong>「色彩公会战」赛季活动</strong>：公会战不再只是战力比拼，而是「领地着色」——哪个公会成员在地图上「涂色」面积最大获胜——重新定义公会战目标，差异化竞争力强</li>
-                      <li><strong>「分层揭秘」官宣节奏复用</strong>：参考 Nintendo 的「预告 → 测试 → 上线 → 资料片」四阶段官宣节奏，应用于卡牌新英雄 / 新赛季官宣——每阶段制造话题峰值，最大化营销 ROI</li>
-                      <li><strong>「街头活动」赛季框架</strong>：以「街头嘉年华」为主题的赛季活动——涂鸦比赛、街头舞蹈、色彩派对，把现实青年文化整体平移为游戏赛季活动，对年轻玩家吸引力极强</li>
-                    </ul>
+                    <div class="ga-empty-note">Splatoon 涂色 PvP 是动作射击核心机制，移植到卡牌品类操作链路过长，玩法侧不输出借鉴方向</div>
                   </div>
                   <div class="ga-col">
                     <div class="ga-col-header">🎬 广告制作</div>
@@ -3671,7 +3604,7 @@ a { text-decoration: none; color: inherit; }
                   </div>
                 </div>
                 <div class="ga-score-row">
-                  <span class="ga-score">角色 <b>4</b>/5</span><span class="ga-score">玩法 <b>4</b>/5</span><span class="ga-score">广告 <b>4</b>/5</span><span class="ga-score">适配 <b>3</b>/5</span>
+                  <span class="ga-score">角色 <b>4</b>/5</span><span class="ga-score ga-score-empty">玩法 —</span><span class="ga-score">广告 <b>4</b>/5</span><span class="ga-score">适配 <b>3</b>/5</span>
                   <span class="ga-label ga-label-b">B 结构借鉴</span>
                 </div>
               </div>
@@ -3718,7 +3651,7 @@ a { text-decoration: none; color: inherit; }
           <div class="cb-grid">
             <div class="cb-col">
               <div class="cb-col-title" style="color:#fe2c55"><span class="dot" style="background:#fe2c55"></span> 广告制作方向</div>
-              <div class="cb-col-body">本期值得关注的信号：欧美主流休闲赛道全员 <span class="cb-highlight">30s±10s 短钩子</span>霸榜——10 条中 8 条落在 22~50s，印证「美区休闲买量 = 30s 节奏 + 单一爽点」的通用节奏。<span class="cb-highlight">Cash Merge 2248 / Arrow Rush / 3D Bolt Master</span> 三条均采用「假装失败 → 突然神操作」的反差钩子，前 3s 直接展示糟糕局面诱导玩家「我能做得更好」。<span class="cb-highlight">Zynga Poker</span>（合规风险，仅参考）则用<span class="cb-highlight">真人桌局氛围</span>放大社交诱惑，提示卡牌品类「真人 vs 真人」叙事在中重度品类的留量优势。<span class="cb-highlight">Kwai 系 W2A 创作者素材</span>（kwai.com / Welcome to tengine!）单条接近 1 分钟，证明 W2A 渠道偏好「真人陪玩讲解」长素材而非纯玩法切片。</div>
+              <div class="cb-col-body">本期值得关注的信号：欧美主流休闲赛道全员 <span class="cb-highlight">30s±10s 短钩子</span>霸榜——10 条中 8 条落在 22~50s，印证「美区休闲买量 = 30s 节奏 + 单一爽点」的通用节奏。<span class="cb-highlight">Cash Merge 2248 / Arrow Rush / 3D Bolt Master</span> 三条均采用「假装失败 → 突然神操作」的反差钩子，前 3s 直接展示糟糕局面诱导玩家「我能做得更好」。<span class="cb-highlight">⚠️ #1 Zynga Poker</span>（博彩品类合规风险，本期已三栏全留白）—— 仅可作为「真人 vs 真人」叙事在中重度品类留量的行业现象记录，不输出广告结构借鉴方向。<span class="cb-highlight">Kwai 系 W2A 创作者素材</span>（kwai.com / Welcome to tengine!）单条接近 1 分钟，证明 W2A 渠道偏好「真人陪玩讲解」长素材而非纯玩法切片。</div>
             </div>
             <div class="cb-col">
               <div class="cb-col-title" style="color:#ffd700"><span class="dot" style="background:#ffd700"></span> 玩法/留存方向</div>
@@ -3726,7 +3659,7 @@ a { text-decoration: none; color: inherit; }
             </div>
             <div class="cb-col">
               <div class="cb-col-title" style="color:#25f4ee"><span class="dot" style="background:#25f4ee"></span> 角色设计方向</div>
-              <div class="cb-col-body">与 Vol.003 的 Arknights 高质量动画形成强烈对比，<span class="cb-highlight">本期角色信号几乎为零</span>——10 条中 9 条没有可识别的英雄角色，只用 UI 元素（数字球、箭头、坚果、螺丝）或真人玩家替代。这本身是个反向信号：<span class="cb-highlight">欧美主流爆款的角色优先级在持续下沉</span>，画面焦点已让位给「即时反馈的物体变化」。可借鉴的角色信号仅有 <span class="cb-highlight">Zynga Poker</span> 的真人玩家肖像（社交临场感）和 <span class="cb-highlight">Welcome to tengine!</span> 的二次元真人讲解 KOL 模板。对西幻卡牌的提示：在欧美休闲赛道竞争时，角色不宜作为唯一卖点，可以先建立 30 秒爽点再带角色出场——本期角色侧的 A 级条数为 0。</div>
+              <div class="cb-col-body">与 Vol.003 的 Arknights 高质量动画形成强烈对比，<span class="cb-highlight">本期角色信号几乎为零</span>——10 条中 9 条没有可识别的英雄角色，只用 UI 元素（数字球、箭头、坚果、螺丝）或真人玩家替代。这本身是个反向信号：<span class="cb-highlight">欧美主流爆款的角色优先级在持续下沉</span>，画面焦点已让位给「即时反馈的物体变化」。可参考的角色信号仅有 <span class="cb-highlight">Welcome to tengine!</span> 的二次元真人讲解 KOL 模板（Zynga Poker 因博彩合规风险已留白，不输出角色借鉴方向）。对西幻卡牌的提示：在欧美休闲赛道竞争时，角色不宜作为唯一卖点，可以先建立 30 秒爽点再带角色出场——本期角色侧的 A 级条数为 0。</div>
             </div>
           </div>
         </div>
@@ -3767,31 +3700,21 @@ a { text-decoration: none; color: inherit; }
               </div>
               <div class="game-analysis" style="margin-top:0;">
                 <div class="ga-cols">
-                  <div class="ga-col">
+                  <div class="ga-col ga-col-empty">
                     <div class="ga-col-header">🎭 角色设计</div>
-                    <ul class="ga-list">
-                      <li><strong>真人玩家肖像替代虚拟角色</strong>：广告中无任何虚拟英雄，全用真人 PvP 桌局画面——验证博彩/社交品类「角色 = 对手」的强临场感设计；西幻卡牌可逆向思考：当玩家在和「真人对手」对战时，是否还需要厚重的角色背景包装？</li>
-                      <li>桌面筹码 / 牌面 / 表情成为「视觉角色」：当无明确人物时，物件本身承担情绪载体；这是低成本广告的兜底方案</li>
-                    </ul>
+                    <div class="ga-empty-note">⚠️ 博彩品类合规风险高，不输出角色借鉴方向</div>
                   </div>
-                  <div class="ga-col">
+                  <div class="ga-col ga-col-empty">
                     <div class="ga-col-header">⚔️ 玩法/活动</div>
-                    <ul class="ga-list">
-                      <li><strong>核心玩法 = 单局 5 分钟扑克</strong>：广告几乎不解释规则，只展示「下注 → 翻牌 → 赢取筹码」的瞬间满足；适配欧美玩家对扑克的高认知基础</li>
-                      <li>对西幻卡牌核心战斗参考价值低：博彩机制不宜进核心系统，但「单局极短 + 多人围观」的局结构对卡牌副玩法有启发</li>
-                    </ul>
+                    <div class="ga-empty-note">⚠️ 博彩玩法机制不可进核心系统，合规红线，不输出玩法借鉴方向</div>
                   </div>
-                  <div class="ga-col">
+                  <div class="ga-col ga-col-empty">
                     <div class="ga-col-header">🎬 广告制作</div>
-                    <ul class="ga-list">
-                      <li><strong>★ 真人 vs 真人社交临场感公式</strong>：开场即给「面对面真人对战」的桌局俯拍 + 玩家表情特写，让观众产生「我也能坐进去」的社交诱惑——这是中重度社交品类的强通用钩子；西幻卡牌「真人 PK 排位赛」类活动可借鉴此俯拍真人特写结构（替换为玩家头像 + 卡牌战场）</li>
-                      <li>29s 紧凑节奏：开场 3s 钩子 → 中段 20s 局内高光（关键 All-in / 翻牌瞬间）→ 收尾 6s 品牌 logo + CTA；标准美区中重度休闲买量节奏</li>
-                      <li><strong>对我们的启示</strong>：剥离合规风险后，可借鉴「社交临场感 + 玩家表情特写」的开场钩子，西幻卡牌 PvP 排位活动广告可参考此结构</li>
-                    </ul>
+                    <div class="ga-empty-note">⚠️ 博彩品类买量结构与西幻卡牌受众错位，合规风险下不输出广告借鉴方向</div>
                   </div>
                 </div>
                 <div class="ga-score-row" style="border-top:none;padding-top:0;">
-                  <span class="ga-score">角色 <b>2</b>/5</span><span class="ga-score">玩法 <b>2</b>/5</span><span class="ga-score">广告 <b>3</b>/5</span><span class="ga-score">适配 <b>1</b>/5</span>
+                  <span class="ga-score ga-score-empty">角色 —</span><span class="ga-score ga-score-empty">玩法 —</span><span class="ga-score ga-score-empty">广告 —</span><span class="ga-score ga-score-empty">适配 —</span>
                   <span class="ga-label ga-label-c">C 观察储备</span>
                 </div>
               </div>
@@ -3903,12 +3826,9 @@ a { text-decoration: none; color: inherit; }
                       <li>屏幕分割结构：上半屏真人 + 下半屏游戏画面，让真人表情和游戏画面同步展现——情感反馈与玩法验证同时完成</li>
                     </ul>
                   </div>
-                  <div class="ga-col">
+                  <div class="ga-col ga-col-empty">
                     <div class="ga-col-header">⚔️ 玩法/活动</div>
-                    <ul class="ga-list">
-                      <li><strong>无具体游戏玩法卖点</strong>：素材本身是平台/CPS 渠道导流，玩法承载弱；本卡的玩法可借鉴价值低，主要看「渠道+素材形态」组合</li>
-                      <li>对西幻卡牌玩法不可借鉴：素材没有完整的玩法循环展示，主要靠创作者讲述吸引点击</li>
-                    </ul>
+                    <div class="ga-empty-note">本条为 CPS 导流素材，无完整玩法循环展示，玩法维度无信号</div>
                   </div>
                   <div class="ga-col">
                     <div class="ga-col-header">🎬 广告制作</div>
@@ -3919,7 +3839,7 @@ a { text-decoration: none; color: inherit; }
                   </div>
                 </div>
                 <div class="ga-score-row" style="border-top:none;padding-top:0;">
-                  <span class="ga-score">角色 <b>2</b>/5</span><span class="ga-score">玩法 <b>1</b>/5</span><span class="ga-score">广告 <b>3</b>/5</span><span class="ga-score">适配 <b>2</b>/5</span>
+                  <span class="ga-score">角色 <b>2</b>/5</span><span class="ga-score ga-score-empty">玩法 —</span><span class="ga-score">广告 <b>3</b>/5</span><span class="ga-score">适配 <b>2</b>/5</span>
                   <span class="ga-label ga-label-c">C 观察储备</span>
                 </div>
               </div>
@@ -4088,12 +4008,9 @@ a { text-decoration: none; color: inherit; }
               </div>
               <div class="game-analysis" style="margin-top:0;">
                 <div class="ga-cols">
-                  <div class="ga-col">
+                  <div class="ga-col ga-col-empty">
                     <div class="ga-col-header">🎭 角色设计</div>
-                    <ul class="ga-list">
-                      <li><strong>无角色，螺丝/坚果即视觉主角</strong>：与西幻卡牌角色侧无关联</li>
-                      <li>颜色心理学应用：暖色调 + 圆润形状降低视觉防御，让画面本身成为情感载体</li>
-                    </ul>
+                    <div class="ga-empty-note">超休闲排序品类无角色设计，与西幻卡牌角色维度无关联</div>
                   </div>
                   <div class="ga-col">
                     <div class="ga-col-header">⚔️ 玩法/活动</div>
@@ -4111,7 +4028,7 @@ a { text-decoration: none; color: inherit; }
                   </div>
                 </div>
                 <div class="ga-score-row" style="border-top:none;padding-top:0;">
-                  <span class="ga-score">角色 <b>1</b>/5</span><span class="ga-score">玩法 <b>2</b>/5</span><span class="ga-score">广告 <b>3</b>/5</span><span class="ga-score">适配 <b>2</b>/5</span>
+                  <span class="ga-score ga-score-empty">角色 —</span><span class="ga-score">玩法 <b>2</b>/5</span><span class="ga-score">广告 <b>3</b>/5</span><span class="ga-score">适配 <b>2</b>/5</span>
                   <span class="ga-label ga-label-c">C 观察储备</span>
                 </div>
               </div>
@@ -4223,12 +4140,9 @@ a { text-decoration: none; color: inherit; }
                       <li>对欧美主流投放借鉴价值低；对西幻卡牌出海多区域有参考价值</li>
                     </ul>
                   </div>
-                  <div class="ga-col">
+                  <div class="ga-col ga-col-empty">
                     <div class="ga-col-header">⚔️ 玩法/活动</div>
-                    <ul class="ga-list">
-                      <li><strong>无具体玩法卖点</strong>：导流型素材，玩法承载弱；与 Ads #3 同样不可借鉴玩法设计</li>
-                      <li>唯一可学的是「素材中创作者反复说一句口号」的洗脑式设计</li>
-                    </ul>
+                    <div class="ga-empty-note">本条为 Kwai W2A 导流素材，无完整玩法循环展示，玩法维度无信号</div>
                   </div>
                   <div class="ga-col">
                     <div class="ga-col-header">🎬 广告制作</div>
@@ -4239,7 +4153,7 @@ a { text-decoration: none; color: inherit; }
                   </div>
                 </div>
                 <div class="ga-score-row" style="border-top:none;padding-top:0;">
-                  <span class="ga-score">角色 <b>2</b>/5</span><span class="ga-score">玩法 <b>1</b>/5</span><span class="ga-score">广告 <b>3</b>/5</span><span class="ga-score">适配 <b>2</b>/5</span>
+                  <span class="ga-score">角色 <b>2</b>/5</span><span class="ga-score ga-score-empty">玩法 —</span><span class="ga-score">广告 <b>3</b>/5</span><span class="ga-score">适配 <b>2</b>/5</span>
                   <span class="ga-label ga-label-c">C 观察储备</span>
                 </div>
               </div>
