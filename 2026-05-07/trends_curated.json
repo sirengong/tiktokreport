@@ -1,0 +1,109 @@
+{
+  "generated_at": "2026-05-07",
+  "period": "2026-04-23 ~ 2026-05-07 (近2周)",
+  "geo": "US",
+  "source": "Google Trends API + WebSearch 人工补全",
+  "selection_basis": "用户拍板 7 条 (T1/T2/T3/T7/T11/T12/T13) + 3 补充 (世界杯/hantavirus/NBA Wemby)",
+  "topics": [
+    {
+      "rank": 1,
+      "slug": "forza_horizon_6",
+      "title_en": "Forza Horizon 6",
+      "title_zh": "极限竞速:地平线 6 · 东京赛道揭晓",
+      "category": "gaming",
+      "concept_anchor": "候选 #14 亲手打造(车体改装) / 复合 G 双状态切换",
+      "summary": "May 19 上线,Xbox Series X/S + PC,系列首次以东京/日本为主舞台,被誉系列最强日本地图;PS5 版稍后推出。",
+      "tags": ["#ForzaHorizon6","#Tokyo","#XboxRacing","#OpenWorld"]
+    },
+    {
+      "rank": 2,
+      "slug": "007_first_light",
+      "title_en": "007 First Light",
+      "title_zh": "007:初露锋芒 · IO Interactive 出品的'baby Bond'",
+      "category": "gaming",
+      "concept_anchor": "候选 #1 钻规则 / 候选 #15 Outlaw Life / 复合 E 反追踪",
+      "summary": "May 27 上线,Hitman 团队 IO Interactive 制作,新人 James Bond 起源故事,叠加 Hitman 式潜行 + 反规则玩法。",
+      "tags": ["#007FirstLight","#JamesBond","#IOInteractive","#Stealth"]
+    },
+    {
+      "rank": 3,
+      "slug": "subnautica_2",
+      "title_en": "Subnautica 2",
+      "title_zh": "深海迷航 2 · Steam 最高愿望单 EA 上线",
+      "category": "gaming",
+      "concept_anchor": "候选 #14 亲手造 / 候选 #2 Build from Collapse",
+      "summary": "Steam 当前愿望单榜首游戏,本月 Early Access 开放;深海建造 + 探索 + 资源链生存,首部已售 1000 万+。",
+      "tags": ["#Subnautica2","#EarlyAccess","#Survival","#Underwater"]
+    },
+    {
+      "rank": 4,
+      "slug": "devil_wears_prada_2",
+      "title_en": "The Devil Wears Prada 2",
+      "title_zh": "穿普拉达的女王 2 · 20 年后归来",
+      "category": "film",
+      "concept_anchor": "候选 #16 底层逆袭(Andy 升任 Runway features 主管)",
+      "summary": "May 1 上映,Anne Hathaway/Streep/Blunt/Tucci 全员回归;Andy 现成中年记者,意外被任命 Runway 特稿主管,再次为 Miranda 工作。开画两周表现强劲。",
+      "tags": ["#DevilWearsPrada2","#AnneHathaway","#MerylStreep","#Runway"]
+    },
+    {
+      "rank": 5,
+      "slug": "the_pitt_s2_finale",
+      "title_en": "The Pitt Season 2 Finale",
+      "title_zh": "急诊室 第二季完结 · HBO Max 现象级医疗剧",
+      "category": "tv",
+      "concept_anchor": "候选 #14 亲手做(医院手术解决具体问题) / 候选 #13 兄弟连(医务团队)",
+      "summary": "HBO Max 历来评价最高的剧集之一,S2 共 15 集刚刚完结;'每集 1 小时 = ER 一个小时'的实时叙事 + 高强度团队协作。",
+      "tags": ["#ThePitt","#HBOMax","#MedicalDrama","#Realtime"]
+    },
+    {
+      "rank": 6,
+      "slug": "beyonce_met_gala_2026",
+      "title_en": "Beyoncé Met Gala 2026 + Act III",
+      "title_zh": "Beyoncé Met Gala 2026 礼服暗示新专辑 Act III",
+      "category": "culture",
+      "concept_anchor": "视觉觉醒母题(弱直接概念) / 文化拼接信号",
+      "summary": "5/4 Met Gala 红毯,Beyoncé 礼服细节激发粉丝对其新专辑 Act III 的猜测;Black swan 妆当晚 Google 搜索 Top1,Blake Lively color-changing 礼服居 Met Gala 颜色搜索 Top1。",
+      "tags": ["#MetGala2026","#Beyonce","#ActIII","#BlackSwanMakeup"]
+    },
+    {
+      "rank": 7,
+      "slug": "netflix_warner_bros_deal",
+      "title_en": "Netflix–Warner Bros $82.7B Acquisition",
+      "title_zh": "Netflix 收购 Warner Bros · $82.7B 媒体大并购",
+      "category": "industry",
+      "concept_anchor": "行业宏观信号(影响内容供给与版权格局)",
+      "summary": "Netflix 拟收购 Warner Bros 的电影/电视/流媒体资产(含 HBO Max),Q3 2026 closing,十年最大媒体并购之一;意味着 Game of Thrones 等大 IP 将归 Netflix。",
+      "tags": ["#Netflix","#WarnerBros","#HBOMax","#MediaMA"]
+    },
+    {
+      "rank": 8,
+      "slug": "fifa_world_cup_2026",
+      "title_en": "2026 FIFA World Cup Countdown",
+      "title_zh": "2026 FIFA 世界杯倒计时 · 美加墨三国 48 队首办",
+      "category": "sports",
+      "concept_anchor": "全球 IP 运营参考(应援文化 / 跨国阵营 / 票务热度)",
+      "summary": "6/11 - 7/19,首次三国联办 + 首次 48 队参赛(原 32);开幕墨西哥 vs 南非于阿兹特克体育场;美国男足 26 人名单将于 5/26 公布;开普角维德/库拉索/约旦/乌兹首次入围。",
+      "tags": ["#WorldCup2026","#FIFA","#MexicoCanadaUSA","#48Teams"]
+    },
+    {
+      "rank": 9,
+      "slug": "hantavirus_cruise_outbreak",
+      "title_en": "Hantavirus Cruise Ship Outbreak (MV Hondius)",
+      "title_zh": "邮轮汉坦病毒疫情 · 3 死 8 例疑似",
+      "category": "health",
+      "concept_anchor": "末日/恐惧母题信号(候选 #2 Build from Collapse 现实情境参考)",
+      "summary": "5/2 WHO 通报,荷兰邮轮 MV Hondius 从阿根廷开往佛得角期间爆发严重急性呼吸道疾病;5/6 已 3 死 8 例疑似(2 实验室确诊),罕见 person-to-person 传播被关注。",
+      "tags": ["#Hantavirus","#MVHondius","#WHO","#Outbreak"]
+    },
+    {
+      "rank": 10,
+      "slug": "wembanyama_12_blocks",
+      "title_en": "Wembanyama 12 Blocks Playoff Record",
+      "title_zh": "Wembanyama 单场季后赛 12 盖纪录 · 西部半决赛 G1",
+      "category": "sports",
+      "concept_anchor": "超级英雄个人秀/巨人原型(候选 #11 Carry 幻想 视觉参考)",
+      "summary": "5/4 西部半决赛 G1,马刺 vs 森林狼,Wembanyama 单场封盖 12 次破历史季后赛纪录(最终森林狼客场绝杀);法国 7 尺 4 内线在 NBA 第 2 季的统治力图腾。",
+      "tags": ["#Wembanyama","#NBAPlayoffs","#Spurs","#12Blocks"]
+    }
+  ]
+}

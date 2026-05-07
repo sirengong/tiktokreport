@@ -1,0 +1,258 @@
+{
+  "generated_at": "2026-05-07",
+  "source": "guangdada_display_ads_cdp",
+  "filter_active": "人气值Top1% + 游戏分类(角色扮演/策略/益智/动作/模拟/冒险/射击/消除) + 时间范围(7/30/90/近1年)",
+  "total_with_video": 10,
+  "total_html_skipped": 1,
+  "skipped_html_ads": [
+    {
+      "rank": 3,
+      "title": "1945 Air Force: Plane Shooter",
+      "brand": "1SOFT",
+      "reason": "iframe-only, no <video>"
+    }
+  ],
+  "ads": [
+    {
+      "rank": 1,
+      "title": "Grill Sort",
+      "brand": "Gloryway Puzzle",
+      "avatar": "https://appcdn-global.zingfront.com/imgs/c18ea09f80722c1781491b8c703bc85b.jpg",
+      "tags": [
+        "Top1%",
+        "重投",
+        "2026-05-07~2026-05-07"
+      ],
+      "platforms": [
+        "android"
+      ],
+      "popularity": 1125,
+      "days_running": 1,
+      "impression": "9.1K",
+      "hot": 51,
+      "duration": "59s",
+      "raw": "人气值1125投放天数1 天最后看见05-07展示估值:9.1K热度:51",
+      "video_url": "https://sp2cdn-idea-global.zingfront.com/sp_opera/9dcbf31a83d189d930353ff4b6c3f170.mp4",
+      "filter_status": "video_ok",
+      "original_rank": 2,
+      "local_video": "ads_videos_gdd/01_Grill_Sort.mp4"
+    },
+    {
+      "rank": 2,
+      "title": "Playground Mod",
+      "brand": "Vladimir Chernenko",
+      "avatar": "https://appcdn-global.zingfront.com/imgs/7491ca022733feadba01bb53ef031554.jpg",
+      "tags": [
+        "Top1%",
+        "重投",
+        "2026-05-07~2026-05-07"
+      ],
+      "platforms": [
+        "apple"
+      ],
+      "popularity": 1579,
+      "days_running": 1,
+      "impression": "8.9K",
+      "hot": 51,
+      "duration": "29s",
+      "raw": "人气值1579投放天数1 天最后看见05-07展示估值:8.9K热度:51",
+      "video_url": "https://sp2cdn-idea-global.zingfront.com/sp_opera/bf41313c6e6f2b44158b6a83005a4b6a.mp4",
+      "filter_status": "video_ok",
+      "original_rank": 4,
+      "local_video": "ads_videos_gdd/02_Playground_Mod.mp4"
+    },
+    {
+      "rank": 3,
+      "title": "Sonic Dash Fun Endless Running",
+      "brand": "SEGA",
+      "avatar": "https://appcdn-global.zingfront.com/imgs/141d35e861a85dd09b547c79b2a5b902.jpg",
+      "tags": [
+        "Top1%",
+        "重投",
+        "2026-05-07~2026-05-07"
+      ],
+      "platforms": [
+        "apple"
+      ],
+      "popularity": 17000,
+      "days_running": 1,
+      "impression": "944K",
+      "hot": 1000,
+      "duration": "35s",
+      "raw": "人气值1.7万投放天数1 天最后看见05-07展示估值:944K热度:1K",
+      "video_url": "https://sp2cdn-idea-global.zingfront.com/sp_opera/6564f7a95d016c8aaa055c533e7e3347.mp4",
+      "filter_status": "video_ok",
+      "original_rank": 5,
+      "local_video": "ads_videos_gdd/03_Sonic_Dash_Fun_Endless_Running.mp4"
+    },
+    {
+      "rank": 4,
+      "title": "Matchcreek Motors: Custom Cars",
+      "brand": "Hutch Games",
+      "avatar": "https://appcdn-global.zingfront.com/imgs/e39d2448d6f80b7ed90faa84cfe591e1.jpg",
+      "tags": [
+        "Top1%",
+        "重投",
+        "2026-05-07~2026-05-07"
+      ],
+      "platforms": [
+        "android"
+      ],
+      "popularity": 1267,
+      "days_running": 1,
+      "impression": "8.6K",
+      "hot": 51,
+      "duration": "30s",
+      "raw": "人气值1267投放天数1 天最后看见05-07展示估值:8.6K热度:51",
+      "video_url": "https://sp2cdn-idea-global.zingfront.com/sp_opera/d60d832b89cb7843c976fc584481459d.mp4",
+      "filter_status": "video_ok",
+      "original_rank": 6,
+      "local_video": "ads_videos_gdd/04_Matchcreek_Motors__Custom_Cars.mp4"
+    },
+    {
+      "rank": 5,
+      "title": "Sheep Dash: Sheep Away",
+      "brand": "Snap Brain Games",
+      "avatar": "https://appcdn-global.zingfront.com/imgs/90a7988cb2c9a76f8e90f65d7a067e92.jpg",
+      "tags": [
+        "Top1%",
+        "重投",
+        "2026-05-07~2026-05-07"
+      ],
+      "platforms": [
+        "android"
+      ],
+      "popularity": 973,
+      "days_running": 1,
+      "impression": "7K",
+      "hot": 51,
+      "duration": "29s",
+      "raw": "人气值973投放天数1 天最后看见05-07展示估值:7K热度:51",
+      "video_url": "https://sp2cdn-idea-global.zingfront.com/sp_opera/e08ac2e243852997c068b6f073d11e40.webm",
+      "filter_status": "video_ok",
+      "original_rank": 7,
+      "local_video": "ads_videos_gdd/05_Sheep_Dash__Sheep_Away.webm"
+    },
+    {
+      "rank": 6,
+      "title": "Jigsawscapes® - Jigsaw Puzzles",
+      "brand": "Oakever Games",
+      "avatar": "https://appcdn-global.zingfront.com/imgs/5904233107fea4c8df4f9dd6ce5a0c92.jpg",
+      "tags": [
+        "Top1%",
+        "重投",
+        "2026-05-07~2026-05-07"
+      ],
+      "platforms": [
+        "android"
+      ],
+      "popularity": 973,
+      "days_running": 1,
+      "impression": "6.6K",
+      "hot": 51,
+      "duration": "42s",
+      "raw": "人气值973投放天数1 天最后看见05-07展示估值:6.6K热度:51",
+      "video_url": "https://sp2cdn-idea-global.zingfront.com/sp_opera/05773c5dcf739aafd321533e379c7e0f.mp4",
+      "filter_status": "video_ok",
+      "original_rank": 8,
+      "local_video": "ads_videos_gdd/06_Jigsawscapes____Jigsaw_Puzzles.mp4"
+    },
+    {
+      "rank": 7,
+      "title": "Gossip Harbor®: Merge & Story",
+      "brand": "Microfun Limited",
+      "avatar": "https://appcdn-global.zingfront.com/imgs/3eaef7a643d3838b7d84cdd8ae77bcdc.jpg",
+      "tags": [
+        "Top1%",
+        "重投",
+        "2026-05-07~2026-05-07"
+      ],
+      "platforms": [
+        "apple"
+      ],
+      "popularity": 1579,
+      "days_running": 1,
+      "impression": "7.2K",
+      "hot": 51,
+      "duration": "55s",
+      "raw": "人气值1579投放天数1 天最后看见05-07展示估值:7.2K热度:51",
+      "video_url": "https://sp2cdn-idea-global.zingfront.com/sp_opera/676bb00b39bd482ab94d777c2ab93c46.mp4",
+      "filter_status": "video_ok",
+      "original_rank": 9,
+      "local_video": "ads_videos_gdd/07_Gossip_Harbor___Merge___Story.mp4"
+    },
+    {
+      "rank": 8,
+      "title": "Anime Dress Up & Makeup Doll",
+      "brand": "Shelton Gumentol",
+      "avatar": "https://appcdn-global.zingfront.com/imgs/08fc563b1c6579985422716c76942134.jpg",
+      "tags": [
+        "Top1%",
+        "重投",
+        "2026-05-07~2026-05-07"
+      ],
+      "platforms": [
+        "android"
+      ],
+      "popularity": 1579,
+      "days_running": 1,
+      "impression": "7.2K",
+      "hot": 51,
+      "duration": "15s",
+      "raw": "人气值1579投放天数1 天最后看见05-07展示估值:7.2K热度:51",
+      "video_url": "https://sp2cdn-idea-global.zingfront.com/sp_opera/f56b8ffff16521d07f0b0cb67a0527b1.mp4",
+      "filter_status": "video_ok",
+      "original_rank": 10,
+      "local_video": "ads_videos_gdd/08_Anime_Dress_Up___Makeup_Doll.mp4"
+    },
+    {
+      "rank": 9,
+      "title": "Coin Master",
+      "brand": "Moon Active",
+      "avatar": "https://appcdn-global.zingfront.com/imgs/1041c057dfad23e9eaf93d322516d2f4.jpg",
+      "tags": [
+        "Top1%",
+        "重投",
+        "2026-05-07~2026-05-07"
+      ],
+      "platforms": [
+        "android"
+      ],
+      "popularity": 1278,
+      "days_running": 1,
+      "impression": "10K",
+      "hot": 51,
+      "duration": "59s",
+      "raw": "人气值1278投放天数1 天最后看见05-07展示估值:10K热度:51",
+      "video_url": "https://sp2cdn-idea-global.zingfront.com/sp_opera/f16fb3f1c547f0110c09d76f38551c88.mp4",
+      "filter_status": "video_ok",
+      "original_rank": 11,
+      "local_video": "ads_videos_gdd/09_Coin_Master.mp4"
+    },
+    {
+      "rank": 10,
+      "title": "Obby Chapters: Escape Games",
+      "brand": "Beos Studio",
+      "avatar": "https://appcdn-global.zingfront.com/imgs/54cdaa9012b965140e9d1fa9c52f8bea.jpg",
+      "tags": [
+        "Top1%",
+        "重投",
+        "2026-05-07~2026-05-07"
+      ],
+      "platforms": [
+        "android"
+      ],
+      "popularity": 1579,
+      "days_running": 1,
+      "impression": "8.4K",
+      "hot": 51,
+      "duration": "30s",
+      "raw": "人气值1579投放天数1 天最后看见05-07展示估值:8.4K热度:51",
+      "video_url": "https://sp2cdn-idea-global.zingfront.com/sp_opera/107e7304429d69b3832918ed17c2fce1.mp4",
+      "filter_status": "video_ok",
+      "original_rank": 12,
+      "local_video": "ads_videos_gdd/10_Obby_Chapters__Escape_Games.mp4"
+    }
+  ],
+  "dedupe_note": "已按 (title, brand) 去重,保留人气值更高的素材"
+}

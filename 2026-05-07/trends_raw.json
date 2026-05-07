@@ -1,0 +1,81 @@
+{
+  "generated_at": "2026-05-07T02:29:59.051968+00:00",
+  "period": "now 7-d",
+  "geo": "US",
+  "total_topics": 10,
+  "topics": [
+    {
+      "rank": 1,
+      "topic": "manu ginobili",
+      "category": "general",
+      "interest": {},
+      "trafficEstimate": "10M+",
+      "relatedQueries": {}
+    },
+    {
+      "rank": 2,
+      "topic": "cruzeiro",
+      "category": "general",
+      "interest": {},
+      "trafficEstimate": "10M+",
+      "relatedQueries": {}
+    },
+    {
+      "rank": 3,
+      "topic": "where to watch cincinnati reds vs chicago cubs",
+      "category": "general",
+      "interest": {},
+      "trafficEstimate": "5M+",
+      "relatedQueries": {}
+    },
+    {
+      "rank": 4,
+      "topic": "san antonio",
+      "category": "general",
+      "interest": {},
+      "trafficEstimate": "5M+"
+    },
+    {
+      "rank": 5,
+      "topic": "saudi arabia",
+      "category": "general",
+      "interest": {},
+      "trafficEstimate": "2M+"
+    },
+    {
+      "rank": 6,
+      "topic": "where to watch deportivo toluca f.c. vs lafc",
+      "category": "general",
+      "interest": {},
+      "trafficEstimate": "2M+"
+    },
+    {
+      "rank": 7,
+      "topic": "spurs game",
+      "category": "gaming",
+      "interest": {},
+      "trafficEstimate": "2M+"
+    },
+    {
+      "rank": 8,
+      "topic": "is anthony edwards playing tonight",
+      "category": "general",
+      "interest": {},
+      "trafficEstimate": "1M+"
+    },
+    {
+      "rank": 9,
+      "topic": "kicks",
+      "category": "general",
+      "interest": {},
+      "trafficEstimate": "1M+"
+    },
+    {
+      "rank": 10,
+      "topic": "giannis antetokounmpo",
+      "category": "general",
+      "interest": {},
+      "trafficEstimate": "1M+"
+    }
+  ]
+}
